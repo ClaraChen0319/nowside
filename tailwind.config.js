@@ -34,13 +34,13 @@ module.exports = {
     },
     fontSize: {
       '2xs': '0.25rem', // 4px
-      'xs': '0.5rem', // 8px
-      'sm': '0.75rem', // 12px
-      'md': '1rem', // 16px
-      'lg': '1.25rem', // 20px
-      'xl': '1.5rem', // 24px
+      'xs': '0.5rem',   // 8px
+      'sm': '0.75rem',  // 12px
+      'md': '1rem',     // 16px
+      'lg': '1.25rem',  // 20px
+      'xl': '1.5rem',   // 24px
       '2xl': '1.75rem', // 28px
-      '3xl': '2rem', // 32px
+      '3xl': '2rem',    // 32px
     },
     fontWeight: {
       light: '300',
@@ -49,8 +49,8 @@ module.exports = {
       bold: '600',
     },
     screens: {
-      'sm': '320px', // @media (min-width: 320px) { ... }
-      'md': '768px', // @media (min-width: 768px) { ... }
+      'sm': '320px',  // @media (min-width: 320px) { ... }
+      'md': '768px',  // @media (min-width: 768px) { ... }
       'lg': '1920px', // @media (min-width: 1920px) { ... }
     },
     borderRadius: {
