@@ -9,7 +9,7 @@
         @apply p-3 pt-5 pb-2 w-full rounded border border-gray-700 focus:border-green-500 active:border-green-500 focus:outline-none active:outline-none appearance-none;
     }
     .nowside-label {
-        @apply pt-2.5 pl-3 mb-0 text-base text-gray-700 cursor-text;
+        @apply pt-2.5 pl-3 mb-0 text-md text-gray-700 cursor-text;
     }
     .nowside-checkbox {
         @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 rounded-[4px] focus:ring-green-500 form-checkbox;

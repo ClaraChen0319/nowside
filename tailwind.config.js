@@ -46,6 +46,7 @@ module.exports = {
       light: '300',
       regular: '400',
       medium: '500',
+      bold: '600',
     },
     screens: {
       'sm': '320px', // @media (min-width: 320px) { ... }
