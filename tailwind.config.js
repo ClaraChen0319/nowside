@@ -27,13 +27,38 @@ module.exports = {
         900: '#15202A',
       },
       green: {
+        100: '#DFF5F1',
         500: '#40C3A9',
         700: '#287F6E',
       },
     },
+    fontSize: {
+      '2xs': '0.25rem', // 4px
+      'xs': '0.5rem', // 8px
+      'sm': '0.75rem', // 12px
+      'md': '1rem', // 16px
+      'lg': '1.25rem', // 20px
+      'xl': '1.5rem', // 24px
+      '2xl': '1.75rem', // 28px
+      '3xl': '2rem', // 32px
+    },
+    fontWeight: {
+      light: '300',
+      regular: '400',
+      medium: '500',
+    },
+    screens: {
+      'sm': '320px', // @media (min-width: 320px) { ... }
+      'md': '768px', // @media (min-width: 768px) { ... }
+      'lg': '1920px', // @media (min-width: 1920px) { ... }
+    },
     borderRadius: {
-      DEFAULT: '8px', // rounded 默認 8px
+      DEFAULT: '8px', // rounded 預設 8px
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class', // only generate classes
+    }),
+  ],
 }
