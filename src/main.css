@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .nowside-checkbox {
+        @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 form-checkbox;
+    }
+}

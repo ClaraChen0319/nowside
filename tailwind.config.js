@@ -35,5 +35,9 @@ module.exports = {
       DEFAULT: '8px', // rounded 默認 8px
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class', // only generate classes
+    }),
+  ],
 }
