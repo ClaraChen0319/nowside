@@ -11,11 +11,6 @@
 
 <template>
   <div class="flex overflow-hidden relative flex-col justify-center py-6 min-h-screen">
-    <img
-      src="https://play.tailwindcss.com/img/beams.jpg"
-      alt=""
-      class="absolute top-1/2 left-1/2 w-screen h-screen -translate-x-1/2 -translate-y-1/2"
-    >
     <div class="relative py-8 px-6 mx-auto min-w-[416px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
       <div class="mx-auto max-w-md">
         <div class="divide-y divide-gray-300">
@@ -82,22 +77,4 @@
   </div>
 </template>
 
-<style>
-  .custom-input {
-    transition: border 0.2s ease-in-out;
-    min-width: 280px
-  }
-  .custom-label {
-    transition: all 0.2s ease-out;
-    top: 0.4rem;
-    left: 0;
-  }
-  .custom-input:focus+.custom-label,
-  .custom-input:active+.custom-label,
-  .custom-input.filled+.custom-label {
-    font-size: .75rem;
-    transition: all 0.2s ease-out;
-    top: -0.5rem;
-    color: #40C3A9;
-  }
-</style>
+<style></style>

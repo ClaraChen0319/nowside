@@ -15,3 +15,23 @@
         @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 rounded-[4px] focus:ring-green-500 form-checkbox;
     }
 }
+
+.custom-input {
+    transition: border 0.2s ease-in-out;
+    min-width: 280px
+}
+
+.custom-label {
+    transition: all 0.2s ease-out;
+    top: 0.4rem;
+    left: 0;
+}
+
+.custom-input:focus+.custom-label,
+.custom-input:active+.custom-label,
+.custom-input.filled+.custom-label {
+    font-size: .75rem;
+    transition: all 0.2s ease-out;
+    top: -0.5rem;
+    color: #40C3A9;
+}
