@@ -3,10 +3,10 @@ import LoginModal from '@/components/LoginModal.vue';
 </script>
 
 <template>
-  <img
-    src="https://play.tailwindcss.com/img/beams.jpg"
-    alt=""
-    class="absolute top-1/2 left-1/2 w-screen h-screen -translate-x-1/2 -translate-y-1/2"
+  <div
+    class="w-full h-full"
+    style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
-  <LoginModal></LoginModal>
+    <LoginModal></LoginModal>
+  </div>
 </template>

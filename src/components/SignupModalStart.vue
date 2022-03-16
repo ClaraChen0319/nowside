@@ -19,11 +19,11 @@
             >
           </div>
           <div class="mb-12 font-bold text-center text-blue-700">
-            <p class="mb-8 text-3xl">
+            <p class="mb-4 text-3xl">
               歡迎進入腦塞 project世界
             </p>
             <p class="mb-8 text-3xl">
-              Miss <span class="material-icons">edit</span>
+              Mr. Sider <span class="material-icons">edit</span>
             </p>
             <p>
               以下所填寫的資訊將有助於<br>幫助我們推薦適合你的專案項目

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="py-16 w-full h-full bg-gray-100">
+  <div class="pt-96 w-full h-full bg-gray-100">
     <div class="container mx-auto">
       <div class="mx-auto w-11/12 lg:w-2/6">
         <div class="flex justify-between items-center h-1 bg-gray-200">
@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="flex relative justify-between items-center w-1/3 h-1 bg-blue-700">
-            <div class="absolute right-0 -mr-2">
+            <div class="absolute right-5">
               <div class="relative py-1 px-2 mt-16 -mr-12 bg-white rounded shadow-lg">
                 <svg
                   class="absolute inset-x-0 top-0 -mt-1 w-full"
@@ -67,7 +67,7 @@
                   </g>
                 </svg>
                 <p class="text-xs font-bold text-blue-700">
-                  Step 3: Analyzing
+                  Step 1
                 </p>
               </div>
             </div>
@@ -103,5 +103,3 @@
     </div>
   </div>
 </template>
-
-<style></style>

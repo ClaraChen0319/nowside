@@ -7,14 +7,14 @@ import SignupModalStep4 from '@/components/SignupModalStep4.vue';
 </script>
 
 <template>
-  <img
-    src="https://play.tailwindcss.com/img/beams.jpg"
-    alt=""
-    class="absolute top-1/2 left-1/2 w-screen h-screen -translate-x-1/2 -translate-y-1/2"
+  <div
+    class="w-full h-full"
+    style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
-  <SignupModalStart></SignupModalStart>
-  <SignupModalStep1></SignupModalStep1>
-  <SignupModalStep2></SignupModalStep2>
-  <SignupModalStep3></SignupModalStep3>
-  <SignupModalStep4></SignupModalStep4>
+    <SignupModalStart></SignupModalStart>
+    <SignupModalStep1></SignupModalStep1>
+    <SignupModalStep2></SignupModalStep2>
+    <SignupModalStep3></SignupModalStep3>
+    <SignupModalStep4></SignupModalStep4>
+  </div>
 </template>
