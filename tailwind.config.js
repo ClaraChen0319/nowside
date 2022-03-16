@@ -1,10 +1,22 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Noto Sans TC', ...defaultTheme.fontFamily.sans], // 載入 Noto Sans TC
+      },
+      backgroundImage: {
+        'nowside-md': "url('@/assets/logo.png')",
+        'poopoo-md': "url('@/src/assets/poopoo.png')",
+        'ghost-md': "url('@/src/assets/ghost.png')",
+        'zombie-md': "url('@/src/assets/zombie.png')",
+      },
+    },
     colors: {
       black: '#000000',
       white: '#FFFFFF',
@@ -55,6 +67,7 @@ module.exports = {
     },
     borderRadius: {
       DEFAULT: '8px', // rounded 預設 8px
+      full: '9999px',
     },
   },
   plugins: [

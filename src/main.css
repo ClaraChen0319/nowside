@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
     .nowside-input {
-        @apply p-3 pt-5 pb-2 w-full rounded border border-gray-700 focus:border-green-500 focus:outline-none active:outline-none appearance-none;
-    }
-    .nowside-label {
-        @apply pt-2.5 pl-3 mb-0 text-gray-700 cursor-text;
+        @apply p-3 pt-5 pb-2 w-full rounded border border-gray-700 focus:border-green-500 focus:outline-none active:outline-none;
     }
     .nowside-checkbox {
         @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 rounded-[4px] focus:ring-green-500 form-checkbox;
+    }
+    .nowside-label {
+        @apply pt-2.5 pl-3 mb-0 text-gray-700 cursor-text;
     }
 }
 
 .custom-input {
     transition: border 0.2s ease-in-out;
-    min-width: 280px
 }
 
 .custom-label {
