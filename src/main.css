@@ -1,37 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
     .nowside-input {
-        @apply p-3 pt-5 pb-2 w-full rounded border border-gray-700 focus:border-green-500 focus:outline-none active:outline-none appearance-none;
+        @apply w-full h-10 placeholder:text-transparent border-b-2 border-gray-300 focus:border-green-500 focus:outline-none;
     }
-    .nowside-label {
-        @apply pt-2.5 pl-3 mb-0 text-gray-700 cursor-text;
+    .nowside-inputLabel {
+        @apply absolute -top-3.5 peer-placeholder-shown:top-2 peer-focus:-top-3.5 left-0 text-sm peer-placeholder-shown:text-md peer-focus:text-sm peer-placeholder-shown:text-gray-700 text-gray-700 peer-focus:text-green-500 transition-all;
+    }
+    .filled {
+        @apply text-green-500;
     }
     .nowside-checkbox {
         @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 rounded-[4px] focus:ring-green-500 form-checkbox;
     }
-}
-
-.custom-input {
-    transition: border 0.2s ease-in-out;
-    min-width: 280px
-}
-
-.custom-label {
-    transition: all 0.2s ease-out;
-    top: 0.4rem;
-    left: 0;
-}
-
-.custom-input:focus+.custom-label,
-.custom-input:active+.custom-label,
-.custom-input.filled+.custom-label {
-    font-size: .75rem;
-    transition: all 0.2s ease-out;
-    top: -0.5rem;
-    color: #40C3A9;
 }
