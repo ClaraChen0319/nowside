@@ -47,7 +47,7 @@
             <label
               for="password"
               class="nowside-inputLabel"
-              :class="[ email ? 'nowside-inputFilled' : '' ]"
+              :class="[ password ? 'nowside-inputFilled' : '' ]"
             >密碼</label>
           </div>
           <div class="relative">
@@ -63,7 +63,7 @@
               for="confirm"
               class="nowside-inputLabel"
               :class="[ confirm ? 'nowside-inputFilled' : '' ]"
-            >密碼</label>
+            >確認密碼</label>
           </div>
         </form>
         <div class="pt-8 mb-8">
