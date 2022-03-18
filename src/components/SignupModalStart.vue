@@ -31,7 +31,7 @@
           </div>
           <div class="mb-8">
             <RouterLink
-              class="flex justify-center py-4 px-6 mb-8 w-full text-lg font-bold text-white bg-blue-600 rounded"
+              class="nowside-buttonForSignup-A"
               to="/signup"
             >
               開始

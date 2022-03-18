@@ -19,52 +19,58 @@
             請輸入註冊信箱、密碼
           </p>
         </div>
-        <div class="mb-8">
+        <form class="mb-8">
           <div class="relative mb-8">
             <input
               id="email"
               v-model="email"
-              class="nowside-input custom-input"
-              :class="{ 'filled': email !== '', '': email === '' }"
+              name="email" 
               type="text"
-              autofocus
+              class="peer nowside-input"
+              placeholder="信箱"
             >
             <label
               for="email"
-              class="absolute nowside-label custom-label"
+              class="nowside-inputLabel"
+              :class="[ email ? 'nowside-inputFilled' : '' ]"
             >信箱</label>
           </div>
-          <div class="relative mb-8">
+          <div class="relative mb-6">
             <input
               id="password"
               v-model="password"
-              class="nowside-input custom-input"
-              :class="{ 'filled': password !== '', '': password === '' }"
               type="password"
-              autofocus
+              name="password"     
+              class="peer nowside-input"
+              placeholder="密碼"
             >
             <label
               for="password"
-              class="absolute nowside-label custom-label"
+              class="nowside-inputLabel"
+              :class="[ email ? 'nowside-inputFilled' : '' ]"
             >密碼</label>
           </div>
-          <div class="relative mb-8">
+          <div class="relative">
             <input
-              id="password"
+              id="confirm"
               v-model="confirm"
-              class="nowside-input custom-input"
-              :class="{ 'filled': confirm !== '', '': confirm === '' }"
-              type="password"
-              autofocus
+              type="confirm"
+              name="confirm"     
+              class="peer nowside-input"
+              placeholder="確認密碼"
             >
             <label
-              for="password"
-              class="absolute nowside-label custom-label"
-            >確認密碼</label>
+              for="confirm"
+              class="nowside-inputLabel"
+              :class="[ confirm ? 'nowside-inputFilled' : '' ]"
+            >密碼</label>
           </div>
-        </div>
+        </form>
         <div class="pt-8 mb-8">
-          <button class="py-4 px-6 mb-8 w-full text-lg font-bold text-white bg-blue-600 rounded">
+          <button
+            type="button"
+            class="nowside-buttonForSignup-A"
+          >
             下一步
           </button>
           <p class="flex justify-center text-xs text-blue-600">

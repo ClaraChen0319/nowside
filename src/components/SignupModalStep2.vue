@@ -16,14 +16,14 @@
           <p class="mb-8 text-3xl">
             請問您的性別
           </p>
-          <div class="flex flex-col items-center mb-8 text-lg">
+          <form class="flex flex-col items-center mb-8 text-lg">
             <div class="mb-8">
               <input
                 id="male"
                 v-model="gender"
                 value="male"
                 name="gender"
-                class="mr-2 text-green-500 focus:ring-green-500 form-radio"
+                class="nowside-radio"
                 type="radio"
               >
               <label
@@ -37,7 +37,7 @@
                 v-model="gender"
                 value="female"
                 name="gender"
-                class="mr-2 text-green-500 focus:ring-green-500 form-radio"
+                class="nowside-radio"
                 type="radio"
               >
               <label
@@ -45,13 +45,13 @@
                 class="ml-2 text-blue-700"
               >女性</label>
             </div>
-            <div class="">
+            <div>
               <input
                 id="other" 
                 v-model="gender"
                 value="other"
                 name="gender"
-                class="mr-2 text-green-500 focus:ring-green-500 form-radio"
+                class="nowside-radio"
                 type="radio"
               >
               <label
@@ -59,10 +59,13 @@
                 class="ml-2 text-blue-700"
               >其他</label>
             </div>
-          </div>
+          </form>
         </div>
         <div class="pt-8 mb-8">
-          <button class="py-4 px-6 mb-8 w-full text-lg font-bold text-white bg-blue-600 rounded">
+          <button
+            type="button"
+            class="nowside-buttonForSignup-A"
+          >
             下一步
           </button>
           <p class="flex justify-center text-xs text-blue-600">

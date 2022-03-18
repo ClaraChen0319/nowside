@@ -48,11 +48,14 @@
           </div>
         </div>
         <div class="pt-8 mb-8">
-          <button class="py-4 px-6 mb-8 w-full text-lg font-bold text-white bg-blue-600 rounded">
+          <button
+            type="button"
+            class="nowside-buttonForSignup-A"
+          >
             上傳
           </button>
           <RouterLink
-            class="flex justify-center py-4 px-6 mb-8 w-full text-lg font-bold text-blue-600 bg-blue-100 rounded border border-blue-300"
+            class="nowside-buttonForSignup-B"
             to="/signup"
           >
             下一步

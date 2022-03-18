@@ -4,15 +4,24 @@
 
 @layer components {
     .nowside-input {
-        @apply w-full h-10 placeholder:text-transparent border-b-2 border-gray-300 focus:border-green-500 focus:outline-none;
+        @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-gray-700 bg-gray-100 rounded border border-gray-700 focus:border-green-500 focus:outline-none;
     }
     .nowside-inputLabel {
-        @apply absolute -top-3.5 peer-placeholder-shown:top-2 peer-focus:-top-3.5 left-0 text-sm peer-placeholder-shown:text-md peer-focus:text-sm peer-placeholder-shown:text-gray-700 text-gray-700 peer-focus:text-green-500 transition-all;
+        @apply absolute -top-0.5 peer-placeholder-shown:top-2 peer-focus:-top-0.5 left-0 pt-2.5 pl-3 text-sm peer-placeholder-shown:text-lg peer-focus:text-sm peer-placeholder-shown:text-gray-700 text-gray-700 peer-focus:text-green-500 transition-all;
     }
-    .filled {
+    .nowside-inputFilled {
         @apply text-green-500;
     }
     .nowside-checkbox {
-        @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 rounded-[4px] focus:ring-green-500 form-checkbox;
+        @apply mr-2 checked:bg-green-500 checked:hover:bg-green-500 checked:focus:bg-green-500 rounded-[4px] border-gray-700 focus:ring-green-500 form-checkbox;
+    }
+    .nowside-radio {
+        @apply mr-2 text-green-500 focus:ring-green-500 form-radio
+    }
+    .nowside-buttonForSignup-A {
+        @apply block py-4 mb-8 w-full text-lg font-bold text-center text-white bg-blue-600 hover:bg-blue-500 rounded focus:outline-none cursor-pointer;
+    }
+    .nowside-buttonForSignup-B {
+        @apply flex justify-center py-4 px-6 mb-8 w-full text-lg font-bold text-blue-600 bg-blue-100 hover:bg-[#E0F1FF] rounded border border-blue-300;
     }
 }

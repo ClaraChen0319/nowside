@@ -32,16 +32,8 @@
               id="contactTime"
               v-model="contactTime"
               name="contactTime"
-              class="py-4 pl-6 w-full text-lg font-bold text-blue-700 indent-20 rounded border border-gray-700 focus:border-green-500 focus:outline-none active:outline-none form-select"
-              :class="{ 'filled': contactTime !== '', '': contactTime === '' }"
-              required
+              class="py-4 pl-6 w-full text-lg font-bold text-blue-700 indent-20 bg-gray-100 rounded border border-gray-700 focus:border-green-500 focus:outline-none active:outline-none focus:ring-green-500 form-select"
             >
-              <!-- <option
-                value=""
-                selected
-                disabled
-              >
-              </option> -->
               <option value="00:00～03:00 AM">
                 00:00～03:00 AM
               </option>
@@ -63,16 +55,17 @@
               <option value="06:00～09:00 PM">
                 06:00～09:00 PM
               </option>
-              <option
-                value="09:00～12:00 PM"
-              >
+              <option value="09:00～12:00 PM">
                 09:00～12:00 PM
               </option>
             </select>
           </div>
         </div>
         <div class="pt-8 mb-8">
-          <button class="py-4 px-6 mb-8 w-full text-lg font-bold text-white bg-blue-600 rounded">
+          <button
+            type="button"
+            class="nowside-buttonForSignup-A"
+          >
             完成
           </button>
           <p class="flex justify-center text-xs text-blue-600">

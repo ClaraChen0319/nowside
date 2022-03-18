@@ -13,16 +13,21 @@ module.exports = {
       colors: {
         black: '#000000',
         white: '#FFFFFF',
+        red: '#F75147',
         gray: {
           100: '#F9F9F9',
           200: '#EFEFEF',
           300: '#E5E5E5',
+          400: '#D8D8D8',
+          500: '#BBBBBB',
+          600: '#ADADAD',
           700: '#949494',
+          800: '#808080',
           900: '#616161',
         },
         blue: {
           100: '#F4FAFF',
-          200: '#A7CBEA',
+          200: '#E6F3FF',
           300: '#89AECD',
           400: '#6E92AF',
           500: '#567792',
@@ -33,19 +38,25 @@ module.exports = {
         },
         green: {
           100: '#DFF5F1',
+          200: '#C0EBE3',
+          300: '#A1E2D5',
+          400: '#63CEB9',
           500: '#40C3A9',
+          600: '#33A28C',
           700: '#287F6E',
+          800: '#236E5F',
+          900: '#1D5C50',
         },
       },
       fontSize: {
-        '2xs': '0.25rem', // 4px
-        'xs': '0.5rem',   // 8px
-        'sm': '0.75rem',  // 12px
-        'md': '1rem',     // 16px
-        'lg': '1.25rem',  // 20px
-        'xl': '1.5rem',   // 24px
-        '2xl': '1.75rem', // 28px
-        '3xl': '2rem',    // 32px
+        '2xs': '0.25rem',
+        'xs': '0.5rem',
+        'sm': '0.75rem',
+        'md': '1rem', // 16px
+        'lg': '1.25rem',
+        'xl': '1.5rem',
+        '2xl': '1.75rem',
+        '3xl': '2rem',
       },
       fontWeight: {
         light: '300',
