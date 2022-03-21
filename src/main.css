@@ -24,4 +24,7 @@
     .nowside-buttonForSignup-B {
         @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-blue-600 bg-blue-100 hover:bg-[#E0F1FF] rounded border border-blue-300;
     }
+    .nowside-container {
+        @apply pt-[208px] mx-auto max-w-[1296px];
+    }
 }
