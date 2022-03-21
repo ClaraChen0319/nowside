@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply font-sans;
+    }
+}
+
 @layer components {
     .nowside-input {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-gray-700 bg-gray-100 rounded border border-gray-700 focus:border-green-500 focus:outline-none;
@@ -25,6 +31,12 @@
         @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-blue-600 bg-blue-100 hover:bg-[#E0F1FF] rounded border border-blue-300;
     }
     .nowside-container {
-        @apply pt-[208px] mx-auto max-w-[1296px];
+        @apply mx-auto max-w-[1296px];
+    }
+    .nowside-shadow {
+        @apply bg-white rounded ring-1 ring-gray-300 shadow-xl;
+    }
+    .nowside-backgroundImage {
+        @apply overflow-hidden bg-center bg-cover;
     }
 }
