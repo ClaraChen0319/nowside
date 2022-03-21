@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import SignupView from '../views/SignupView.vue'
-import TestView from '../views/TestView.vue'
+import Home from '../views/Home.vue'
+import Signup from '../views/Signup.vue'
+import Test from '../views/Test.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -9,18 +9,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Home
     },
     {
       path: '/test',
       name: 'test',
-      component: TestView
+      component: Test
       // component: () => import('../views/TestView.vue')
     },
     {
       path: '/signup',
       name: 'signup',
-      component: SignupView
+      component: Signup
     },
 
   ]
