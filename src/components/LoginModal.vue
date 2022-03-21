@@ -1,20 +1,44 @@
 <script>
-  export default {
-    data () {
-      return {
-        email: '',
-        password: '',
-      };
+import { login } from '@/http/api';
+
+export default {
+  name: 'LoginModal',
+  data() {
+    return {
+      loginParams: {
+        account: "",
+        password: "",
+      },
+    };
+  },
+  computed: {},
+  methods: {
+    postLogin() {
+      login(this.loginParams)
+      .then(res =>{
+        // this.$emit("emit-text", this.message);
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+        // this.signInProcess = false;
+        // this.$notify({
+        //   group: "error",
+        //   title: "Error",
+        //   text: `error`
+        // }, 2500) ;
+      });
     },
-  }
+  },
+}
 </script>
 
 <template>
   <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
     <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
       <div class="mx-auto max-w-[384px] divide-y divide-gray-300">
-        <div class="my-8 text-gray-700">
-          <div class="mb-8">
+        <div class="my-6 text-gray-700">
+          <div class="mb-6">
             <img
               src="@/assets/logo.png"
               alt="logo"
@@ -22,25 +46,25 @@
             >
           </div>
           <form class="mb-4">
-            <div class="relative mb-8">
+            <div class="relative mb-6">
               <input
-                id="email"
-                v-model="email"
-                name="email" 
+                id="account"
+                v-model="loginParams.account"
+                name="account" 
                 type="text"
                 class="peer nowside-input"
                 placeholder="信箱"
               >
               <label
-                for="email"
+                for="account"
                 class="nowside-inputLabel"
-                :class="[ email ? 'nowside-inputFilled' : '' ]"
+                :class="[ loginParams.account ? 'nowside-inputFilled' : '' ]"
               >信箱</label>
             </div>
             <div class="relative">
               <input
                 id="password"
-                v-model="password"
+                v-model="loginParams.password"
                 type="password"
                 name="password"     
                 class="peer nowside-input"
@@ -49,7 +73,7 @@
               <label
                 for="password"
                 class="nowside-inputLabel"
-                :class="[ email ? 'nowside-inputFilled' : '' ]"
+                :class="[ loginParams.password ? 'nowside-inputFilled' : '' ]"
               >密碼</label>
             </div>
           </form>
@@ -70,10 +94,11 @@
             </div>
           </form>
         </div>
-        <div class="pt-8 mb-8">
+        <div class="pt-6 mb-6">
           <button
             type="button"
             class="nowside-buttonForSignup-A"
+            @click="postLogin"
           >
             登入
           </button>

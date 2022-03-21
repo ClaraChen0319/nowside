@@ -35,7 +35,7 @@
               :class="[ email ? 'nowside-inputFilled' : '' ]"
             >信箱</label>
           </div>
-          <div class="relative mb-6">
+          <div class="relative mb-8">
             <input
               id="password"
               v-model="password"

@@ -1,5 +1,17 @@
-<script setup>
+<script>
 import LoginModal from '@/components/LoginModal.vue';
+
+export default {
+  name: 'HomeView',
+  components: {
+    LoginModal,
+  },
+  data() {
+    return {};
+  },
+  computed: {},
+  methods: {},
+}
 </script>
 
 <template>
