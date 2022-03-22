@@ -23,7 +23,7 @@
                 v-model="gender"
                 value="male"
                 name="gender"
-                class="nowside-radio"
+                class="nowside-signupRadio"
                 type="radio"
               >
               <label
@@ -37,7 +37,7 @@
                 v-model="gender"
                 value="female"
                 name="gender"
-                class="nowside-radio"
+                class="nowside-signupRadio"
                 type="radio"
               >
               <label
@@ -51,7 +51,7 @@
                 v-model="gender"
                 value="other"
                 name="gender"
-                class="nowside-radio"
+                class="nowside-signupRadio"
                 type="radio"
               >
               <label
@@ -64,7 +64,7 @@
         <div class="pt-8 mb-8">
           <button
             type="button"
-            class="nowside-buttonForSignup-A"
+            class="nowside-button-A"
           >
             下一步
           </button>

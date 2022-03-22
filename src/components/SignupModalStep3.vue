@@ -50,12 +50,12 @@
         <div class="pt-8 mb-8">
           <button
             type="button"
-            class="nowside-buttonForSignup-A"
+            class="nowside-button-A"
           >
             上傳
           </button>
           <RouterLink
-            class="nowside-buttonForSignup-B"
+            class="nowside-button-B"
             to="/signup"
           >
             下一步

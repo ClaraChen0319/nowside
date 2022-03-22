@@ -64,7 +64,7 @@
         <div class="pt-8 mb-8">
           <button
             type="button"
-            class="nowside-buttonForSignup-A"
+            class="nowside-button-A"
           >
             完成
           </button>

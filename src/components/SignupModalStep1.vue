@@ -26,13 +26,13 @@
               v-model="email"
               name="email" 
               type="text"
-              class="peer nowside-input"
+              class="peer nowside-loginInput"
               placeholder="信箱"
             >
             <label
               for="email"
-              class="nowside-inputLabel"
-              :class="[ email ? 'nowside-inputFilled' : '' ]"
+              class="nowside-loginLabel"
+              :class="[ email ? 'nowside-loginFilled' : '' ]"
             >信箱</label>
           </div>
           <div class="relative mb-8">
@@ -41,13 +41,13 @@
               v-model="password"
               type="password"
               name="password"     
-              class="peer nowside-input"
+              class="peer nowside-loginInput"
               placeholder="密碼"
             >
             <label
               for="password"
-              class="nowside-inputLabel"
-              :class="[ password ? 'nowside-inputFilled' : '' ]"
+              class="nowside-loginLabel"
+              :class="[ password ? 'nowside-loginFilled' : '' ]"
             >密碼</label>
           </div>
           <div class="relative">
@@ -56,20 +56,20 @@
               v-model="confirm"
               type="confirm"
               name="confirm"     
-              class="peer nowside-input"
+              class="peer nowside-loginInput"
               placeholder="確認密碼"
             >
             <label
               for="confirm"
-              class="nowside-inputLabel"
-              :class="[ confirm ? 'nowside-inputFilled' : '' ]"
+              class="nowside-loginLabel"
+              :class="[ confirm ? 'nowside-loginFilled' : '' ]"
             >確認密碼</label>
           </div>
         </form>
         <div class="pt-8 mb-8">
           <button
             type="button"
-            class="nowside-buttonForSignup-A"
+            class="nowside-button-A"
           >
             下一步
           </button>

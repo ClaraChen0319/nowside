@@ -52,13 +52,13 @@ export default {
                 v-model="loginParams.account"
                 name="account" 
                 type="text"
-                class="peer nowside-input"
+                class="peer nowside-loginInput"
                 placeholder="信箱"
               >
               <label
                 for="account"
-                class="nowside-inputLabel"
-                :class="[ loginParams.account ? 'nowside-inputFilled' : '' ]"
+                class="nowside-loginLabel"
+                :class="[ loginParams.account ? 'nowside-loginFilled' : '' ]"
               >信箱</label>
             </div>
             <div class="relative">
@@ -67,13 +67,13 @@ export default {
                 v-model="loginParams.password"
                 type="password"
                 name="password"     
-                class="peer nowside-input"
+                class="peer nowside-loginInput"
                 placeholder="密碼"
               >
               <label
                 for="password"
-                class="nowside-inputLabel"
-                :class="[ loginParams.password ? 'nowside-inputFilled' : '' ]"
+                class="nowside-loginLabel"
+                :class="[ loginParams.password ? 'nowside-loginFilled' : '' ]"
               >密碼</label>
             </div>
           </form>
@@ -82,7 +82,7 @@ export default {
               <input
                 id="remember"
                 type="checkbox"
-                class="nowside-checkbox"
+                class="nowside-loginCheckbox"
               >
               <label
                 for="remember"
@@ -97,13 +97,13 @@ export default {
         <div class="pt-6 mb-6">
           <button
             type="button"
-            class="nowside-buttonForSignup-A"
+            class="nowside-button-A"
             @click="postLogin"
           >
             登入
           </button>
           <RouterLink
-            class="nowside-buttonForSignup-B"
+            class="nowside-button-B"
             to="/signup"
           >
             立即註冊

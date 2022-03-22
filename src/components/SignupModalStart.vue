@@ -31,7 +31,7 @@
           </div>
           <div class="mb-8">
             <RouterLink
-              class="nowside-buttonForSignup-A"
+              class="nowside-button-A"
               to="/signup"
             >
               開始
