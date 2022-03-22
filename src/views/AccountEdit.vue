@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AccountView',
+  name: 'AccountEdit',
   components: {},
   data() {
     return {

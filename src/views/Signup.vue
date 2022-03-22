@@ -8,7 +8,7 @@ import { signup } from '@/http/api';
 
 
 export default {
-  name: 'SignupView',
+  name: 'Signup',
   components: {
     SignupModalStart, SignupModalStep1, SignupModalStep2, SignupModalStep3, SignupModalStep4,
   },

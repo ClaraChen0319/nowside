@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div
-    class="w-full h-full"
+    class="py-[104px] w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
     <LoginModal></LoginModal>
