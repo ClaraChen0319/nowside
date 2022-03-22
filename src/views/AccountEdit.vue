@@ -37,7 +37,7 @@ export default {
     class="pb-[104px] w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
-    <div class="p-10 nowside-container nowside-shadow">
+    <div class="py-14 px-10 nowside-container nowside-shadow">
       <div class="flex justify-between mb-[72px]">
         <div class="flex relative flex-col justify-center ml-4">
           <div

@@ -73,13 +73,13 @@ export default {
           </li>
         </ul>
       </div>
-      <div class="flex flex-col items-end p-10 min-w-[966px] nowside-shadow">
+      <div class="flex flex-col items-end py-14 px-10 min-w-[966px] nowside-shadow">
         <div class="mb-12 w-full text-xl font-bold text-blue-600 border-b-2 border-blue-400">
           個人資料
         </div>
         <div class="w-[854px]">
           <form class="flex flex-nowrap justify-between">
-            <div class="flex flex-initial justify-between items-center mb-12 w-[600px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[560px] h-10">
               <label
                 for="nickName"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -93,7 +93,7 @@ export default {
                 disabled
               >
             </div>
-            <div class="flex flex-initial justify-between items-center mb-12 w-[206px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[270px] h-10">
               <label
                 for="gender"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -191,13 +191,13 @@ export default {
         </div>
       </div>
     </div>
-    <div class="flex flex-col items-end p-10 nowside-shadow nowside-container">
+    <div class="flex flex-col items-end py-14 px-10 min-w-[1230px] nowside-shadow nowside-container">
       <div class="mb-12 w-full text-xl font-bold text-blue-600 border-b-2 border-blue-400">
         專業背景
       </div>
       <div class="mb-14 w-[1160px]">
         <form class="flex flex-nowrap justify-between">
-          <div class="flex flex-initial justify-between items-center mb-12 w-[728px] h-10">
+          <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
             <label
               for="workState"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -211,7 +211,7 @@ export default {
               disabled
             >
           </div>
-          <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
+          <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
             <label
               for="language"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -227,7 +227,7 @@ export default {
           </div>
         </form>
         <form class="flex flex-nowrap justify-between">
-          <div class="flex flex-initial justify-between items-center mb-12 w-[728px] h-10">
+          <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
             <label
               for="company"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -241,7 +241,7 @@ export default {
               disabled
             >
           </div>
-          <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
+          <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
             <label
               for="industry"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -257,7 +257,7 @@ export default {
           </div>
         </form>
         <form class="flex flex-nowrap justify-between">
-          <div class="flex flex-initial justify-between items-center mb-12 w-[728px] h-10">
+          <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
             <label
               for="position"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -271,7 +271,7 @@ export default {
               disabled
             >
           </div>
-          <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
+          <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
             <label
               for="jobDescription"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
