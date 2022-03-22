@@ -4,7 +4,7 @@ import SignupModalStep1 from '@/components/SignupModalStep1.vue';
 import SignupModalStep2 from '@/components/SignupModalStep2.vue';
 import SignupModalStep3 from '@/components/SignupModalStep3.vue';
 import SignupModalStep4 from '@/components/SignupModalStep4.vue';
-// import { login } from '@/http/api';
+import { signup } from '@/http/api';
 
 
 export default {
@@ -13,10 +13,37 @@ export default {
     SignupModalStart, SignupModalStep1, SignupModalStep2, SignupModalStep3, SignupModalStep4,
   },
   data() {
-    return {};
+    return {
+      signupParams: {
+        account: "abc.@gmail.com",
+        password: "123",
+        nickName: "123",
+        gender: "男",
+        defaultPicture: "default-01.jpg",
+        uploadPicture: "",
+        contactTime: "9:00~12:00 PM",
+      },
+    };
   },
   computed: {},
-  methods: {},
+  methods: {
+    postSignup() {
+      signup(this.signupParams)
+      .then(res =>{
+        // this.$emit("emit-text", this.message);
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+        // this.signInProcess = false;
+        // this.$notify({
+        //   group: "error",
+        //   title: "Error",
+        //   text: `error`
+        // }, 2500) ;
+      });
+    },
+  },
 }
 </script>
 
@@ -30,5 +57,12 @@ export default {
     <SignupModalStep2></SignupModalStep2>
     <SignupModalStep3></SignupModalStep3>
     <SignupModalStep4></SignupModalStep4>
+    <button
+      type="button"
+      class="nowside-buttonForSignup-A"
+      @click="postSignup"
+    >
+      登入
+    </button>
   </div>
 </template>
