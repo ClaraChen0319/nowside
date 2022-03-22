@@ -9,6 +9,27 @@
 }
 
 @layer components {
+    .nowside-container {
+        @apply mx-auto max-w-[1296px];
+    }
+    .nowside-shadow {
+        @apply bg-white rounded ring-1 ring-gray-300 shadow-xl;
+    }
+    .nowside-backgroundImage {
+        @apply overflow-hidden bg-center bg-cover;
+    }
+    .nowside-button-A {
+        @apply block py-4 mb-6 w-full text-lg font-bold text-center text-white bg-blue-600 hover:bg-blue-500 rounded focus:outline-none cursor-pointer;
+    }
+    .nowside-button-B {
+        @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-blue-600 bg-blue-100 hover:bg-[#E0F1FF] rounded border border-blue-300;
+    }
+    .nowside-button-C{
+        @apply py-2 mr-6 w-[196px] text-lg font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400;
+    }
+    .nowside-button-D{
+        @apply py-2 w-[196px] text-lg font-bold text-white bg-blue-400 hover:bg-blue-300 rounded;
+    }
     .nowside-loginInput {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-gray-700 bg-gray-100 rounded border border-gray-700 focus:border-green-500 focus:outline-none;
     }
@@ -24,19 +45,10 @@
     .nowside-signupRadio {
         @apply mr-2 text-green-500 focus:ring-green-500 form-radio
     }
-    .nowside-button-A {
-        @apply block py-4 mb-6 w-full text-lg font-bold text-center text-white bg-blue-600 hover:bg-blue-500 rounded focus:outline-none cursor-pointer;
+    .nowside-accountInput{
+    @apply w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 focus:border-green-500 focus:ring-green-500 form-input;
     }
-    .nowside-button-B {
-        @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-blue-600 bg-blue-100 hover:bg-[#E0F1FF] rounded border border-blue-300;
-    }
-    .nowside-container {
-        @apply mx-auto max-w-[1296px];
-    }
-    .nowside-shadow {
-        @apply bg-white rounded ring-1 ring-gray-300 shadow-xl;
-    }
-    .nowside-backgroundImage {
-        @apply overflow-hidden bg-center bg-cover;
+    .nowside-accountTextarea{
+        @apply p-2 w-full text-blue-600 bg-gray-100 rounded border-2 border-gray-300 focus:border-green-500 focus:outline-none focus:ring-green-500;
     }
 }

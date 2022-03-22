@@ -89,7 +89,7 @@ export default {
                 v-model="accountParams.nickName"
                 name="nickName" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -103,7 +103,7 @@ export default {
                 v-model="accountParams.gender"
                 name="gender" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -119,7 +119,7 @@ export default {
                 v-model="accountParams.account"
                 name="account" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -135,7 +135,7 @@ export default {
                 v-model="accountParams.fb"
                 name="fb" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -151,7 +151,7 @@ export default {
                 v-model="accountParams.ig"
                 name="ig" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -167,7 +167,7 @@ export default {
                 v-model="accountParams.profileWebsite"
                 name="profileWebsite" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -183,7 +183,7 @@ export default {
                 v-model="accountParams.contactTime"
                 name="contactTime" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
                 disabled
               >
             </div>
@@ -207,7 +207,7 @@ export default {
               v-model="accountParams.workState"
               name="workState" 
               type="text"
-              class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+              class="nowside-accountInput"
               disabled
             >
           </div>
@@ -221,7 +221,7 @@ export default {
               v-model="accountParams.language"
               name="language" 
               type="text"
-              class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+              class="nowside-accountInput"
               disabled
             >
           </div>
@@ -237,7 +237,7 @@ export default {
               v-model="accountParams.company"
               name="company" 
               type="text"
-              class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+              class="nowside-accountInput"
               disabled
             >
           </div>
@@ -251,7 +251,7 @@ export default {
               v-model="accountParams.industry"
               name="industry" 
               type="text"
-              class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+              class="nowside-accountInput"
               disabled
             >
           </div>
@@ -267,7 +267,7 @@ export default {
               v-model="accountParams.position"
               name="position" 
               type="text"
-              class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+              class="nowside-accountInput"
               disabled
             >
           </div>
@@ -281,7 +281,7 @@ export default {
               v-model="accountParams.jobDescription"
               name="jobDescription" 
               type="text"
-              class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+              class="nowside-accountInput"
               disabled
             >
           </div>

@@ -45,7 +45,7 @@ export default {
             style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
           ></div>
           <button
-            class="flex absolute right-8 bottom-28 justify-center items-center w-[60px] h-[60px] bg-green-500 rounded-full border-4 border-white nowside-backgroundImage"
+            class="flex absolute right-8 bottom-28 justify-center items-center w-[60px] h-[60px] bg-green-500 hover:bg-green-400 rounded-full border-4 border-white nowside-backgroundImage"
           >
             <span class="text-3xl text-white align-sub material-icons">
               monochrome_photos
@@ -68,7 +68,7 @@ export default {
                   v-model="accountParams.nickName"
                   name="nickName" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
               <div class="flex flex-initial justify-between items-center mb-12 w-[206px] h-10">
@@ -81,7 +81,7 @@ export default {
                   v-model="accountParams.gender"
                   name="gender" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
             </form>
@@ -96,7 +96,7 @@ export default {
                   v-model="accountParams.account"
                   name="account" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
             </form>
@@ -111,7 +111,7 @@ export default {
                   v-model="accountParams.fb"
                   name="fb" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
             </form>
@@ -126,7 +126,7 @@ export default {
                   v-model="accountParams.ig"
                   name="ig" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
             </form>
@@ -141,7 +141,7 @@ export default {
                   v-model="accountParams.profileWebsite"
                   name="profileWebsite" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
             </form>
@@ -156,7 +156,7 @@ export default {
                   v-model="accountParams.contactTime"
                   name="contactTime" 
                   type="text"
-                  class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                  class="nowside-accountInput"
                 >
               </div>
             </form>
@@ -179,7 +179,7 @@ export default {
                 v-model="accountParams.workState"
                 name="workState" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
               >
             </div>
             <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
@@ -192,7 +192,7 @@ export default {
                 v-model="accountParams.language"
                 name="language" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
               >
             </div>
           </form>
@@ -207,7 +207,7 @@ export default {
                 v-model="accountParams.company"
                 name="company" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
               >
             </div>
             <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
@@ -220,7 +220,7 @@ export default {
                 v-model="accountParams.industry"
                 name="industry" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
               >
             </div>
           </form>
@@ -235,7 +235,7 @@ export default {
                 v-model="accountParams.position"
                 name="position" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
               >
             </div>
             <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
@@ -248,7 +248,7 @@ export default {
                 v-model="accountParams.jobDescription"
                 name="jobDescription" 
                 type="text"
-                class="w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300 form-input"
+                class="nowside-accountInput"
               >
             </div>
           </form>
@@ -301,7 +301,7 @@ export default {
               <textarea
                 id="selfIntroduction"
                 v-model="accountParams.selfIntroduction"
-                class="p-2 w-full text-blue-600 bg-gray-100 rounded border border-gray-300 focus:outline-none"
+                class="nowside-accountTextarea"
                 name="selfIntroduction"
                 rows="5"
                 maxlength="1000"
@@ -310,10 +310,10 @@ export default {
           </form>
         </div>
         <div class="flex justify-center w-full">
-          <button class="py-2 mr-6 w-[196px] text-lg font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400">
+          <button class="nowside-button-C">
             取消
           </button>
-          <button class="py-2 w-[196px] text-lg font-bold text-white bg-blue-400 hover:bg-blue-300 rounded">
+          <button class="nowside-button-D">
             <span class="align-sub material-icons">
               bookmark_border
             </span>
