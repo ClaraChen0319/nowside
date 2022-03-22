@@ -2,7 +2,7 @@
   export default {
     data () {
       return {
-        email: '',
+        account: '',
         password: '',
         confirm: '',
       };
@@ -22,17 +22,17 @@
         <form class="mb-8">
           <div class="relative mb-8">
             <input
-              id="email"
-              v-model="email"
-              name="email" 
+              id="account"
+              v-model="account"
+              name="account" 
               type="text"
               class="peer nowside-loginInput"
               placeholder="信箱"
             >
             <label
-              for="email"
+              for="account"
               class="nowside-loginLabel"
-              :class="[ email ? 'nowside-loginFilled' : '' ]"
+              :class="[ account ? 'nowside-loginFilled' : '' ]"
             >信箱</label>
           </div>
           <div class="relative mb-8">

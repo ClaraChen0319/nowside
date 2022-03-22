@@ -15,22 +15,23 @@ export default {
   data() {
     return {
       signupParams: {
-        account: "abc.@gmail.com",
-        password: "123",
-        nickName: "123",
-        gender: "男",
-        defaultPicture: "default-01.jpg",
-        uploadPicture: "",
-        contactTime: "9:00~12:00 PM",
+        account: "",
+        password: "",
+        nickName: "",
+        gender: "",
+        profilePicture: "",
+        contactTime: "",
       },
     };
   },
   computed: {},
   methods: {
+
     postSignup() {
       signup(this.signupParams)
       .then(res =>{
         console.log(res.data);
+        localStorage.setItem('nowsideToken', res.data.token); // 使用 setItem 將 token 存入 localStorage
       })
       .catch(error => {
         console.log(error);
