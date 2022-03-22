@@ -2,7 +2,7 @@
 import Header from '@/components/Header.vue';
 
 export default {
-  name: 'TestView',
+  name: 'Test',
   components: {
     Header,
   },
@@ -30,7 +30,23 @@ export default {
   },
   computed: {},
   methods: {
-    getAccount(){},
+    postLogin() {
+      login(this.loginParams)
+      .then(res =>{
+        // this.$emit("emit-text", this.message);
+        console.log(res.data);
+        localStorage.setItem('nowsideToken', res.data.token);
+      })
+      .catch(error => {
+        console.log(error);
+        // this.signInProcess = false;
+        // this.$notify({
+        //   group: "error",
+        //   title: "Error",
+        //   text: `error`
+        // }, 2500) ;
+      });
+    },
   },
 }
 </script>

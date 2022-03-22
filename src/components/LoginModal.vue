@@ -16,17 +16,11 @@ export default {
     postLogin() {
       login(this.loginParams)
       .then(res =>{
-        // this.$emit("emit-text", this.message);
         console.log(res.data);
+        localStorage.setItem('nowsideToken', res.data.token); // 使用 setItem 將 token 存入 localStorage
       })
       .catch(error => {
         console.log(error);
-        // this.signInProcess = false;
-        // this.$notify({
-        //   group: "error",
-        //   title: "Error",
-        //   text: `error`
-        // }, 2500) ;
       });
     },
   },

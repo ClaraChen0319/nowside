@@ -30,17 +30,10 @@ export default {
     postSignup() {
       signup(this.signupParams)
       .then(res =>{
-        // this.$emit("emit-text", this.message);
         console.log(res.data);
       })
       .catch(error => {
         console.log(error);
-        // this.signInProcess = false;
-        // this.$notify({
-        //   group: "error",
-        //   title: "Error",
-        //   text: `error`
-        // }, 2500) ;
       });
     },
   },

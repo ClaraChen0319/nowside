@@ -2,7 +2,7 @@
 import LoginModal from '@/components/LoginModal.vue';
 
 export default {
-  name: 'HomeView',
+  name: 'Home',
   components: {
     LoginModal,
   },
@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div
-    class="py-[104px] w-full h-full"
+    class="w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
     <LoginModal></LoginModal>
