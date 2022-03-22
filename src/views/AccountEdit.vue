@@ -58,7 +58,7 @@ export default {
           </div>
           <div class="w-[808px]">
             <form class="flex flex-nowrap justify-between">
-              <div class="flex flex-initial justify-between items-center mb-12 w-[600px] h-10">
+              <div class="flex flex-initial justify-between items-center mb-12 w-[576px] h-10">
                 <label
                   for="nickName"
                   class="mr-6 w-24 text-lg font-bold text-blue-500"
