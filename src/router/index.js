@@ -5,6 +5,7 @@ import Test from '../views/Test.vue'
 import Account from '../views/Account.vue'
 import AccountView from '../views/AccountView.vue'
 import AccountEdit from '../views/AccountEdit.vue'
+import Project from '../views/Project.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/accountedit',
       name: 'accountedit',
       component: AccountEdit
+    },
+    {
+      path: '/project',
+      name: 'project',
+      component: Project
     },
 
   ]
