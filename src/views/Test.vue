@@ -1,9 +1,13 @@
 <script>
+import Header from '@/components/Header.vue';
+import Login from '@/components/LoginModal.vue';
 import { uploadProfile, signup } from '@/http/api';
 
 export default {
   name: 'Test',
-  components: {},
+  components: {
+    Header, Login,
+  },
   data() {
     return {
       signupParams: {
@@ -64,10 +68,12 @@ export default {
 </script>
 
 <template>
+  <Header></Header>
   <div
     class="flex justify-center items-center w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
+    <Login class="mr-20"></Login>
     <form class="flex flex-col justify-center items-center space-x-6 h-screen">
       <label class="block mb-6">
         <span class="sr-only">Choose profile photo</span>

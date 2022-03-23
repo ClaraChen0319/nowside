@@ -1,7 +1,11 @@
 <script>
+import Header from '@/components/Header.vue';
+
 export default {
   name: 'AccountView',
-  components: {},
+  components: {
+    Header,
+  },
   data() {
     return {
       accountParams: {
@@ -32,8 +36,9 @@ export default {
 </script>
 
 <template>
+  <Header></Header>
   <div
-    class="pb-[104px] w-full h-full"
+    class="py-[180px] w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
     <div class="flex justify-between mb-[72px] nowside-container">

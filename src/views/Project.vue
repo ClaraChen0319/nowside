@@ -1,7 +1,11 @@
 <script>
+import Header from '@/components/Header.vue';
+
 export default {
   name: 'Project',
-  components: {},
+  components: {
+    Header,
+  },
   data() {
     return {};
   },
@@ -11,8 +15,9 @@ export default {
 </script>
 
 <template>
+  <Header></Header>
   <div
-    class="py-[104px] w-full h-full"
+    class="py-[180px] w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
     <div class="flex flex-col justify-center items-center py-12 mb-[58px] h-[232px] nowside-container nowside-shadow">
