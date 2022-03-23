@@ -23,14 +23,14 @@ export default {
   >
     <div class="flex flex-col justify-center items-center py-12 mb-[58px] h-[232px] nowside-container nowside-shadow">
       <div class="w-[1076px]">
-        <label class="block relative mb-12">
+        <label class="block relative mb-10">
           <span class="flex absolute inset-y-0 left-0 items-center pl-2">
             <span
               class="ml-12 text-3xl text-green-500 material-icons"
             >search</span>
           </span>
           <input
-            class="block py-3 pr-3 pl-28 w-full placeholder:italic placeholder:text-gray-700 bg-white rounded border-2 border-blue-500 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 shadow-sm"
+            class="block py-3 pr-3 pl-28 w-full placeholder:italic placeholder:text-gray-700 bg-white rounded-full border-2 border-blue-500 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 shadow-sm"
             placeholder="搜尋感興趣的 side project"
             type="text"
             name="search"
