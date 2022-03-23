@@ -345,10 +345,10 @@ export default {
         </form>
       </div>
       <div class="flex justify-center w-full">
-        <button class="py-2 mr-6 w-[196px] text-lg font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400">
+        <button class="nowside-button-C">
           取消
         </button>
-        <button class="py-2 w-[196px] text-lg font-bold text-white bg-blue-400 hover:bg-blue-300 rounded">
+        <button class="nowside-button-D">
           <span class="align-sub material-icons">
             edit
           </span>
