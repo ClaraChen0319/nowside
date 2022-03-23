@@ -1,5 +1,6 @@
 <script>
 import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 import SignupModalStart from '@/components/SignupModalStart.vue';
 import SignupModalStep1 from '@/components/SignupModalStep1.vue';
 import SignupModalStep2 from '@/components/SignupModalStep2.vue';
@@ -11,7 +12,7 @@ import { signup } from '@/http/api';
 export default {
   name: 'Signup',
   components: {
-    Header, SignupModalStart, SignupModalStep1, SignupModalStep2, SignupModalStep3, SignupModalStep4,
+    Header, Footer, SignupModalStart, SignupModalStep1, SignupModalStep2, SignupModalStep3, SignupModalStep4,
   },
   data() {
     return {
@@ -61,4 +62,5 @@ export default {
       登入
     </button>
   </div>
+  <Footer></Footer>
 </template>

@@ -1,11 +1,12 @@
 <script>
 import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 import LoginModal from '@/components/LoginModal.vue';
 
 export default {
   name: 'Home',
   components: {
-    Header, LoginModal,
+    Header, Footer, LoginModal,
   },
   data() {
     return {};
@@ -23,4 +24,5 @@ export default {
   >
     <LoginModal></LoginModal>
   </div>
+  <Footer></Footer>
 </template>

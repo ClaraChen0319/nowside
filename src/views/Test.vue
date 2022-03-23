@@ -1,12 +1,13 @@
 <script>
 import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 import Login from '@/components/LoginModal.vue';
 import { uploadProfile, signup } from '@/http/api';
 
 export default {
   name: 'Test',
   components: {
-    Header, Login,
+    Header, Footer, Login,
   },
   data() {
     return {
@@ -92,4 +93,5 @@ export default {
       </button>
     </form>
   </div>
+  <Footer></Footer>
 </template>

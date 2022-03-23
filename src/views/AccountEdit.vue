@@ -1,10 +1,11 @@
 <script>
 import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'AccountEdit',
   components: {
-    Header,
+    Header, Footer,
   },
   data() {
     return {
@@ -328,4 +329,5 @@ export default {
       </div>
     </div>
   </div>
+  <Footer></Footer>
 </template>
