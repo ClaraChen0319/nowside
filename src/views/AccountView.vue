@@ -293,12 +293,12 @@ export default {
           </div>
         </form>
         <form>
-          <div class="flex justify-between items-center mb-12 h-10">
+          <div class="flex justify-between items-center mb-12">
             <label
               for="profileWebsite"
               class="mr-6 w-24 text-lg font-bold text-blue-500"
             >技能</label>
-            <div class="p-2 w-full text-lg text-blue-600 bg-gray-100 rounded border border-gray-300">
+            <div class="p-2 w-full h-[140px] text-lg text-blue-600 bg-gray-100 rounded border border-gray-300">
               <div class="inline-block mr-4 bg-blue-200 rounded">
                 　Vue　
                 <span class="align-sub material-icons">
@@ -343,7 +343,7 @@ export default {
               v-model="accountParams.selfIntroduction"
               class="nowside-accountTextarea"
               name="selfIntroduction"
-              rows="8"
+              rows="5"
               maxlength="1000"
               disabled
             ></textarea>
