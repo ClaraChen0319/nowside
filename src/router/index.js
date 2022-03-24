@@ -6,6 +6,7 @@ import Account from '../views/Account.vue'
 import AccountView from '../views/AccountView.vue'
 import AccountEdit from '../views/AccountEdit.vue'
 import Project from '../views/Project.vue'
+import ProjectView from '../views/ProjectView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -46,7 +47,11 @@ const router = createRouter({
       name: 'project',
       component: Project
     },
-
+    {
+      path: '/projectview',
+      name: 'projectview',
+      component: ProjectView
+    },
   ]
 })
 

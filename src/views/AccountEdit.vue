@@ -175,7 +175,7 @@ export default {
         </div>
         <div class="mb-14 w-[1160px]">
           <form class="flex flex-nowrap justify-between">
-            <div class="flex flex-initial justify-between items-center mb-12 w-[728px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
               <label
                 for="workState"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -188,7 +188,7 @@ export default {
                 class="nowside-accountInput"
               >
             </div>
-            <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
               <label
                 for="language"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -203,7 +203,7 @@ export default {
             </div>
           </form>
           <form class="flex flex-nowrap justify-between">
-            <div class="flex flex-initial justify-between items-center mb-12 w-[728px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
               <label
                 for="company"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -216,7 +216,7 @@ export default {
                 class="nowside-accountInput"
               >
             </div>
-            <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
               <label
                 for="industry"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -231,7 +231,7 @@ export default {
             </div>
           </form>
           <form class="flex flex-nowrap justify-between">
-            <div class="flex flex-initial justify-between items-center mb-12 w-[728px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
               <label
                 for="position"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -244,7 +244,7 @@ export default {
                 class="nowside-accountInput"
               >
             </div>
-            <div class="flex flex-initial justify-between items-center mb-12 w-[384px] h-10">
+            <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
               <label
                 for="jobDescription"
                 class="mr-6 w-24 text-lg font-bold text-blue-500"
@@ -309,7 +309,7 @@ export default {
                 v-model="accountParams.selfIntroduction"
                 class="nowside-accountTextarea"
                 name="selfIntroduction"
-                rows="5"
+                rows="8"
                 maxlength="1000"
               ></textarea>
             </div>

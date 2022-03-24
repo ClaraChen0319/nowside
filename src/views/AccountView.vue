@@ -341,9 +341,9 @@ export default {
             <textarea
               id="selfIntroduction"
               v-model="accountParams.selfIntroduction"
-              class="p-2 w-full text-blue-600 bg-gray-100 rounded border border-gray-300 focus:outline-none"
+              class="nowside-accountTextarea"
               name="selfIntroduction"
-              rows="5"
+              rows="8"
               maxlength="1000"
               disabled
             ></textarea>
