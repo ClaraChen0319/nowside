@@ -33,9 +33,7 @@ export default {
           class="mb-12 w-[304px] h-[304px] rounded-full shadow-xl nowside-backgroundImage"
           style="background-image: url('https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1157&q=80')"
         ></div>
-        <div>
-          <span class="text-xl font-bold text-blue-700">家務分配</span><br>
-        </div>
+        <span class="text-xl font-bold text-blue-700">家務分配</span>
         <ul class="absolute top-20 right-12 w-[256px]">
           <li class="mb-4">
             <div class="flex justify-between w-full">

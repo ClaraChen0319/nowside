@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <div class="flex fixed z-10 justify-center items-center w-screen h-[60px] text-lg text-white bg-blue-700 shadow-xl">
+  <div class="flex fixed z-10 justify-center items-center w-screen h-[60px] text-lg text-blue-700 bg-white shadow-md">
     <div class="mr-6 w-[196px]">
       <img
         src="@/assets/logo.png"
@@ -11,17 +11,17 @@
     </div>
     <ul class="flex items-center w-[1070px]">
       <li class="ml-28">
-        <button>
+        <button class="font-bold">
           成功案例
         </button>
       </li>
       <li class="ml-28">
-        <button>
+        <button class="font-bold">
           瀏覽專案
         </button>
       </li>
       <li class="ml-28">
-        <button>
+        <button class="font-bold">
           發起專案
         </button>
       </li>

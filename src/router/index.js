@@ -7,6 +7,7 @@ import AccountView from '../views/AccountView.vue'
 import AccountEdit from '../views/AccountEdit.vue'
 import Project from '../views/Project.vue'
 import ProjectView from '../views/ProjectView.vue'
+import ProjectMatch from '../views/ProjectMatch.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -51,6 +52,11 @@ const router = createRouter({
       path: '/projectview',
       name: 'projectview',
       component: ProjectView
+    },
+    {
+      path: '/projectmatch',
+      name: 'projectmatch',
+      component: ProjectMatch
     },
   ]
 })
