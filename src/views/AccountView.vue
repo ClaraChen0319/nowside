@@ -1,6 +1,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import { getUserInfo } from '@/http/api';
 
 export default {
   name: 'AccountView',
@@ -31,7 +32,14 @@ export default {
   },
   computed: {},
   methods: {
-    getAccount(){},
+    getAccountParams(){
+      getUserInfo().then(res =>{
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
   },
 }
 </script>

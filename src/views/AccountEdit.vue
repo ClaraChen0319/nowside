@@ -1,6 +1,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import { getUserInfo, editUserInfo, editProfilePic } from '@/http/api';
 
 export default {
   name: 'AccountEdit',
@@ -31,8 +32,30 @@ export default {
   },
   computed: {},
   methods: {
-    getAccount(){},
-    postAccount(){},
+    getAccountParams(){
+      getUserInfo().then(res =>{
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    editAccountParams(){
+      editUserInfo().then(res =>{
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    editAccountPic(){
+      editProfilePic().then(res =>{
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
   },
 }
 </script>
