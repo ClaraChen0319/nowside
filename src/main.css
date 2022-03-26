@@ -30,16 +30,16 @@
     .nowside-button-D {
         @apply py-2 w-[196px] text-lg font-bold shadow-lg text-white bg-C_green-500 hover:bg-C_green-400 rounded;
     }
-    .nowside-loginInput {
+    .nowside-peerInput {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-C_gray-700 bg-C_gray-100 rounded border border-C_gray-700 focus:border-C_green-500 focus:outline-none;
     }
-    .nowside-loginLabel {
+    .nowside-peerLabel {
         @apply absolute -top-0.5 peer-placeholder-shown:top-2 peer-focus:-top-0.5 left-0 pt-2.5 pl-3 text-sm peer-placeholder-shown:text-lg peer-focus:text-sm peer-placeholder-shown:text-C_gray-700 text-C_gray-700 peer-focus:text-C_green-500 transition-all;
     }
-    .nowside-loginFilled {
+    .nowside-peerFilled {
         @apply text-C_green-500;
     }
-    .nowside-loginCheckbox {
+    .nowside-checkbox {
         @apply mr-2 checked:bg-C_green-500 checked:hover:bg-C_green-500 checked:focus:bg-C_green-500 rounded-[4px] border-C_gray-700 focus:ring-C_green-500 form-checkbox;
     }
     .nowside-signupRadio {

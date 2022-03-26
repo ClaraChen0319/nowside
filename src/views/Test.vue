@@ -1,9 +1,8 @@
 <script>
-// <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import Login from '@/components/LoginModal.vue';
-import { uploadProfile, signup } from '@/http/api';
+import { S_uploadProfile, S_signup } from '@/http/api';
 
 export default {
   name: 'Test',
@@ -47,7 +46,7 @@ export default {
       const formdata = new FormData;
       formdata.append(e.target.files[0].name, e.target.files[0]);
       
-      uploadProfile(formdata).then(res =>{
+      S_uploadProfile(formdata).then(res =>{
         console.log(res.data);
       })
       .catch(error => {
@@ -55,7 +54,7 @@ export default {
       });
     },
     postSignup() {
-      signup(this.signupParams).then(res =>{
+      S_signup(this.signupParams).then(res =>{
         console.log(res.data);
       })
       .catch(error => {

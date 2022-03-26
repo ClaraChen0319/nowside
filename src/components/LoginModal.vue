@@ -46,13 +46,13 @@ export default {
                 v-model="loginParams.account"
                 name="account" 
                 type="text"
-                class="peer nowside-loginInput"
+                class="peer nowside-peerInput"
                 placeholder="信箱"
               >
               <label
                 for="account"
-                class="nowside-loginLabel"
-                :class="[ loginParams.account ? 'nowside-loginFilled' : '' ]"
+                class="nowside-peerLabel"
+                :class="[ loginParams.account ? 'nowside-peerFilled' : '' ]"
               >信箱</label>
             </div>
             <div class="relative">
@@ -61,13 +61,13 @@ export default {
                 v-model="loginParams.password"
                 type="password"
                 name="password"     
-                class="peer nowside-loginInput"
+                class="peer nowside-peerInput"
                 placeholder="密碼"
               >
               <label
                 for="password"
-                class="nowside-loginLabel"
-                :class="[ loginParams.password ? 'nowside-loginFilled' : '' ]"
+                class="nowside-peerLabel"
+                :class="[ loginParams.password ? 'nowside-peerFilled' : '' ]"
               >密碼</label>
             </div>
           </form>
@@ -76,7 +76,7 @@ export default {
               <input
                 id="remember"
                 type="checkbox"
-                class="nowside-loginCheckbox"
+                class="nowside-checkbox"
               >
               <label
                 for="remember"
