@@ -1,5 +1,5 @@
 <script>
-import { login } from '@/http/api';
+import { S_login } from '@/http/api';
 
 export default {
   name: 'LoginModal',
@@ -14,7 +14,7 @@ export default {
   computed: {},
   methods: {
     postLogin() {
-      login(this.loginParams)
+      S_login(this.loginParams)
       .then(res =>{
         console.log(res.data);
         localStorage.setItem('nowsideToken', res.data.token); // 使用 setItem 將 token 存入 localStorage

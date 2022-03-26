@@ -1,7 +1,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import { signup } from '@/http/api';
+import { S_signup } from '@/http/api';
 
 
 export default {
@@ -25,7 +25,7 @@ export default {
   computed: {},
   methods: {
     postSignup() {
-      signup(this.signupParams)
+      S_signup(this.signupParams)
       .then(res =>{
         console.log(res.data);
 

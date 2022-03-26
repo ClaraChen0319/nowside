@@ -1,7 +1,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import { getUserInfo, editUserInfo, editProfilePic } from '@/http/api';
+import { S_getUserInfo, S_editUserInfo, S_editProfilePic } from '@/http/api';
 
 export default {
   name: 'AccountEdit',
@@ -33,7 +33,7 @@ export default {
   computed: {},
   methods: {
     getAccountParams(){
-      getUserInfo().then(res =>{
+      S_getUserInfo().then(res =>{
         console.log(res.data);
       })
       .catch(error => {
@@ -41,7 +41,7 @@ export default {
       });
     },
     editAccountParams(){
-      editUserInfo().then(res =>{
+      S_editUserInfo().then(res =>{
         console.log(res.data);
       })
       .catch(error => {
@@ -49,7 +49,7 @@ export default {
       });
     },
     editAccountPic(){
-      editProfilePic().then(res =>{
+      S_editProfilePic().then(res =>{
         console.log(res.data);
       })
       .catch(error => {
