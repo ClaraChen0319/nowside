@@ -91,13 +91,13 @@ export default {
         <div class="pt-6 mb-6">
           <button
             type="button"
-            class="nowside-button-A"
+            class="nowside-button-darkBlue-lg"
             @click="postLogin"
           >
             登入
           </button>
           <RouterLink
-            class="nowside-button-B"
+            class="nowside-button-lightBlue-lg"
             to="/signup"
           >
             立即註冊

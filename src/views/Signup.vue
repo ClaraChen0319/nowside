@@ -71,7 +71,7 @@ export default {
             </div>
             <div class="mb-8">
               <RouterLink
-                class="nowside-button-A"
+                class="nowside-button-darkBlue-lg"
                 to="/signup"
               >
                 開始
@@ -149,7 +149,7 @@ export default {
           <div class="pt-8 mb-8">
             <button
               type="button"
-              class="nowside-button-A"
+              class="nowside-button-darkBlue-lg"
             >
               下一步
             </button>
@@ -216,7 +216,7 @@ export default {
           <div class="pt-8 mb-8">
             <button
               type="button"
-              class="nowside-button-A"
+              class="nowside-button-darkBlue-lg"
             >
               下一步
             </button>
@@ -269,12 +269,12 @@ export default {
           <div class="pt-8 mb-8">
             <button
               type="button"
-              class="nowside-button-A"
+              class="nowside-button-darkBlue-lg"
             >
               上傳
             </button>
             <RouterLink
-              class="nowside-button-B"
+              class="nowside-button-lightBlue-lg"
               to="/signup"
             >
               下一步
@@ -342,7 +342,7 @@ export default {
           <div class="pt-8 mb-8">
             <button
               type="button"
-              class="nowside-button-A"
+              class="nowside-button-darkBlue-lg"
             >
               完成
             </button>

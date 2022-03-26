@@ -18,10 +18,10 @@
     .nowside-backgroundImage {
         @apply overflow-hidden bg-center bg-cover;
     }
-    .nowside-button-A {
+    .nowside-button-darkBlue-lg {
         @apply block py-4 mb-6 w-full text-lg font-bold text-center text-white bg-C_blue-600 hover:bg-C_blue-500 rounded focus:outline-none cursor-pointer;
     }
-    .nowside-button-B {
+    .nowside-button-lightBlue-lg {
         @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-C_blue-600 bg-C_blue-100 hover:bg-[#E0F1FF] rounded border border-C_blue-300;
     }
     .nowside-button-C {
