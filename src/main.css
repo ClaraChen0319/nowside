@@ -36,6 +36,15 @@
     .nowside-button-lightBlue-lg {
         @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-C_blue-600 bg-C_blue-100 hover:bg-[#E0F1FF] rounded border border-C_blue-300;
     }
+    .nowside-input {
+        @apply w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border border-C_gray-300 focus:border-C_green-500 focus:ring-C_green-500 form-input;
+    }
+    .nowside-checkbox {
+        @apply mr-2 checked:bg-C_green-500 checked:hover:bg-C_green-500 checked:focus:bg-C_green-500 rounded-[4px] border-C_gray-700 focus:ring-C_green-500 form-checkbox;
+    }
+    .nowside-textarea {
+        @apply p-2 w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border-2 border-C_gray-300 focus:border-C_green-500 focus:outline-none focus:ring-C_green-500 form-textarea;
+    }
     .nowside-peerInput {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-C_gray-700 bg-C_gray-100 rounded border border-C_gray-700 focus:border-C_green-500 focus:outline-none;
     }
@@ -45,17 +54,8 @@
     .nowside-peerFilled {
         @apply text-C_green-500;
     }
-    .nowside-checkbox {
-        @apply mr-2 checked:bg-C_green-500 checked:hover:bg-C_green-500 checked:focus:bg-C_green-500 rounded-[4px] border-C_gray-700 focus:ring-C_green-500 form-checkbox;
-    }
     .nowside-genderRadio {
         @apply mr-2 text-C_green-500 focus:ring-C_green-500 form-radio;
-    }
-    .nowside-input {
-    @apply w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border border-C_gray-300 focus:border-C_green-500 focus:ring-C_green-500 form-input;
-    }
-    .nowside-accountTextarea {
-        @apply p-2 w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border-2 border-C_gray-300 focus:border-C_green-500 focus:outline-none focus:ring-C_green-500 form-textarea;
     }
     .nowside-projectSelect {
         @apply py-2 pr-6 pl-2 mr-8 w-40 text-lg font-bold text-center text-white bg-C_blue-700 bg-right rounded border-2 border-C_blue-400 hover:bg-C_blue-600 form-select;

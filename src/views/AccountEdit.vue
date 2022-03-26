@@ -330,7 +330,7 @@ export default {
               <textarea
                 id="selfIntroduction"
                 v-model="accountParams.selfIntroduction"
-                class="nowside-accountTextarea"
+                class="nowside-textarea"
                 name="selfIntroduction"
                 rows="5"
                 maxlength="1000"

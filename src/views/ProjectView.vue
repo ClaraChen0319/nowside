@@ -316,7 +316,7 @@ export default {
             <textarea
               id="content"
               v-model="messageParams.content"
-              class="nowside-accountTextarea"
+              class="nowside-textarea"
               name="content"
               rows="8"
               maxlength="1000"
