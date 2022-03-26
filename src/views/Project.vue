@@ -39,7 +39,7 @@ export default {
         <form>
           <select
             id=""
-            class="nowside-projectSelect"
+            class="nowside-searchSelect"
             name=""
           >
             <option
@@ -51,7 +51,7 @@ export default {
           </select>
           <select
             id=""
-            class="nowside-projectSelect"
+            class="nowside-searchSelect"
             name=""
           >
             <option
@@ -63,7 +63,7 @@ export default {
           </select>
           <select
             id=""
-            class="nowside-projectSelect"
+            class="nowside-searchSelect"
             name=""
           >
             <option
@@ -75,7 +75,7 @@ export default {
           </select>
           <select
             id=""
-            class="nowside-projectSelect"
+            class="nowside-searchSelect"
             name=""
           >
             <option
