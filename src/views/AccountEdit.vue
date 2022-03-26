@@ -339,10 +339,10 @@ export default {
           </form>
         </div>
         <div class="flex justify-center w-full">
-          <button class="nowside-button-C">
+          <button class="nowside-button-white-md">
             取消
           </button>
-          <button class="nowside-button-D">
+          <button class="nowside-button-lightGreen-md">
             <span class="align-sub material-icons">
               bookmark_border
             </span>

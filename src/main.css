@@ -24,17 +24,17 @@
     .nowside-backgroundImage {
         @apply overflow-hidden bg-center bg-cover;
     }
+    .nowside-button-white-md {
+        @apply py-2 mr-6 w-[196px] text-lg font-bold shadow-lg text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400;
+    }
+    .nowside-button-lightGreen-md {
+        @apply py-2 w-[196px] text-lg font-bold shadow-lg text-white bg-C_green-500 hover:bg-C_green-400 rounded;
+    }
     .nowside-button-darkBlue-lg {
         @apply block py-4 mb-6 w-full text-lg font-bold text-center text-white bg-C_blue-600 hover:bg-C_blue-500 rounded focus:outline-none cursor-pointer;
     }
     .nowside-button-lightBlue-lg {
         @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-C_blue-600 bg-C_blue-100 hover:bg-[#E0F1FF] rounded border border-C_blue-300;
-    }
-    .nowside-button-C {
-        @apply py-2 mr-6 w-[196px] text-lg font-bold shadow-lg text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400;
-    }
-    .nowside-button-D {
-        @apply py-2 w-[196px] text-lg font-bold shadow-lg text-white bg-C_green-500 hover:bg-C_green-400 rounded;
     }
     .nowside-peerInput {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-C_gray-700 bg-C_gray-100 rounded border border-C_gray-700 focus:border-C_green-500 focus:outline-none;
