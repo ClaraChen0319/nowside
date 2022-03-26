@@ -21,7 +21,7 @@ export default {
     class="py-[180px] w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
-    <div class="flex flex-col justify-center items-center py-12 mb-[58px] h-[232px] nowside-container nowside-shadow">
+    <div class="flex flex-col justify-center items-center py-12 mb-[58px] h-[232px] nowside-container-lg nowside-shadow">
       <div class="w-[1076px]">
         <label class="block relative mb-10">
           <span class="flex absolute inset-y-0 left-0 items-center pl-2">
@@ -88,7 +88,7 @@ export default {
         </form>
       </div>
     </div>
-    <div class="mb-[32px] nowside-container">
+    <div class="mb-[32px] nowside-container-lg">
       <ul class="flex justify-end">
         <li>
           <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500">
@@ -107,7 +107,7 @@ export default {
         </li>
       </ul>
     </div>
-    <div class="flex justify-center items-start py-10 px-6 mb-20 nowside-container nowside-shadow">
+    <div class="flex justify-center items-start py-10 px-6 mb-20 nowside-container-lg nowside-shadow">
       <div
         class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
         style="background-image: url('https://images.unsplash.com/photo-1608303588026-884930af2559?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=403&q=80')"
@@ -178,7 +178,7 @@ export default {
         </ul>
       </div>
     </div>
-    <div class="flex justify-center items-start py-10 px-6 mb-20 nowside-container nowside-shadow">
+    <div class="flex justify-center items-start py-10 px-6 mb-20 nowside-container-lg nowside-shadow">
       <div
         class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
         style="background-image: url('https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')"
@@ -244,7 +244,7 @@ export default {
         </ul>
       </div>
     </div>
-    <div class="flex justify-center items-start py-10 px-6 mb-20 nowside-container nowside-shadow">
+    <div class="flex justify-center items-start py-10 px-6 mb-20 nowside-container-lg nowside-shadow">
       <div
         class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
         style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"

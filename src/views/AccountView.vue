@@ -50,8 +50,8 @@ export default {
     class="py-[180px] w-full h-full"
     style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
   >
-    <div class="flex justify-between mb-[72px] nowside-container">
-      <div class="flex flex-col items-center p-14 min-w-[306px] nowside-shadow">
+    <div class="flex justify-between mb-[72px] nowside-container-lg">
+      <div class="flex flex-col items-center p-14 nowside-container-sm nowside-shadow">
         <div
           class="mb-8 w-[200px] h-[200px] rounded-full nowside-backgroundImage"
           style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
@@ -87,7 +87,7 @@ export default {
           </li>
         </ul>
       </div>
-      <div class="flex flex-col items-end py-14 px-10 min-w-[966px] nowside-shadow">
+      <div class="flex flex-col items-end py-14 px-10 nowside-container-md nowside-shadow">
         <div class="mb-12 w-full text-xl font-bold text-C_blue-600 border-b-2 border-C_blue-400">
           個人資料
         </div>
@@ -205,7 +205,7 @@ export default {
         </div>
       </div>
     </div>
-    <div class="flex flex-col items-end py-14 px-10 min-w-[1230px] nowside-shadow nowside-container">
+    <div class="flex flex-col items-end py-14 px-10 min-w-[1230px] nowside-shadow nowside-container-lg">
       <div class="mb-12 w-full text-xl font-bold text-C_blue-600 border-b-2 border-C_blue-400">
         專業背景
       </div>
