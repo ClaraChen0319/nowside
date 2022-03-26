@@ -305,7 +305,7 @@ export default {
               v-model="messageParams.title"
               name="title" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
             >
           </li>
           <li class="flex flex-col">

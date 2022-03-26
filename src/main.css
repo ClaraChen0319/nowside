@@ -51,7 +51,7 @@
     .nowside-genderRadio {
         @apply mr-2 text-C_green-500 focus:ring-C_green-500 form-radio;
     }
-    .nowside-accountInput {
+    .nowside-input {
     @apply w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border border-C_gray-300 focus:border-C_green-500 focus:ring-C_green-500 form-input;
     }
     .nowside-accountTextarea {

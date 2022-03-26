@@ -154,7 +154,7 @@ export default {
                             v-model="applicantParams.nickName"
                             name="nickName" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -168,7 +168,7 @@ export default {
                             v-model="applicantParams.gender"
                             name="gender" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -184,7 +184,7 @@ export default {
                             v-model="applicantParams.account"
                             name="account" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -200,7 +200,7 @@ export default {
                             v-model="applicantParams.fb"
                             name="fb" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -216,7 +216,7 @@ export default {
                             v-model="applicantParams.ig"
                             name="ig" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -232,7 +232,7 @@ export default {
                             v-model="applicantParams.profileWebsite"
                             name="profileWebsite" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -248,7 +248,7 @@ export default {
                             v-model="applicantParams.contactTime"
                             name="contactTime" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -270,7 +270,7 @@ export default {
                             v-model="applicantParams.workState"
                             name="workState" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -286,7 +286,7 @@ export default {
                             v-model="applicantParams.language"
                             name="language" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -302,7 +302,7 @@ export default {
                             v-model="applicantParams.company"
                             name="company" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -318,7 +318,7 @@ export default {
                             v-model="applicantParams.industry"
                             name="industry" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -334,7 +334,7 @@ export default {
                             v-model="applicantParams.jobDescription"
                             name="jobDescription" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>
@@ -350,7 +350,7 @@ export default {
                             v-model="applicantParams.position"
                             name="position" 
                             type="text"
-                            class="nowside-accountInput"
+                            class="nowside-input"
                             disabled
                           >
                         </div>

@@ -103,7 +103,7 @@ export default {
                 v-model="accountParams.nickName"
                 name="nickName" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -117,7 +117,7 @@ export default {
                 v-model="accountParams.gender"
                 name="gender" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -133,7 +133,7 @@ export default {
                 v-model="accountParams.account"
                 name="account" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -149,7 +149,7 @@ export default {
                 v-model="accountParams.fb"
                 name="fb" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -165,7 +165,7 @@ export default {
                 v-model="accountParams.ig"
                 name="ig" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -181,7 +181,7 @@ export default {
                 v-model="accountParams.profileWebsite"
                 name="profileWebsite" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -197,7 +197,7 @@ export default {
                 v-model="accountParams.contactTime"
                 name="contactTime" 
                 type="text"
-                class="nowside-accountInput"
+                class="nowside-input"
                 disabled
               >
             </div>
@@ -221,7 +221,7 @@ export default {
               v-model="accountParams.workState"
               name="workState" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
               disabled
             >
           </div>
@@ -235,7 +235,7 @@ export default {
               v-model="accountParams.language"
               name="language" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
               disabled
             >
           </div>
@@ -251,7 +251,7 @@ export default {
               v-model="accountParams.company"
               name="company" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
               disabled
             >
           </div>
@@ -265,7 +265,7 @@ export default {
               v-model="accountParams.industry"
               name="industry" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
               disabled
             >
           </div>
@@ -281,7 +281,7 @@ export default {
               v-model="accountParams.position"
               name="position" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
               disabled
             >
           </div>
@@ -295,7 +295,7 @@ export default {
               v-model="accountParams.jobDescription"
               name="jobDescription" 
               type="text"
-              class="nowside-accountInput"
+              class="nowside-input"
               disabled
             >
           </div>
