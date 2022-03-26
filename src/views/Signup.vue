@@ -106,13 +106,13 @@ export default {
                 v-model="signupParams.account"
                 name="account" 
                 type="text"
-                class="peer nowside-loginInput"
+                class="peer nowside-peerInput"
                 placeholder="信箱"
               >
               <label
                 for="account"
-                class="nowside-loginLabel"
-                :class="[ signupParams.account ? 'nowside-loginFilled' : '' ]"
+                class="nowside-peerLabel"
+                :class="[ signupParams.account ? 'nowside-peerFilled' : '' ]"
               >信箱</label>
             </div>
             <div class="relative mb-8">
@@ -121,13 +121,13 @@ export default {
                 v-model="signupParams.password"
                 type="password"
                 name="password"     
-                class="peer nowside-loginInput"
+                class="peer nowside-peerInput"
                 placeholder="密碼"
               >
               <label
                 for="password"
-                class="nowside-loginLabel"
-                :class="[ signupParams.password ? 'nowside-loginFilled' : '' ]"
+                class="nowside-peerLabel"
+                :class="[ signupParams.password ? 'nowside-peerFilled' : '' ]"
               >密碼</label>
             </div>
             <div class="relative">
@@ -136,13 +136,13 @@ export default {
                 v-model="confirm"
                 type="confirm"
                 name="confirm"     
-                class="peer nowside-loginInput"
+                class="peer nowside-peerInput"
                 placeholder="確認密碼"
               >
               <label
                 for="confirm"
-                class="nowside-loginLabel"
-                :class="[ confirm ? 'nowside-loginFilled' : '' ]"
+                class="nowside-peerLabel"
+                :class="[ confirm ? 'nowside-peerFilled' : '' ]"
               >確認密碼</label>
             </div>
           </form>
@@ -175,7 +175,7 @@ export default {
                   v-model="signupParams.gender"
                   value="male"
                   name="gender"
-                  class="nowside-signupRadio"
+                  class="nowside-genderRadio"
                   type="radio"
                 >
                 <label
@@ -189,7 +189,7 @@ export default {
                   v-model="signupParams.gender"
                   value="female"
                   name="gender"
-                  class="nowside-signupRadio"
+                  class="nowside-genderRadio"
                   type="radio"
                 >
                 <label
@@ -203,7 +203,7 @@ export default {
                   v-model="signupParams.gender"
                   value="other"
                   name="gender"
-                  class="nowside-signupRadio"
+                  class="nowside-genderRadio"
                   type="radio"
                 >
                 <label

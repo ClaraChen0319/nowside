@@ -42,7 +42,7 @@
     .nowside-checkbox {
         @apply mr-2 checked:bg-C_green-500 checked:hover:bg-C_green-500 checked:focus:bg-C_green-500 rounded-[4px] border-C_gray-700 focus:ring-C_green-500 form-checkbox;
     }
-    .nowside-signupRadio {
+    .nowside-genderRadio {
         @apply mr-2 text-C_green-500 focus:ring-C_green-500 form-radio;
     }
     .nowside-accountInput {
