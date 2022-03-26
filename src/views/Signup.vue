@@ -48,7 +48,7 @@ export default {
   >
     <!-- Step1 暱稱 -->
     <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
+      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
         <div class="mx-auto max-w-[384px]">
           <div class="my-8">
             <div class="mb-8">
@@ -58,7 +58,7 @@ export default {
                 class="mx-auto max-h-[126px] align-middle"
               >
             </div>
-            <div class="mb-12 font-bold text-center text-blue-700">
+            <div class="mb-12 font-bold text-center text-C_blue-700">
               <p class="mb-4 text-3xl">
                 歡迎進入腦塞 project世界
               </p>
@@ -76,10 +76,10 @@ export default {
               >
                 開始
               </RouterLink>
-              <p class="flex justify-center text-xs text-blue-600">
+              <p class="flex justify-center text-xs text-C_blue-600">
                 已經有腦塞project的帳戶了嗎？
                 <RouterLink
-                  class="text-green-500"
+                  class="text-C_green-500"
                   to="/"
                 >
                   立即登入
@@ -92,9 +92,9 @@ export default {
     </div>
     <!-- Step2 帳密 -->
     <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
-        <div class="mx-auto max-w-[384px] divide-y divide-gray-300">
-          <div class="my-8 font-bold text-center text-blue-700">
+      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
+        <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
+          <div class="my-8 font-bold text-center text-C_blue-700">
             <p class="text-3xl">
               請輸入註冊信箱、密碼
             </p>
@@ -153,7 +153,7 @@ export default {
             >
               下一步
             </button>
-            <p class="flex justify-center text-xs text-blue-600">
+            <p class="flex justify-center text-xs text-C_blue-600">
               完成後，進一步填寫個人資料設定
             </p>
           </div>
@@ -162,9 +162,9 @@ export default {
     </div>
     <!-- Step3 性別 -->
     <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
-        <div class="mx-auto max-w-[384px] divide-y divide-gray-300">
-          <div class="my-8 font-bold text-center text-blue-700">
+      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
+        <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
+          <div class="my-8 font-bold text-center text-C_blue-700">
             <p class="mb-8 text-3xl">
               請問您的性別
             </p>
@@ -180,7 +180,7 @@ export default {
                 >
                 <label
                   for="male"
-                  class="ml-2 text-blue-700"
+                  class="ml-2 text-C_blue-700"
                 >男性</label>
               </div>
               <div class="mb-8">
@@ -194,7 +194,7 @@ export default {
                 >
                 <label
                   for="female"
-                  class="ml-2 text-blue-700"
+                  class="ml-2 text-C_blue-700"
                 >女性</label>
               </div>
               <div>
@@ -208,7 +208,7 @@ export default {
                 >
                 <label
                   for="other"
-                  class="ml-2 text-blue-700"
+                  class="ml-2 text-C_blue-700"
                 >其他</label>
               </div>
             </form>
@@ -220,7 +220,7 @@ export default {
             >
               下一步
             </button>
-            <p class="flex justify-center text-xs text-blue-600">
+            <p class="flex justify-center text-xs text-C_blue-600">
               完成後，進一步填寫個人資料設定
             </p>
           </div>
@@ -229,39 +229,39 @@ export default {
     </div>
     <!-- Step4 圖片 -->
     <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
-        <div class="mx-auto max-w-[384px] divide-y divide-gray-300">
-          <div class="my-8 text-gray-700">
+      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
+        <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
+          <div class="my-8 text-C_gray-700">
             <div class="flex justify-around items-center mb-14 w-full">
-              <span class="text-3xl text-blue-700 material-icons">arrow_back_ios</span>
-              <div class="flex overflow-hidden items-center max-w-[96px] max-h-[96px] rounded-full border-2 border-gray-300">
+              <span class="text-3xl text-C_blue-700 material-icons">arrow_back_ios</span>
+              <div class="flex overflow-hidden items-center max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300">
                 <img
                   src="@/assets/poopoo.png"
                   alt="poopoo"
                   class="align-middle"
                 >
               </div>
-              <div class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 border-gray-300">
+              <div class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300">
                 <img
                   src="@/assets/zombie.png"
                   alt="zombie"
                   class="align-middle"
                 >
               </div>
-              <div class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 border-gray-300">
+              <div class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300">
                 <img
                   src="@/assets/ghost.png"
                   alt="ghost"
                   class="align-middle"
                 >
               </div>
-              <span class="text-3xl text-blue-700 material-icons">arrow_forward_ios</span>
+              <span class="text-3xl text-C_blue-700 material-icons">arrow_forward_ios</span>
             </div>
             <div class="mb-12 text-center">
-              <p class="mb-6 text-3xl font-bold text-blue-700">
+              <p class="mb-6 text-3xl font-bold text-C_blue-700">
                 請對您的大頭貼進行設定
               </p>
-              <p class="text-lg font-bold text-blue-500">
+              <p class="text-lg font-bold text-C_blue-500">
                 或是選擇我們提供的預設素材
               </p>
             </div>
@@ -279,7 +279,7 @@ export default {
             >
               下一步
             </RouterLink>
-            <p class="flex justify-center text-xs text-blue-600">
+            <p class="flex justify-center text-xs text-C_blue-600">
               完成後，進一步填寫個人資料設定
             </p>
           </div>
@@ -288,11 +288,11 @@ export default {
     </div>
     <!-- Step5 時間 -->
     <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
-        <div class="mx-auto max-w-[384px] divide-y divide-gray-300">
-          <div class="my-8 text-gray-700">
+      <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
+        <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
+          <div class="my-8 text-C_gray-700">
             <div class="flex justify-around items-center mb-14 w-full">
-              <div class="flex overflow-hidden items-center max-w-[96px] max-h-[96px] rounded-full border-2 border-gray-300">
+              <div class="flex overflow-hidden items-center max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300">
                 <img
                   src="@/assets/poopoo.png"
                   alt="poopoo"
@@ -301,7 +301,7 @@ export default {
               </div>
             </div>
             <div class="mb-12 text-center">
-              <p class="mb-6 text-3xl font-bold text-blue-700">
+              <p class="mb-6 text-3xl font-bold text-C_blue-700">
                 便便人，請提供您方便回復專案等相關問題的時段 :D
               </p>
             </div>
@@ -310,7 +310,7 @@ export default {
                 id="contactTime"
                 v-model="signupParams.contactTime"
                 name="contactTime"
-                class="py-4 pl-6 w-full text-lg font-bold text-blue-700 indent-20 bg-gray-100 rounded border border-gray-700 focus:border-green-500 focus:outline-none active:outline-none focus:ring-green-500 form-select"
+                class="py-4 pl-6 w-full text-lg font-bold text-C_blue-700 indent-20 bg-C_gray-100 rounded border border-C_gray-700 focus:border-C_green-500 focus:outline-none active:outline-none focus:ring-C_green-500 form-select"
               >
                 <option value="00:00～03:00 AM">
                   00:00～03:00 AM
@@ -346,7 +346,7 @@ export default {
             >
               完成
             </button>
-            <p class="flex justify-center text-xs text-blue-600">
+            <p class="flex justify-center text-xs text-C_blue-600">
               完成後，進一步填寫個人資料設定
             </p>
           </div>

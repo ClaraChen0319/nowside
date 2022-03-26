@@ -9,12 +9,13 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Noto Sans TC', ...defaultTheme.fontFamily.sans], // 載入 Noto Sans TC
+        'chillax': ['Chillax', ...defaultTheme.fontFamily.sans], // 載入 Chillax
       },
       colors: {
         black: '#000000',
         white: '#FFFFFF',
-        red: '#F75147',
-        gray: {
+        C_red: '#F75147',
+        C_gray: {
           100: '#F9F9F9',
           200: '#EFEFEF',
           300: '#E5E5E5',
@@ -25,7 +26,7 @@ module.exports = {
           800: '#808080',
           900: '#616161',
         },
-        blue: {
+        C_blue: {
           100: '#F4FAFF',
           200: '#E6F3FF',
           300: '#89AECD',
@@ -36,7 +37,7 @@ module.exports = {
           800: '#1D2C3A',
           900: '#15202A',
         },
-        green: {
+        C_green: {
           100: '#DFF5F1',
           200: '#C0EBE3',
           300: '#A1E2D5',
@@ -52,7 +53,7 @@ module.exports = {
         '2xs': '0.25rem',
         'xs': '0.5rem',
         'sm': '0.75rem',
-        'md': '1rem', // 16px
+        'md': '1rem',
         'lg': '1.25rem',
         'xl': '1.5rem',
         '2xl': '1.75rem',
@@ -62,15 +63,17 @@ module.exports = {
         light: '300',
         regular: '400',
         medium: '500',
-        bold: '600',
+        bold: '700',
       },
       screens: {
-        'sm': '320px',  // @media (min-width: 320px) { ... }
-        'md': '768px',  // @media (min-width: 768px) { ... }
-        'lg': '1920px', // @media (min-width: 1920px) { ... }
+        'mobile': '320px',
+        'laptop': '768px',
+        'desktop': '1920px',
       },
       borderRadius: {
+        sm: '4px',
         DEFAULT: '8px', // rounded 預設 8px
+        lg: '16px',
         full: '9999px',
       },
     },

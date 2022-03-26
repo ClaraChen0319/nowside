@@ -29,9 +29,9 @@ export default {
 
 <template>
   <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-    <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-gray-300 shadow-xl">
-      <div class="mx-auto max-w-[384px] divide-y divide-gray-300">
-        <div class="my-6 text-gray-700">
+    <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
+      <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
+        <div class="my-6 text-C_gray-700">
           <div class="mb-6">
             <img
               src="@/assets/logo.png"
@@ -84,7 +84,7 @@ export default {
               >記住帳號密碼</label>
             </div>
             <div class="pr-2">
-              <span class="text-sm text-green-500">忘記密碼？</span>
+              <span class="text-sm text-C_green-500">忘記密碼？</span>
             </div>
           </form>
         </div>
@@ -102,7 +102,7 @@ export default {
           >
             立即註冊
           </RouterLink>
-          <p class="flex justify-center text-xs text-blue-600">
+          <p class="flex justify-center text-xs text-C_blue-600">
             沒有信箱？立即註冊
           </p>
         </div>

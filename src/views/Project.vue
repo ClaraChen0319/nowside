@@ -26,11 +26,11 @@ export default {
         <label class="block relative mb-10">
           <span class="flex absolute inset-y-0 left-0 items-center pl-2">
             <span
-              class="ml-12 text-3xl text-green-500 material-icons"
+              class="ml-12 text-3xl text-C_green-500 material-icons"
             >search</span>
           </span>
           <input
-            class="block py-3 pr-3 pl-28 w-full placeholder:italic placeholder:text-gray-700 bg-white rounded-full border-2 border-blue-500 focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 shadow-sm"
+            class="block py-3 pr-3 pl-28 w-full placeholder:italic placeholder:text-C_gray-700 bg-white rounded-full border-2 border-C_blue-500 focus:border-C_green-500 focus:outline-none focus:ring-1 focus:ring-C_green-500 shadow-sm"
             placeholder="搜尋感興趣的 side project"
             type="text"
             name="search"
@@ -91,17 +91,17 @@ export default {
     <div class="mb-[32px] nowside-container">
       <ul class="flex justify-end">
         <li>
-          <button class="text-lg font-bold text-blue-700 hover:text-blue-500">
+          <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500">
             最新
           </button>
         </li>
         <li class="ml-10">
-          <button class="text-lg font-bold text-blue-700 hover:text-blue-500">
+          <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500">
             熱門
           </button>
         </li>
         <li class="ml-10">
-          <button class="text-lg font-bold text-blue-700 hover:text-blue-500">
+          <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500">
             組團
           </button>
         </li>
@@ -114,62 +114,62 @@ export default {
       >
       </div>
       <div class="mr-10 w-[780px]">
-        <ul class="text-blue-800">
+        <ul class="text-C_blue-800">
           <li class="mb-6 h-[64px]">
-            <span class="text-lg font-bold text-blue-700">專案名稱</span><br>
+            <span class="text-lg font-bold text-C_blue-700">專案名稱</span><br>
             <span>家務分配</span>
           </li>
           <li class="mb-6 h-[215px]">
-            <span class="text-lg font-bold text-blue-700">專案內容</span><br>
+            <span class="text-lg font-bold text-C_blue-700">專案內容</span><br>
             <span>自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。</span>
           </li>
           <li>
-            <span class="font-bold text-blue-700">媒合期限</span>　
+            <span class="font-bold text-C_blue-700">媒合期限</span>　
             <span>2022.01.02</span>
           </li>
         </ul>
       </div>
       <div class="w-[256px]">
-        <ul class="text-blue-800">
+        <ul class="text-C_blue-800">
           <li class="flex justify-between mb-4">
             <div>
-              <span class="mr-2 font-bold text-blue-700">種類</span>
-              <span class="text-blue-500">SaaS</span>
+              <span class="mr-2 font-bold text-C_blue-700">種類</span>
+              <span class="text-C_blue-500">SaaS</span>
             </div>
             <div class="flex items-center">
-              <span class="mr-1 text-xl font-bold text-green-500 material-icons">adjust</span>
-              <span class="font-bold text-blue-700">進行中</span>
+              <span class="mr-1 text-xl font-bold text-C_green-500 material-icons">adjust</span>
+              <span class="font-bold text-C_blue-700">進行中</span>
             </div>
           </li>
           <li class="mb-4">
-            <span class="mr-2 font-bold text-blue-700">發起日</span>
+            <span class="mr-2 font-bold text-C_blue-700">發起日</span>
             <span>2022.01.01</span>
           </li>
           <li class="mb-4">
-            <span class="mr-4 font-bold text-blue-700">結束日</span>
+            <span class="mr-4 font-bold text-C_blue-700">結束日</span>
             <span>2022.03.01</span>
           </li>
           <li class="flex items-center mb-4">
-            <span class="mr-2 text-3xl text-blue-400 material-icons">account_circle</span>
+            <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
             <span class="text-xl">3</span>
           </li>
           <li class="flex flex-wrap mb-4 h-[120px]">
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Vue</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">C++</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">XD</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">C#</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Java</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">PHP</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">MySQL</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Notion</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Vue</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">C++</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">XD</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">C#</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Java</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">PHP</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">MySQL</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Notion</span>
           </li>
           <li>
             <div class="flex justify-between w-full">
-              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400">
+              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                 <span class="mr-1 material-icons">favorite_border</span>
                 收藏
               </button>
-              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-green-400 hover:bg-green-500 rounded">
+              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-400 hover:bg-C_green-500 rounded">
                 <span class="mr-1 material-icons">north_east</span>
                 查看
               </button>
@@ -185,57 +185,57 @@ export default {
       >
       </div>
       <div class="mr-10 w-[780px]">
-        <ul class="text-blue-800">
+        <ul class="text-C_blue-800">
           <li class="mb-6 h-[64px]">
-            <span class="text-lg font-bold text-blue-700">專案名稱</span><br>
+            <span class="text-lg font-bold text-C_blue-700">專案名稱</span><br>
             <span>虛擬莫吉托</span>
           </li>
           <li class="mb-6 h-[215px]">
-            <span class="text-lg font-bold text-blue-700">專案內容</span><br>
+            <span class="text-lg font-bold text-C_blue-700">專案內容</span><br>
             <span>用於虛擬活動、遠程團隊、社交聚會和黑客馬拉鬆的精選工具目錄。</span>
           </li>
           <li>
-            <span class="font-bold text-blue-700">媒合期限</span>　
+            <span class="font-bold text-C_blue-700">媒合期限</span>　
             <span>2022.01.02</span>
           </li>
         </ul>
       </div>
       <div class="w-[256px]">
-        <ul class="text-blue-800">
+        <ul class="text-C_blue-800">
           <li class="flex justify-between mb-4">
             <div>
-              <span class="mr-2 font-bold text-blue-700">種類</span>
-              <span class="text-blue-500">SaaS</span>
+              <span class="mr-2 font-bold text-C_blue-700">種類</span>
+              <span class="text-C_blue-500">SaaS</span>
             </div>
             <div class="flex items-center">
-              <span class="mr-1 text-xl font-bold text-gray-500 material-icons">adjust</span>
-              <span class="font-bold text-blue-700">已關閉</span>
+              <span class="mr-1 text-xl font-bold text-C_gray-500 material-icons">adjust</span>
+              <span class="font-bold text-C_blue-700">已關閉</span>
             </div>
           </li>
           <li class="mb-4">
-            <span class="mr-2 font-bold text-blue-700">發起日</span>
+            <span class="mr-2 font-bold text-C_blue-700">發起日</span>
             <span>2022.01.01</span>
           </li>
           <li class="mb-4">
-            <span class="mr-4 font-bold text-blue-700">結束日</span>
+            <span class="mr-4 font-bold text-C_blue-700">結束日</span>
             <span>2022.03.01</span>
           </li>
           <li class="flex items-center mb-4">
-            <span class="mr-2 text-3xl text-blue-400 material-icons">account_circle</span>
+            <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
             <span class="text-xl">2</span>
           </li>
           <li class="flex flex-wrap mb-4 h-[120px]">
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">X.ai</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Softr</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Airtable</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">X.ai</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Softr</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Airtable</span>
           </li>
           <li>
             <div class="flex justify-between w-full">
-              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400">
+              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                 <span class="mr-1 material-icons">favorite_border</span>
                 收藏
               </button>
-              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-green-400 hover:bg-green-500 rounded">
+              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-400 hover:bg-C_green-500 rounded">
                 <span class="mr-1 material-icons">north_east</span>
                 查看
               </button>
@@ -251,59 +251,59 @@ export default {
       >
       </div>
       <div class="mr-10 w-[780px]">
-        <ul class="text-blue-800">
+        <ul class="text-C_blue-800">
           <li class="mb-6 h-[64px]">
-            <span class="text-lg font-bold text-blue-700">專案名稱</span><br>
+            <span class="text-lg font-bold text-C_blue-700">專案名稱</span><br>
             <span>記住</span>
           </li>
           <li class="mb-6 h-[215px]">
-            <span class="text-lg font-bold text-blue-700">專案內容</span><br>
+            <span class="text-lg font-bold text-C_blue-700">專案內容</span><br>
             <span>用這是一個平台，可幫助您從新興國家的完全合格的治療師那裡獲得負擔得起的心理保健服務。尋找心理健康護理非常棘手。成本很高，但也很難找到和你說同一種語言的人（字面意思！）<br>
               所以我們創建了 Evermind。這是一個平台，可幫助您從新興國家的完全合格的治療師那裡獲得負擔得起的心理保健服務。
               而且因為我們支付給治療師的費用比他們在當地國家得到的更多，我們也可以幫助他們支持當地經濟。</span>
           </li>
           <li>
-            <span class="font-bold text-blue-700">媒合期限</span>　
+            <span class="font-bold text-C_blue-700">媒合期限</span>　
             <span>2022.01.02</span>
           </li>
         </ul>
       </div>
       <div class="w-[256px]">
-        <ul class="text-blue-800">
+        <ul class="text-C_blue-800">
           <li class="flex justify-between mb-4">
             <div>
-              <span class="mr-2 font-bold text-blue-700">種類</span>
-              <span class="text-blue-500">SaaS</span>
+              <span class="mr-2 font-bold text-C_blue-700">種類</span>
+              <span class="text-C_blue-500">SaaS</span>
             </div>
             <div class="flex items-center">
               <span class="mr-1 text-xl font-bold text-orange-500 material-icons">adjust</span>
-              <span class="font-bold text-blue-700">審核中</span>
+              <span class="font-bold text-C_blue-700">審核中</span>
             </div>
           </li>
           <li class="mb-4">
-            <span class="mr-2 font-bold text-blue-700">發起日</span>
+            <span class="mr-2 font-bold text-C_blue-700">發起日</span>
             <span>2022.01.01</span>
           </li>
           <li class="mb-4">
-            <span class="mr-4 font-bold text-blue-700">結束日</span>
+            <span class="mr-4 font-bold text-C_blue-700">結束日</span>
             <span>2022.03.01</span>
           </li>
           <li class="flex items-center mb-4">
-            <span class="mr-2 text-3xl text-blue-400 material-icons">account_circle</span>
+            <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
             <span class="text-xl">6</span>
           </li>
           <li class="flex flex-wrap mb-4 h-[120px]">
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Notion</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Figma</span>
-            <span class="px-4 mr-2 mb-4 h-6 bg-blue-200 rounded-[4px]">Bltly</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Notion</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Figma</span>
+            <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Bltly</span>
           </li>
           <li>
             <div class="flex justify-between w-full">
-              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400">
+              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                 <span class="mr-1 material-icons">favorite_border</span>
                 收藏
               </button>
-              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-green-400 hover:bg-green-500 rounded">
+              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-400 hover:bg-C_green-500 rounded">
                 <span class="mr-1 material-icons">north_east</span>
                 查看
               </button>

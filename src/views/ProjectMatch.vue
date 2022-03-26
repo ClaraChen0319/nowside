@@ -61,13 +61,13 @@ export default {
         class="mb-20 w-[415px] h-[415px] rounded-full shadow-xl nowside-backgroundImage"
         style="background-image: url('https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1157&q=80')"
       ></div>
-      <span class="text-3xl font-bold text-blue-700">家務分配</span><br>
+      <span class="text-3xl font-bold text-C_blue-700">家務分配</span><br>
     </div>
     <!-- 表格 -->
     <div class="flex flex-col justify-center items-center mb-28">
-      <span class="text-lg font-bold text-blue-700">申請名單</span><br>
+      <span class="text-lg font-bold text-C_blue-700">申請名單</span><br>
       <table class="w-[1296px] table-fixed nowside-shadow">
-        <thead class="text-lg text-white bg-blue-900">
+        <thead class="text-lg text-white bg-C_blue-900">
           <tr class="text-center">
             <th class="py-4 rounded-tl-[16px]">
               狀態
@@ -86,8 +86,8 @@ export default {
             </th>
           </tr>
         </thead>
-        <tbody class="text-blue-800">
-          <tr class="mt-[-1px] text-center border-y border-gray-300">
+        <tbody class="text-C_blue-800">
+          <tr class="mt-[-1px] text-center border-y border-C_gray-300">
             <td class="py-6">
               <span>已通過</span>
             </td>
@@ -102,7 +102,7 @@ export default {
             </td>
             <td class="py-6">
               <button
-                class="py-2 px-6 font-bold text-blue-700 hover:bg-gray-100 rounded-[4px] border-2 border-blue-400"
+                class="py-2 px-6 font-bold text-C_blue-700 hover:bg-C_gray-100 rounded-[4px] border-2 border-C_blue-400"
                 @click="tableDisplay"
               >
                 查看檔案
@@ -118,21 +118,21 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
                   ></div>
                   <div class="flex flex-col items-end mr-[43px] mb-12 w-[866px]">
-                    <div class="mb-12 w-full text-blue-600 border-b-2 border-blue-400">
+                    <div class="mb-12 w-full text-C_blue-600 border-b-2 border-C_blue-400">
                       <button
-                        class="mr-8 text-xl font-bold hover:bg-blue-200 hover:rounded"
+                        class="mr-8 text-xl font-bold hover:bg-C_blue-200 hover:rounded"
                         @click="userStatus = 'userInfo'"
                       >
                         個人資料
                       </button>
                       <button
-                        class="mr-8 text-xl font-bold hover:bg-blue-200 hover:rounded"
+                        class="mr-8 text-xl font-bold hover:bg-C_blue-200 hover:rounded"
                         @click="userStatus = 'userBackground'"
                       >
                         專業背景
                       </button>
                       <button
-                        class="text-xl font-bold hover:bg-blue-200 hover:rounded"
+                        class="text-xl font-bold hover:bg-C_blue-200 hover:rounded"
                         @click="userStatus = 'userSelfIntroduction'"
                       >
                         自我介紹
@@ -147,7 +147,7 @@ export default {
                         <div class="flex flex-initial justify-between items-center mb-12 w-[546px] h-10">
                           <label
                             for="nickName"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >暱稱</label>
                           <input
                             id="nickName"
@@ -161,7 +161,7 @@ export default {
                         <div class="flex flex-initial justify-between items-center mb-12 w-[230px] h-10">
                           <label
                             for="gender"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >性別</label>
                           <input
                             id="gender"
@@ -177,7 +177,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="account"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >信箱</label>
                           <input
                             id="account"
@@ -193,7 +193,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="fb"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >FB</label>
                           <input
                             id="fb"
@@ -209,7 +209,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="ig"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >IG</label>
                           <input
                             id="ig"
@@ -225,7 +225,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="profileWebsite"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >個人網站</label>
                           <input
                             id="profileWebsite"
@@ -241,7 +241,7 @@ export default {
                         <div class="flex justify-between items-center h-10">
                           <label
                             for="contactTime"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >聯絡時間</label>
                           <input
                             id="contactTime"
@@ -263,7 +263,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="workState"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >目前狀態</label>
                           <input
                             id="workState"
@@ -279,7 +279,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="language"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >語言</label>
                           <input
                             id="language"
@@ -295,7 +295,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="company"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >公司</label>
                           <input
                             id="company"
@@ -311,7 +311,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="industry"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >產業</label>
                           <input
                             id="industry"
@@ -327,7 +327,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="jobDescription"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >職務</label>
                           <input
                             id="jobDescription"
@@ -343,7 +343,7 @@ export default {
                         <div class="flex justify-between items-center mb-12 h-10">
                           <label
                             for="position"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >工作內容</label>
                           <input
                             id="position"
@@ -359,34 +359,34 @@ export default {
                         <div class="flex justify-between items-center">
                           <label
                             for="profileWebsite"
-                            class="mr-6 w-24 text-lg font-bold text-blue-500"
+                            class="mr-6 w-24 text-lg font-bold text-C_blue-500"
                           >技能</label>
-                          <div class="p-2 w-full h-[140px] text-lg text-blue-600 bg-gray-100 rounded border border-gray-300">
-                            <div class="inline-block mr-4 bg-blue-200 rounded">
+                          <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 rounded border border-C_gray-300">
+                            <div class="inline-block mr-4 bg-C_blue-200 rounded">
                               　Vue　
                               <span class="align-sub material-icons">
                                 close
                               </span>
                             </div>
-                            <div class="inline-block mr-4 bg-blue-200 rounded">
+                            <div class="inline-block mr-4 bg-C_blue-200 rounded">
                               　C++　
                               <span class="align-sub material-icons">
                                 close
                               </span>
                             </div>
-                            <div class="inline-block mr-4 bg-blue-200 rounded">
+                            <div class="inline-block mr-4 bg-C_blue-200 rounded">
                               　MySQL　
                               <span class="align-sub material-icons">
                                 close
                               </span>
                             </div>
-                            <div class="inline-block mr-4 bg-blue-200 rounded">
+                            <div class="inline-block mr-4 bg-C_blue-200 rounded">
                               　Java　
                               <span class="align-sub material-icons">
                                 close
                               </span>
                             </div>
-                            <div class="inline-block mr-4 bg-blue-200 rounded">
+                            <div class="inline-block mr-4 bg-C_blue-200 rounded">
                               　PHP　
                               <span class="align-sub material-icons">
                                 close
@@ -416,13 +416,13 @@ export default {
                   </div>
                 </div>
                 <div class="flex justify-center">
-                  <button class="py-2 mr-6 w-32 text-lg font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400">
+                  <button class="py-2 mr-6 w-32 text-lg font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                     <span class="align-sub material-icons">
                       close
                     </span>
                     未通過
                   </button>
-                  <button class="py-2 w-32 text-lg font-bold text-white bg-green-500 hover:bg-green-400 rounded">
+                  <button class="py-2 w-32 text-lg font-bold text-white bg-C_green-500 hover:bg-C_green-400 rounded">
                     <span class="align-sub material-icons">
                       done
                     </span>
@@ -437,13 +437,13 @@ export default {
     </div>
     <!-- 按鈕 -->
     <div class="flex justify-center">
-      <button class="py-2 mr-6 w-[196px] text-lg font-bold text-blue-700 bg-white hover:bg-gray-100 rounded border-2 border-blue-400 shadow-lg">
+      <button class="py-2 mr-6 w-[196px] text-lg font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400 shadow-lg">
         <span class="align-sub material-icons">
           reply
         </span>
         回上一步
       </button>
-      <button class="py-2 w-[196px] text-lg font-bold text-white bg-green-500 hover:bg-green-400 rounded shadow-lg">
+      <button class="py-2 w-[196px] text-lg font-bold text-white bg-C_green-500 hover:bg-C_green-400 rounded shadow-lg">
         <span class="align-sub material-icons">
           ios_share
         </span>

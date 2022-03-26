@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <div class="flex fixed z-10 justify-center items-center w-screen h-[60px] text-lg text-blue-700 bg-white shadow-md">
+  <div class="flex fixed z-10 justify-center items-center w-screen h-[60px] text-lg text-C_blue-700 bg-white shadow-md">
     <div class="mr-6 w-[196px]">
       <img
         src="@/assets/logo.png"

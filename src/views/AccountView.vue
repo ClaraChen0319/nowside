@@ -56,31 +56,31 @@ export default {
           class="mb-8 w-[200px] h-[200px] rounded-full nowside-backgroundImage"
           style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
         ></div>
-        <ul class="text-lg text-center text-blue-700">
+        <ul class="text-lg text-center text-C_blue-700">
           <li class="mb-6 font-bold">
             Crystal Kay
           </li>
-          <li class="mb-6 hover:text-blue-400">
+          <li class="mb-6 hover:text-C_blue-400">
             <button class="font-bold">
               個人資料
             </button>
           </li>
-          <li class="mb-6 hover:text-blue-400">
+          <li class="mb-6 hover:text-C_blue-400">
             <button class="font-bold">
               發起的專案
             </button>
           </li>
-          <li class="mb-6 hover:text-blue-400">
+          <li class="mb-6 hover:text-C_blue-400">
             <button class="font-bold">
               參與的專案
             </button>
           </li>
-          <li class="mb-6 hover:text-blue-400">
+          <li class="mb-6 hover:text-C_blue-400">
             <button class="font-bold">
               收藏的專案
             </button>
           </li>
-          <li class=" hover:text-blue-400">
+          <li class=" hover:text-C_blue-400">
             <button class="font-bold">
               通知
             </button>
@@ -88,7 +88,7 @@ export default {
         </ul>
       </div>
       <div class="flex flex-col items-end py-14 px-10 min-w-[966px] nowside-shadow">
-        <div class="mb-12 w-full text-xl font-bold text-blue-600 border-b-2 border-blue-400">
+        <div class="mb-12 w-full text-xl font-bold text-C_blue-600 border-b-2 border-C_blue-400">
           個人資料
         </div>
         <div class="w-[854px]">
@@ -96,7 +96,7 @@ export default {
             <div class="flex flex-initial justify-between items-center mb-12 w-[560px] h-10">
               <label
                 for="nickName"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >暱稱</label>
               <input
                 id="nickName"
@@ -110,7 +110,7 @@ export default {
             <div class="flex flex-initial justify-between items-center mb-12 w-[270px] h-10">
               <label
                 for="gender"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >性別</label>
               <input
                 id="gender"
@@ -126,7 +126,7 @@ export default {
             <div class="flex justify-between items-center mb-12 h-10">
               <label
                 for="account"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >信箱</label>
               <input
                 id="account"
@@ -142,7 +142,7 @@ export default {
             <div class="flex justify-between items-center mb-12 h-10">
               <label
                 for="fb"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >FB</label>
               <input
                 id="fb"
@@ -158,7 +158,7 @@ export default {
             <div class="flex justify-between items-center mb-12 h-10">
               <label
                 for="ig"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >IG</label>
               <input
                 id="ig"
@@ -174,7 +174,7 @@ export default {
             <div class="flex justify-between items-center mb-12 h-10">
               <label
                 for="profileWebsite"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >個人網站</label>
               <input
                 id="profileWebsite"
@@ -190,7 +190,7 @@ export default {
             <div class="flex justify-between items-center h-10">
               <label
                 for="contactTime"
-                class="mr-6 w-24 text-lg font-bold text-blue-500"
+                class="mr-6 w-24 text-lg font-bold text-C_blue-500"
               >聯絡時間</label>
               <input
                 id="contactTime"
@@ -206,7 +206,7 @@ export default {
       </div>
     </div>
     <div class="flex flex-col items-end py-14 px-10 min-w-[1230px] nowside-shadow nowside-container">
-      <div class="mb-12 w-full text-xl font-bold text-blue-600 border-b-2 border-blue-400">
+      <div class="mb-12 w-full text-xl font-bold text-C_blue-600 border-b-2 border-C_blue-400">
         專業背景
       </div>
       <div class="mb-14 w-[1160px]">
@@ -214,7 +214,7 @@ export default {
           <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
             <label
               for="workState"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >目前狀態</label>
             <input
               id="workState"
@@ -228,7 +228,7 @@ export default {
           <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
             <label
               for="language"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >語言</label>
             <input
               id="language"
@@ -244,7 +244,7 @@ export default {
           <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
             <label
               for="company"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >公司</label>
             <input
               id="company"
@@ -258,7 +258,7 @@ export default {
           <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
             <label
               for="industry"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >產業</label>
             <input
               id="industry"
@@ -274,7 +274,7 @@ export default {
           <div class="flex flex-initial justify-between items-center mb-12 w-[712px] h-10">
             <label
               for="position"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >工作內容</label>
             <input
               id="position"
@@ -288,7 +288,7 @@ export default {
           <div class="flex flex-initial justify-between items-center mb-12 w-[424px] h-10">
             <label
               for="jobDescription"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >職務</label>
             <input
               id="jobDescription"
@@ -304,34 +304,34 @@ export default {
           <div class="flex justify-between items-center mb-12">
             <label
               for="profileWebsite"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >技能</label>
-            <div class="p-2 w-full h-[140px] text-lg text-blue-600 bg-gray-100 rounded border border-gray-300">
-              <div class="inline-block mr-4 bg-blue-200 rounded">
+            <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 rounded border border-C_gray-300">
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
                 　Vue　
                 <span class="align-sub material-icons">
                   close
                 </span>
               </div>
-              <div class="inline-block mr-4 bg-blue-200 rounded">
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
                 　C++　
                 <span class="align-sub material-icons">
                   close
                 </span>
               </div>
-              <div class="inline-block mr-4 bg-blue-200 rounded">
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
                 　MySQL　
                 <span class="align-sub material-icons">
                   close
                 </span>
               </div>
-              <div class="inline-block mr-4 bg-blue-200 rounded">
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
                 　Java　
                 <span class="align-sub material-icons">
                   close
                 </span>
               </div>
-              <div class="inline-block mr-4 bg-blue-200 rounded">
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
                 　PHP　
                 <span class="align-sub material-icons">
                   close
@@ -344,7 +344,7 @@ export default {
           <div class="flex justify-between items-center">
             <label
               for="selfIntroduction"
-              class="mr-6 w-24 text-lg font-bold text-blue-500"
+              class="mr-6 w-24 text-lg font-bold text-C_blue-500"
             >自我介紹</label>
             <textarea
               id="selfIntroduction"
