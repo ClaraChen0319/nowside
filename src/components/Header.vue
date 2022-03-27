@@ -29,17 +29,17 @@ export default {
     </div>
     <ul class="flex justify-between items-center w-[950px]">
       <li>
-        <button class="font-bold">
+        <button class="font-medium">
           成功案例
         </button>
       </li>
       <li>
-        <button class="font-bold">
+        <button class="font-medium">
           瀏覽專案
         </button>
       </li>
       <li>
-        <button class="font-bold">
+        <button class="font-medium">
           發起專案
         </button>
       </li>

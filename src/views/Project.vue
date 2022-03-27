@@ -190,7 +190,7 @@ export default {
               <li class="flex justify-between mb-4">
                 <div>
                   <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
-                    種類
+                    種類　
                   </p>
                   <p class="text-C_blue-500 dark:text-C_blue-200">
                     SaaS
@@ -288,7 +288,7 @@ export default {
               <li class="flex justify-between mb-4">
                 <div>
                   <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
-                    種類
+                    種類　
                   </p>
                   <p class="text-C_blue-500 dark:text-C_blue-200">
                     SaaS
@@ -386,7 +386,7 @@ export default {
               <li class="flex justify-between mb-4">
                 <div>
                   <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
-                    種類
+                    種類　
                   </p>
                   <p class="text-C_blue-500 dark:text-C_blue-200">
                     SaaS
