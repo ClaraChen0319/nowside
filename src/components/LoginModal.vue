@@ -17,7 +17,8 @@ export default {
       S_login(this.loginParams)
       .then(res =>{
         console.log(res.data);
-        localStorage.setItem('nowsideToken', res.data.token); // 使用 setItem 將 token 存入 localStorage
+        // 使用 setItem 將 token 存入 localStorage
+        localStorage.setItem('nowsideToken', res.data.token);
       })
       .catch(error => {
         console.log(error);
@@ -33,6 +34,7 @@ export default {
       <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
         <!-- LOGO + 信箱密碼 input -->
         <section class="my-6 text-C_gray-700">
+          <!-- LOGO -->
           <div class="mb-6">
             <img
               src="@/assets/logo.png"
@@ -40,6 +42,7 @@ export default {
               class="mx-auto max-h-[126px] align-middle"
             >
           </div>
+          <!-- 信箱密碼 input -->
           <div class="mb-4">
             <form class="relative mb-6">
               <input
@@ -72,6 +75,7 @@ export default {
               >密碼</label>
             </form>
           </div>
+          <!-- 記住帳號密碼 checkbox -->
           <div class="flex justify-between">
             <form class="flex items-center pl-2">
               <input
@@ -89,7 +93,7 @@ export default {
             </div>
           </div>
         </section>
-        <!-- 登入註冊按鈕 -->
+        <!-- 登入註冊按鈕 + 底部文字 -->
         <section class="pt-6 mb-6">
           <button
             type="button"
