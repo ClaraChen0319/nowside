@@ -5,6 +5,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // false, 'class', 'media'
   theme: {
     extend: {
       fontFamily: {
@@ -12,8 +13,8 @@ module.exports = {
         'chillax': ['Chillax', ...defaultTheme.fontFamily.sans], // 載入 Chillax
       },
       colors: {
-        black: '#000000',
         white: '#FFFFFF',
+        C_black: '#202020',
         C_red: '#F75147',
         C_gray: {
           100: '#F9F9F9',

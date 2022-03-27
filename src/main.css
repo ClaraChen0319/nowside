@@ -6,20 +6,23 @@
     body {
         @apply font-sans;
     }
+    p {
+        @apply inline-block;
+    }
 }
 
 @layer components {
     .nowside-container-sm {
-        @apply min-w-[306px];
+        @apply max-w-[306px];
     }
     .nowside-container-md {
-        @apply min-w-[966px];
+        @apply max-w-[966px];
     }
     .nowside-container-lg {
         @apply mx-auto max-w-[1296px];
     }
     .nowside-shadow {
-        @apply bg-white rounded-lg ring-1 ring-C_gray-300 shadow-xl;
+        @apply bg-white dark:bg-C_black rounded-lg ring-1 ring-C_gray-300 dark:ring-0 shadow-xl dark:shadow-gray-800;
     }
     .nowside-backgroundImage {
         @apply overflow-hidden bg-center bg-cover;
@@ -30,6 +33,9 @@
     .nowside-button-lightGreen-md {
         @apply py-2 w-[196px] text-lg font-bold shadow-lg text-white bg-C_green-500 hover:bg-C_green-400 rounded;
     }
+    .nowside-button-blue-md {
+        @apply flex justify-center items-center w-[196px] h-[46px] text-lg font-bold text-C_blue-200 bg-C_blue-500 hover:bg-C_blue-400 rounded;
+    }
     .nowside-button-darkBlue-lg {
         @apply block py-4 mb-6 w-full text-lg font-bold text-center text-white bg-C_blue-600 hover:bg-C_blue-500 rounded focus:outline-none cursor-pointer;
     }
@@ -37,13 +43,13 @@
         @apply flex justify-center py-4 mb-6 w-full text-lg font-bold text-C_blue-600 bg-C_blue-100 hover:bg-[#E0F1FF] rounded border border-C_blue-300;
     }
     .nowside-input {
-        @apply w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border border-C_gray-300 focus:border-C_green-500 focus:ring-C_green-500 form-input;
+        @apply w-full tracking-wide text-C_blue-600 dark:text-C_blue-200 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300 focus:border-C_green-500 focus:ring-C_green-500 form-input;
     }
     .nowside-checkbox {
         @apply mr-2 checked:bg-C_green-500 checked:hover:bg-C_green-500 checked:focus:bg-C_green-500 rounded-[4px] border-C_gray-700 focus:ring-C_green-500 form-checkbox;
     }
     .nowside-textarea {
-        @apply p-2 w-full tracking-wide text-C_blue-600 bg-C_gray-100 rounded border-2 border-C_gray-300 focus:border-C_green-500 focus:outline-none focus:ring-C_green-500 form-textarea;
+        @apply p-2 w-full tracking-wide text-C_blue-600 dark:text-C_blue-200 bg-C_gray-100 dark:bg-[#333333] rounded border-2 border-C_gray-300 focus:border-C_green-500 focus:outline-none focus:ring-C_green-500 form-textarea;
     }
     .nowside-peerInput {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-C_gray-700 bg-C_gray-100 rounded border border-C_gray-700 focus:border-C_green-500 focus:outline-none;
@@ -58,6 +64,6 @@
         @apply mr-2 text-C_green-500 focus:ring-C_green-500 form-radio;
     }
     .nowside-searchSelect {
-        @apply py-2 pr-6 pl-2 mr-8 w-40 text-lg font-bold text-center text-white bg-C_blue-700 bg-right rounded border-2 border-C_blue-400 hover:bg-C_blue-600 form-select;
+        @apply py-2 pr-6 pl-2 mr-8 w-40 text-lg font-bold text-center text-white bg-C_blue-700 hover:bg-C_blue-600 bg-right rounded form-select;
     }
 }

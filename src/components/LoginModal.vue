@@ -28,10 +28,11 @@ export default {
 </script>
 
 <template>
-  <div class="flex overflow-hidden relative flex-col justify-center min-h-screen">
-    <div class="relative mx-auto min-w-[464px] bg-white rounded ring-1 ring-C_gray-300 shadow-xl">
+  <article class="flex justify-center items-center min-h-screen">
+    <div class="relative mx-auto min-w-[464px] nowside-shadow">
       <div class="mx-auto max-w-[384px] divide-y divide-C_gray-300">
-        <div class="my-6 text-C_gray-700">
+        <!-- LOGO + 信箱密碼 input -->
+        <section class="my-6 text-C_gray-700">
           <div class="mb-6">
             <img
               src="@/assets/logo.png"
@@ -39,8 +40,8 @@ export default {
               class="mx-auto max-h-[126px] align-middle"
             >
           </div>
-          <form class="mb-4">
-            <div class="relative mb-6">
+          <div class="mb-4">
+            <form class="relative mb-6">
               <input
                 id="account"
                 v-model="loginParams.account"
@@ -54,8 +55,8 @@ export default {
                 class="nowside-peerLabel"
                 :class="[ loginParams.account ? 'nowside-peerFilled' : '' ]"
               >信箱</label>
-            </div>
-            <div class="relative">
+            </form>
+            <form class="relative">
               <input
                 id="password"
                 v-model="loginParams.password"
@@ -69,10 +70,10 @@ export default {
                 class="nowside-peerLabel"
                 :class="[ loginParams.password ? 'nowside-peerFilled' : '' ]"
               >密碼</label>
-            </div>
-          </form>
-          <form class="flex justify-between">
-            <div class="flex items-center pl-2">
+            </form>
+          </div>
+          <div class="flex justify-between">
+            <form class="flex items-center pl-2">
               <input
                 id="remember"
                 type="checkbox"
@@ -82,13 +83,14 @@ export default {
                 for="remember"
                 class="text-sm"
               >記住帳號密碼</label>
-            </div>
+            </form>
             <div class="pr-2">
               <span class="text-sm text-C_green-500">忘記密碼？</span>
             </div>
-          </form>
-        </div>
-        <div class="pt-6 mb-6">
+          </div>
+        </section>
+        <!-- 登入註冊按鈕 -->
+        <section class="pt-6 mb-6">
           <button
             type="button"
             class="nowside-button-darkBlue-lg"
@@ -105,10 +107,10 @@ export default {
           <p class="flex justify-center text-xs text-C_blue-600">
             沒有信箱？立即註冊
           </p>
-        </div>
+        </section>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <style></style>

@@ -1,9 +1,18 @@
-<script></script>
+<script>
+export default {
+  name: 'Footer',
+  data() {
+    return {};
+  },
+  computed: {},
+  methods: {},
+}
+</script>
 
 <template>
-  <div class="flex justify-center items-center w-full h-[130px] text-white bg-C_blue-700">
+  <section class="flex justify-center items-center w-full h-[130px] text-white bg-C_blue-700 dark:bg-C_blue-900">
     © 2022 Side Project Now. All rights reserved.
-  </div>
+  </section>
 </template>
 
 <style></style>
