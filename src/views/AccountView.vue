@@ -7,34 +7,41 @@ export default {
   data() {
     return {
       accountParams: {
-        nickName: 'Crystal Kay',
-        gender: '女',
-        account: 'christie0319@gmail.com',
-        password: '',
-        fb: 'http://christie0319/profile.com',
-        ig: 'http://christie0319/profile.com',
-        profileWebsite: 'http://christie0319/profile.com',
-        contactTime: '9:00~12:00 PM',
-        workState: '職業倦怠中，力拼轉職尋求新機會',
-        language: '英語 / 中文 / 法文',
-        company: '火箭數位行銷公司',
-        industry: '設計業',
-        position: '萬能雜工',
-        jobDescription: '設計小菜雞',
-        skills: '',
-        selfIntroduction: '目前在接案公司任職，是位菜鳥設計師～ 想尋找跟我一起做有趣專案的人，我提供設計稿，你提供技術，大家合作好棒棒 \^0^/',
+        Account: '',
+        NickName: '',
+        Gender: '',
+        ProfilePicture: '',
+        Ig: '',
+        Fb: '',
+        ProfileWebsite: '',
+        ContactTime: '',
+        SelfIntroduction: '',
+        WorkState: '',
+        Language: '',
+        Company: '',
+        Industry: '',
+        Position: '',
+        Skills: [],
+        JobDescription: ''
       },
       confirm: '',
     };
   },
-  computed: {},
+  computed: {
+    imageUrl() {
+      let url = '';
+      url = `http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${this.accountParams.ProfilePicture}`;
+      return url;
+    },
+  },
   mounted() {
     this.getAccountParams();
   },
   methods: {
     getAccountParams(){
       S_getUserInfo().then(res =>{
-        console.log(res.data);
+        console.log(res.data.userdata);
+        this.accountParams = res.data.userdata;
       })
       .catch(error => {
         console.log(error);
@@ -52,11 +59,11 @@ export default {
       <div class="flex flex-col items-center p-14 nowside-container-sm nowside-shadow">
         <div
           class="mb-8 w-[200px] h-[200px] rounded-full nowside-backgroundImage"
-          style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
+          :style="{ 'background-image': `url(${imageUrl})` }"
         ></div>
         <ul class="text-lg text-center text-C_blue-700 dark:text-C_blue-400">
           <li class="mb-6 font-medium">
-            Crystal Kay
+            {{ accountParams.NickName }}
           </li>
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
             <button class="font-medium">
@@ -101,7 +108,7 @@ export default {
               >暱稱</label>
               <input
                 id="nickName"
-                v-model="accountParams.nickName"
+                v-model="accountParams.NickName"
                 name="nickName" 
                 type="text"
                 class="nowside-input"
@@ -115,7 +122,7 @@ export default {
               >性別</label>
               <input
                 id="gender"
-                v-model="accountParams.gender"
+                v-model="accountParams.Gender"
                 name="gender" 
                 type="text"
                 class="nowside-input"
@@ -131,7 +138,7 @@ export default {
               >信箱</label>
               <input
                 id="account"
-                v-model="accountParams.account"
+                v-model="accountParams.Account"
                 name="account" 
                 type="text"
                 class="nowside-input"
@@ -147,7 +154,7 @@ export default {
               >FB</label>
               <input
                 id="fb"
-                v-model="accountParams.fb"
+                v-model="accountParams.Fb"
                 name="fb" 
                 type="text"
                 class="nowside-input"
@@ -163,7 +170,7 @@ export default {
               >IG</label>
               <input
                 id="ig"
-                v-model="accountParams.ig"
+                v-model="accountParams.Ig"
                 name="ig" 
                 type="text"
                 class="nowside-input"
@@ -179,7 +186,7 @@ export default {
               >個人網站</label>
               <input
                 id="profileWebsite"
-                v-model="accountParams.profileWebsite"
+                v-model="accountParams.ProfileWebsite"
                 name="profileWebsite" 
                 type="text"
                 class="nowside-input"
@@ -195,7 +202,7 @@ export default {
               >聯絡時間</label>
               <input
                 id="contactTime"
-                v-model="accountParams.contactTime"
+                v-model="accountParams.ContactTime"
                 name="contactTime" 
                 type="text"
                 class="nowside-input"
@@ -222,7 +229,7 @@ export default {
             >目前狀態</label>
             <input
               id="workState"
-              v-model="accountParams.workState"
+              v-model="accountParams.WorkState"
               name="workState" 
               type="text"
               class="nowside-input"
@@ -236,7 +243,7 @@ export default {
             >語言</label>
             <input
               id="language"
-              v-model="accountParams.language"
+              v-model="accountParams.Language"
               name="language" 
               type="text"
               class="nowside-input"
@@ -252,7 +259,7 @@ export default {
             >公司</label>
             <input
               id="company"
-              v-model="accountParams.company"
+              v-model="accountParams.Company"
               name="company" 
               type="text"
               class="nowside-input"
@@ -266,7 +273,7 @@ export default {
             >產業</label>
             <input
               id="industry"
-              v-model="accountParams.industry"
+              v-model="accountParams.Industry"
               name="industry" 
               type="text"
               class="nowside-input"
@@ -282,7 +289,7 @@ export default {
             >工作內容</label>
             <input
               id="position"
-              v-model="accountParams.position"
+              v-model="accountParams.Position"
               name="position" 
               type="text"
               class="nowside-input"
@@ -296,7 +303,7 @@ export default {
             >職務</label>
             <input
               id="jobDescription"
-              v-model="accountParams.jobDescription"
+              v-model="accountParams.JobDescription"
               name="jobDescription" 
               type="text"
               class="nowside-input"
@@ -311,35 +318,12 @@ export default {
               class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
             >技能</label>
             <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300">
-              <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                　Vue　
-                <span class="align-sub material-icons">
-                  close
-                </span>
-              </div>
-              <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                　C++　
-                <span class="align-sub material-icons">
-                  close
-                </span>
-              </div>
-              <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                　MySQL　
-                <span class="align-sub material-icons">
-                  close
-                </span>
-              </div>
-              <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                　Java　
-                <span class="align-sub material-icons">
-                  close
-                </span>
-              </div>
-              <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                　PHP　
-                <span class="align-sub material-icons">
-                  close
-                </span>
+              <div
+                v-for="skill in accountParams.Skills"
+                :key="skill.Id"
+                class="inline-block mr-4 bg-C_blue-200 rounded"
+              >
+                <span class="px-4">{{ skill.skill }}</span>
               </div>
             </div>
           </div>
@@ -352,7 +336,7 @@ export default {
             >自我介紹</label>
             <textarea
               id="selfIntroduction"
-              v-model="accountParams.selfIntroduction"
+              v-model="accountParams.SelfIntroduction"
               class="nowside-textarea"
               name="selfIntroduction"
               rows="5"
