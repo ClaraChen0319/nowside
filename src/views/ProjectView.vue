@@ -20,21 +20,24 @@ export default {
   <article class="py-[180px] w-full h-full">
     <!-- 內容 -->
     <section class="flex relative flex-col py-20 px-24 mb-12 nowside-container-lg nowside-shadow">
-      <!-- 圖片 + 狀態選單 -->
+      <!-- 圖片 + 標題 + 狀態選單 -->
       <div class="flex flex-col justify-center items-center mb-14 w-full">
+        <!-- 圖片 -->
         <div
           class="mb-12 w-[304px] h-[304px] rounded-full shadow-xl nowside-backgroundImage"
           style="background-image: url('https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1157&q=80')"
         ></div>
-        <span class="text-xl font-bold text-C_blue-700 dark:text-C_blue-300">家務分配</span>
+        <!-- 標題 -->
+        <span class="text-xl font-medium text-C_blue-700 dark:text-C_blue-300">家務分配</span>
+        <!-- 狀態選單 -->
         <ul class="absolute top-20 right-12 w-[256px]">
           <li class="mb-4">
             <div class="flex justify-between w-full">
-              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
+              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                 <span class="mr-1 material-icons">delete_forever</span>
                 刪除
               </button>
-              <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-500 hover:bg-C_green-400 rounded">
+              <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded">
                 <span class="mr-1 material-icons">restart_alt</span>
                 重啟
               </button>
@@ -42,20 +45,20 @@ export default {
           </li>
           <li class=" flex justify-between mb-4">
             <div>
-              <span class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">種類</span>
+              <span class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">種類</span>
               <span class="text-C_blue-500 dark:text-C_blue-200">SaaS</span>
             </div>
             <div class="flex items-center">
-              <span class="mr-1 text-xl font-bold text-C_red material-icons">adjust</span>
-              <span class="font-bold text-C_blue-700 dark:text-C_blue-200">已關閉</span>
+              <span class="mr-1 text-xl text-C_red material-icons">adjust</span>
+              <span class="font-medium text-C_blue-700 dark:text-C_blue-200">已關閉</span>
             </div>
           </li>
           <li class="mb-4">
-            <span class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">發起日</span>
+            <span class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">發起日</span>
             <span class="dark:text-C_blue-200">2022.01.01</span>
           </li>
           <li class="mb-4">
-            <span class="mr-4 font-bold text-C_blue-700 dark:text-C_blue-400">結束日</span>
+            <span class="mr-4 font-medium text-C_blue-700 dark:text-C_blue-400">結束日</span>
             <span class="dark:text-C_blue-200">2022.03.01</span>
           </li>
           <li class="flex items-center">
@@ -68,17 +71,33 @@ export default {
       <div>
         <ul class="text-C_blue-800">
           <li class="mb-10">
-            <span class="inline-block mb-4 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">專案內容</span><br>
-            <span class="dark:text-C_blue-200">自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。<br>
+            <!-- 標題 -->
+            <p class="inline-block mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+              專案內容
+            </p><br>
+            <!-- 內容 -->
+            <p class="dark:text-C_blue-200">
               自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。<br>
-              自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。</span>
+              自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。<br>
+              自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。
+            </p>
           </li>
           <li class="mb-10">
-            <span class="inline-block mb-4 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">夥伴條件</span><br>
-            <span class="dark:text-C_blue-200">希望夥伴跟我依樣是夜貓子，在夜晚工作效率特別好，並且熟悉Notion作為專案管理工具。</span>
+            <!-- 標題 -->
+            <p class="inline-block mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+              夥伴條件
+            </p><br>
+            <!-- 內容 -->
+            <p class="dark:text-C_blue-200">
+              希望夥伴跟我依樣是夜貓子，在夜晚工作效率特別好，並且熟悉Notion作為專案管理工具。
+            </p>
           </li>
           <li class="mb-10">
-            <span class="inline-block mb-4 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">夥伴技能</span><br>
+            <!-- 標題 -->
+            <p class="inline-block mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+              夥伴技能
+            </p><br>
+            <!-- 標籤 -->
             <div class="flex flex-wrap">
               <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Vue</span>
               <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">C++</span>
@@ -91,11 +110,21 @@ export default {
             </div>
           </li>
           <li class="mb-10">
-            <span class="inline-block mr-8 mb-4 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">媒合期限</span>
-            <span class="dark:text-C_blue-200">2022.01.02</span>
+            <!-- 標題 -->
+            <p class="inline-block mr-8 mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+              媒合期限
+            </p>
+            <!-- 內容 -->
+            <p class="dark:text-C_blue-200">
+              2022.01.02
+            </p>
           </li>
           <li class="mb-10">
-            <span class="inline-block mr-8 mb-4 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">分享</span>
+            <!-- 標題 -->
+            <p class="inline-block mr-8 mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+              分享
+            </p>
+            <!-- 按鈕 -->
             <div class="inline-block">
               <button class="nowside-button-blue-md">
                 複製連結
@@ -103,7 +132,11 @@ export default {
             </div>
           </li>
           <li>
-            <span class="inline-block mb-9 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">參加人員</span><br>
+            <!-- 標題 -->
+            <p class="inline-block mb-9 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+              參加人員
+            </p><br>
+            <!-- 列表 -->
             <ul class="flex flex-wrap items-center">
               <li class="mr-6 mb-10 w-[196px]">
                 <div class="flex items-center">
@@ -112,10 +145,10 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
                   ></div>
                   <div>
-                    <p class="mb-1 w-[100px] font-bold text-C_blue-700 dark:text-C_blue-200 truncate">
+                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
                       Crystal Kay
                     </p>
-                    <p class="font-bold text-C_blue-500 dark:text-C_blue-300">
+                    <p class="text-C_blue-500 dark:text-C_blue-300">
                       發起人
                     </p>
                   </div>
@@ -128,10 +161,10 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/F1v7ifmtVt3DBJA43ehLfcPW4P3YkMWBWW_Rqj_nmBmlsUtUZ5CkECVOoaLViu1ibZcrCOaen7bClqoS=w1920-h800-p-l90-rj')"
                   ></div>
                   <div>
-                    <p class="mb-1 w-[100px] font-bold text-C_blue-700 dark:text-C_blue-200 truncate">
+                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
                       May J.
                     </p>
-                    <p class="font-bold text-C_blue-500 dark:text-C_blue-300">
+                    <p class="text-C_blue-500 dark:text-C_blue-300">
                       組員
                     </p>
                   </div>
@@ -144,10 +177,10 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/FvstfbmQ69b2yTHap_Ez3rUfwq4MY3EM40VCjyKh0OhpcelZVzUYofLzJIUbsuxQtjJhmInYPKBY4g=w1920-h800-p-l90-rj')"
                   ></div>
                   <div>
-                    <p class="mb-1 w-[100px] font-bold text-C_blue-700 dark:text-C_blue-200 truncate">
+                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
                       Daichi Miura
                     </p>
-                    <p class="font-bold text-C_blue-500 dark:text-C_blue-300">
+                    <p class="text-C_blue-500 dark:text-C_blue-300">
                       組員
                     </p>
                   </div>
@@ -160,10 +193,10 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/k3R1thXUw5tEGHPHnsi66I-al08qAYuVT0ux_gFXeRSKcw9tRdGsjRKFgOqVIhMOFR3w9KIOD9e10MU=w1920-h800-p-l90-rj')"
                   ></div>
                   <div>
-                    <p class="mb-1 w-[100px] font-bold text-C_blue-700 dark:text-C_blue-200 truncate">
+                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
                       Yuuri
                     </p>
-                    <p class="font-bold text-C_blue-500 dark:text-C_blue-300">
+                    <p class="text-C_blue-500 dark:text-C_blue-300">
                       組員
                     </p>
                   </div>
@@ -176,10 +209,10 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/Mx-So4HrT7mwKRyn_JfzJQ6nWanKub_YqfN1-Xuhu1m2D5vtSTt0xPaRlAGb_7QUEWJirIs02afkVZU=w1920-h800-p-l90-rj')"
                   ></div>
                   <div>
-                    <p class="mb-1 w-[100px] font-bold text-C_blue-700 dark:text-C_blue-200 truncate">
+                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
                       Hoshino Gen
                     </p>
-                    <p class="font-bold text-C_blue-500 dark:text-C_blue-300">
+                    <p class="text-C_blue-500 dark:text-C_blue-300">
                       組員
                     </p>
                   </div>
@@ -192,10 +225,10 @@ export default {
                     style="background-image: url('https://lh3.googleusercontent.com/BY5XcaHlTixfqXcnH51Sy3AkMxDA5zhftTXPnST2OHOae3UoGkuNdEmAIabvt8Enl-z4sHlVXj_aZQ=w1920-h800-p-l90-rj')"
                   ></div>
                   <div>
-                    <p class="mb-1 w-[100px] font-bold text-C_blue-700 dark:text-C_blue-200 truncate">
+                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
                       Nishino Kana
                     </p>
-                    <p class="font-bold text-C_blue-500 dark:text-C_blue-300">
+                    <p class="text-C_blue-500 dark:text-C_blue-300">
                       組員
                     </p>
                   </div>
@@ -213,7 +246,11 @@ export default {
     <section class="flex relative flex-col py-20 px-24 nowside-container-lg nowside-shadow">
       <!-- 留言列表 -->
       <div class="mb-12">
-        <span class="inline-block mb-14 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">留言</span><br>
+        <!-- 標題 -->
+        <p class="inline-block mb-14 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+          留言
+        </p><br>
+        <!-- 列表 -->
         <ul>
           <li class="mb-16">
             <div class="flex">
@@ -222,18 +259,18 @@ export default {
                   class="mx-6 mb-2 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
                   style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
                 ></div>
-                <p class="text-sm font-bold text-C_blue-700 dark:text-C_blue-200">
+                <p class="text-sm text-C_blue-700 dark:text-C_blue-200">
                   Crystal Kay
                 </p>
               </div>
               <div>
-                <p class="mb-4 text-lg font-bold text-C_blue-500 dark:text-C_blue-300">
+                <p class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-300">
                   我是PM
-                </p>
+                </p><br>
                 <p class="mb-4 text-C_blue-700 dark:text-C_blue-200">
                   我對你的專案超有興趣，+1 ！
-                </p>
-                <p class="mb-4 text-xs font-bold text-C_blue-700 dark:text-C_blue-200">
+                </p><br>
+                <p class="mb-4 text-xs text-C_blue-700 dark:text-C_blue-200">
                   2022.01.01
                 </p>
               </div>
@@ -246,18 +283,18 @@ export default {
                   class="mx-6 mb-2 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
                   style="background-image: url('https://lh3.googleusercontent.com/k3R1thXUw5tEGHPHnsi66I-al08qAYuVT0ux_gFXeRSKcw9tRdGsjRKFgOqVIhMOFR3w9KIOD9e10MU=w1920-h800-p-l90-rj')"
                 ></div>
-                <p class="text-sm font-bold text-C_blue-700 dark:text-C_blue-200">
+                <p class="text-sm text-C_blue-700 dark:text-C_blue-200">
                   Yuuri
                 </p>
               </div>
               <div>
-                <p class="mb-4 text-lg font-bold text-C_blue-500 dark:text-C_blue-300">
+                <p class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-300">
                   酷東西
-                </p>
+                </p><br>
                 <p class="mb-4 text-C_blue-700 dark:text-C_blue-200">
                   不用為家事吵架，這酷東西我想要做～
-                </p>
-                <p class="mb-4 text-xs font-bold text-C_blue-700 dark:text-C_blue-200">
+                </p><br>
+                <p class="mb-4 text-xs text-C_blue-700 dark:text-C_blue-200">
                   2022.01.01
                 </p>
               </div>
@@ -270,18 +307,18 @@ export default {
                   class="mx-6 mb-2 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
                   style="background-image: url('https://lh3.googleusercontent.com/BY5XcaHlTixfqXcnH51Sy3AkMxDA5zhftTXPnST2OHOae3UoGkuNdEmAIabvt8Enl-z4sHlVXj_aZQ=w1920-h800-p-l90-rj')"
                 ></div>
-                <p class="text-sm font-bold text-C_blue-700 dark:text-C_blue-200">
+                <p class="text-sm text-C_blue-700 dark:text-C_blue-200">
                   Nishino Kana
                 </p>
               </div>
               <div>
-                <p class="mb-4 text-lg font-bold text-C_blue-500 dark:text-C_blue-300">
+                <p class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-300">
                   選我選我！
-                </p>
+                </p><br>
                 <p class="mb-4 text-C_blue-700 dark:text-C_blue-200">
                   多麼漢化你們的接受，歐美過來轉變睡覺魔獸顯然可以只要神經病人屬性法國，也沒來自馬上外資自動措施，標誌無關床上諮詢畢業南方一副也要流行，良好我把打算你們的證件秘密對手特徵我真溫度，陽光民眾此外健康，既然註冊這樣挑戰，分鐘放下原本最好大眾協助這個問題天下一道位置，歐美做好關於開發商有關部門樹林精品碩士沒有拿出心裡面向，深入口氣的人前面節目過程花蓮共享聯想表情休閒出現在統計，而是點擊數故事背景無限優秀下午，能量添加時間發展高雄練習保障準備貿易，維修嘉義平均一路優勢性格垃圾也就是閲讀含有難以零售校長家園，廣大很難歌詞哥哥手機鈴聲認為一年對付婚姻，政府最快上有記者走了一套化工關心引用這次統計，美容兒子。
-                </p>
-                <p class="mb-4 text-xs font-bold text-C_blue-700 dark:text-C_blue-200">
+                </p><br>
+                <p class="mb-4 text-xs text-C_blue-700 dark:text-C_blue-200">
                   2022.01.01
                 </p>
               </div>
@@ -289,14 +326,14 @@ export default {
           </li>
         </ul>
       </div>
-      <!-- 留言回覆 -->
+      <!-- 回覆 -->
       <div class="mb-16">
         <ul>
           <li class="flex flex-col mb-12">
             <label
               for="title"
-              class="mb-4 text-lg font-bold text-C_blue-500 dark:text-C_blue-400"
-            >留言標題</label>
+              class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+            >標題</label>
             <input
               id="title"
               v-model="messageParams.title"
@@ -308,8 +345,8 @@ export default {
           <li class="flex flex-col">
             <label
               for="content"
-              class="mb-4 text-lg font-bold text-C_blue-500 dark:text-C_blue-400"
-            >留言標題</label>
+              class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+            >內容</label>
             <textarea
               id="content"
               v-model="messageParams.content"
