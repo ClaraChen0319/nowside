@@ -13,13 +13,13 @@
 
 @layer components {
     .nowside-container-sm {
-        @apply max-w-[306px];
+        @apply w-full max-w-[306px];
     }
     .nowside-container-md {
-        @apply max-w-[966px];
+        @apply w-full max-w-[966px];
     }
     .nowside-container-lg {
-        @apply mx-auto max-w-[1296px];
+        @apply mx-auto w-full max-w-[1296px];
     }
     .nowside-shadow {
         @apply bg-white dark:bg-C_black rounded-lg ring-1 ring-C_gray-300 dark:ring-0 shadow-xl dark:shadow-gray-800;

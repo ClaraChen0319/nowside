@@ -6,8 +6,8 @@ export default {
   data() {
     return {
       loginParams: {
-        account: "",
-        password: "",
+        account: '',
+        password: '',
       },
     };
   },
