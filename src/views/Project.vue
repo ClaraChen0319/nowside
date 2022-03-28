@@ -236,7 +236,7 @@ export default {
               </li>
               <li>
                 <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
+                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300">
                     <span class="mr-1 material-icons">favorite_border</span>
                     收藏
                   </button>

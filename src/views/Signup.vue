@@ -245,27 +245,39 @@ export default {
           <div class="my-12 text-C_gray-700">
             <div class="flex justify-around items-center mb-14 w-full">
               <span class="text-3xl text-C_blue-700 material-icons">arrow_back_ios</span>
-              <div class="flex overflow-hidden items-center max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900">
+              <button
+                type="button"
+                class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
+                @click="signupParams.profilePicture = 'poopoo.png'"
+              >
                 <img
                   src="@/assets/poopoo.png"
                   alt="poopoo"
                   class="align-middle"
                 >
-              </div>
-              <div class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900">
+              </button>
+              <button
+                type="button"
+                class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
+                @click="signupParams.profilePicture = 'zombie.png'"
+              >
                 <img
                   src="@/assets/zombie.png"
                   alt="zombie"
                   class="align-middle"
                 >
-              </div>
-              <div class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900">
+              </button>
+              <button
+                type="button"
+                class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
+                @click="signupParams.profilePicture = 'ghost.png'"
+              >
                 <img
                   src="@/assets/ghost.png"
                   alt="ghost"
                   class="align-middle"
                 >
-              </div>
+              </button>
               <span class="text-3xl text-C_blue-700 material-icons">arrow_forward_ios</span>
             </div>
           </div>
