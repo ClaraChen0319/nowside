@@ -14,5 +14,3 @@ export default {
     <span class="font-medium text-white">© 2022 Side Project Now. All rights reserved.</span>
   </section>
 </template>
-
-<style></style>
