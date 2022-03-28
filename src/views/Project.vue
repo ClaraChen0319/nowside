@@ -86,17 +86,17 @@ export default {
     <section class="mb-[32px] nowside-container-lg">
       <ul class="flex justify-end">
         <li>
-          <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
+          <button class="text-lg text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
             最新
           </button>
         </li>
         <li class="ml-10">
-          <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
+          <button class="text-lg text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
             熱門
           </button>
         </li>
         <li class="ml-10">
-          <button class="text-lg font-bold text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
+          <button class="text-lg text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
             組團
           </button>
         </li>
@@ -108,7 +108,7 @@ export default {
       <section class="h-fit nowside-container-sm nowside-shadow">
         <!-- 標題 -->
         <div class="flex justify-center items-center py-4 w-full bg-C_blue-700 rounded-t-lg">
-          <span class="text-lg text-C_blue-100">收藏的專案</span>
+          <span class="text-lg font-medium text-C_blue-100">收藏的專案</span>
         </div>
         <!-- 列表 -->
         <div class="py-12 px-6 w-full bg-white dark:bg-C_black rounded-b-lg">
@@ -119,9 +119,9 @@ export default {
                 style="background-image: url('https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80')"
               ></div>
               <div>
-                <span class="ml-6 text-C_blue-500 dark:text-C_blue-200">
+                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
                   尋找貓
-                </span>
+                </p>
               </div>
             </li>
             <li class="flex items-center mb-8">
@@ -130,9 +130,9 @@ export default {
                 style="background-image: url('https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"
               ></div>
               <div>
-                <span class="ml-6 text-C_blue-500 dark:text-C_blue-200">
+                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
                   天然 a 食譜
-                </span>
+                </p>
               </div>
             </li>
             <li class="flex items-center">
@@ -141,9 +141,9 @@ export default {
                 style="background-image: url('https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')"
               ></div>
               <div>
-                <span class="ml-6 text-C_blue-500 dark:text-C_blue-200">
+                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
                   植萃分析
-                </span>
+                </p>
               </div>
             </li>
           </ul>
@@ -151,7 +151,7 @@ export default {
       </section>
       <!-- 專案列表 -->
       <section class="flex flex-col ml-6 nowside-container-md">
-        <div class="flex justify-between py-10 px-6 mb-20 nowside-shadow">
+        <div class="flex justify-between py-10 px-6 mb-10 nowside-shadow">
           <!-- 【左】圖片 -->
           <div
             class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
@@ -162,12 +162,12 @@ export default {
           <div class="mr-6 w-[482px]">
             <ul class="text-C_blue-800">
               <li class="mb-4">
-                <p class="text-xl font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
                   家務分配
                 </p>
               </li>
               <li class="mb-6">
-                <p class="mb-1 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
                   專案內容
                 </p>
                 <p class="overflow-y-hidden max-h-[160px] dark:text-C_blue-200">
@@ -175,7 +175,7 @@ export default {
                 </p>
               </li>
               <li>
-                <p class="font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
                 </p>　
                 <p class="dark:text-C_blue-200">
@@ -189,7 +189,7 @@ export default {
             <ul class="text-C_blue-800">
               <li class="flex justify-between mb-4">
                 <div>
-                  <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                  <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                     種類　
                   </p>
                   <p class="text-C_blue-500 dark:text-C_blue-200">
@@ -197,14 +197,14 @@ export default {
                   </p>
                 </div>
                 <div class="flex items-center">
-                  <span class="mr-1 text-xl font-bold text-C_green-500 material-icons">adjust</span>
-                  <p class="font-bold text-C_blue-700 dark:text-C_blue-200">
+                  <span class="mr-1 text-xl text-C_green-500 material-icons">adjust</span>
+                  <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
                     進行中
                   </p>
                 </div>
               </li>
               <li class="mb-4">
-                <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
                 </p>
                 <p class="dark:text-C_blue-200">
@@ -212,7 +212,7 @@ export default {
                 </p>
               </li>
               <li class="mb-4">
-                <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
                 </p>
                 <p class="dark:text-C_blue-200">
@@ -236,11 +236,11 @@ export default {
               </li>
               <li>
                 <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
+                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                     <span class="mr-1 material-icons">favorite_border</span>
                     收藏
                   </button>
-                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-600 hover:bg-C_green-500 rounded">
+                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-600 hover:bg-C_green-500 rounded">
                     <span class="mr-1 material-icons">north_east</span>
                     查看
                   </button>
@@ -249,7 +249,7 @@ export default {
             </ul>
           </div>
         </div>
-        <div class="flex justify-between py-10 px-6 mb-20 nowside-shadow">
+        <div class="flex justify-between py-10 px-6 mb-10 nowside-shadow">
           <!-- 【左】圖片 -->
           <div
             class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
@@ -260,12 +260,12 @@ export default {
           <div class="mr-6 w-[482px]">
             <ul class="text-C_blue-800">
               <li class="mb-4">
-                <p class="text-xl font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
                   家務分配
                 </p>
               </li>
               <li class="mb-6">
-                <p class="mb-1 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
                   專案內容
                 </p>
                 <p class="overflow-y-hidden max-h-[160px] dark:text-C_blue-200">
@@ -273,7 +273,7 @@ export default {
                 </p>
               </li>
               <li>
-                <p class="font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
                 </p>　
                 <p class="dark:text-C_blue-200">
@@ -287,7 +287,7 @@ export default {
             <ul class="text-C_blue-800">
               <li class="flex justify-between mb-4">
                 <div>
-                  <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                  <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                     種類　
                   </p>
                   <p class="text-C_blue-500 dark:text-C_blue-200">
@@ -295,14 +295,14 @@ export default {
                   </p>
                 </div>
                 <div class="flex items-center">
-                  <span class="mr-1 text-xl font-bold text-C_green-500 material-icons">adjust</span>
-                  <p class="font-bold text-C_blue-700 dark:text-C_blue-200">
+                  <span class="mr-1 text-xl text-C_green-500 material-icons">adjust</span>
+                  <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
                     進行中
                   </p>
                 </div>
               </li>
               <li class="mb-4">
-                <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
                 </p>
                 <p class="dark:text-C_blue-200">
@@ -310,7 +310,7 @@ export default {
                 </p>
               </li>
               <li class="mb-4">
-                <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
                 </p>
                 <p class="dark:text-C_blue-200">
@@ -334,11 +334,11 @@ export default {
               </li>
               <li>
                 <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
+                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                     <span class="mr-1 material-icons">favorite_border</span>
                     收藏
                   </button>
-                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-600 hover:bg-C_green-500 rounded">
+                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-600 hover:bg-C_green-500 rounded">
                     <span class="mr-1 material-icons">north_east</span>
                     查看
                   </button>
@@ -347,7 +347,7 @@ export default {
             </ul>
           </div>
         </div>
-        <div class="flex justify-between py-10 px-6 mb-20 nowside-shadow">
+        <div class="flex justify-between py-10 px-6 mb-10 nowside-shadow">
           <!-- 【左】圖片 -->
           <div
             class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
@@ -358,12 +358,12 @@ export default {
           <div class="mr-6 w-[482px]">
             <ul class="text-C_blue-800">
               <li class="mb-4">
-                <p class="text-xl font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
                   家務分配
                 </p>
               </li>
               <li class="mb-6">
-                <p class="mb-1 text-lg font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
                   專案內容
                 </p>
                 <p class="overflow-y-hidden max-h-[160px] dark:text-C_blue-200">
@@ -371,7 +371,7 @@ export default {
                 </p>
               </li>
               <li>
-                <p class="font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
                 </p>　
                 <p class="dark:text-C_blue-200">
@@ -385,7 +385,7 @@ export default {
             <ul class="text-C_blue-800">
               <li class="flex justify-between mb-4">
                 <div>
-                  <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                  <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                     種類　
                   </p>
                   <p class="text-C_blue-500 dark:text-C_blue-200">
@@ -393,14 +393,14 @@ export default {
                   </p>
                 </div>
                 <div class="flex items-center">
-                  <span class="mr-1 text-xl font-bold text-C_green-500 material-icons">adjust</span>
-                  <p class="font-bold text-C_blue-700 dark:text-C_blue-200">
+                  <span class="mr-1 text-xl text-C_green-500 material-icons">adjust</span>
+                  <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
                     進行中
                   </p>
                 </div>
               </li>
               <li class="mb-4">
-                <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
                 </p>
                 <p class="dark:text-C_blue-200">
@@ -408,7 +408,7 @@ export default {
                 </p>
               </li>
               <li class="mb-4">
-                <p class="mr-2 font-bold text-C_blue-700 dark:text-C_blue-400">
+                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
                 </p>
                 <p class="dark:text-C_blue-200">
@@ -432,11 +432,11 @@ export default {
               </li>
               <li>
                 <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
+                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
                     <span class="mr-1 material-icons">favorite_border</span>
                     收藏
                   </button>
-                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-bold text-white bg-C_green-600 hover:bg-C_green-500 rounded">
+                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-600 hover:bg-C_green-500 rounded">
                     <span class="mr-1 material-icons">north_east</span>
                     查看
                   </button>
