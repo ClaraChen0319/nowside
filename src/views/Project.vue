@@ -124,11 +124,11 @@ export default {
               專案類別
             </option>
             <option
-              v-for="skill in skillsData"
-              :key="skill.Id"
-              :value="skill.Id"
+              v-for="type in classData"
+              :key="type.Id"
+              :value="type.Id"
             >
-              {{ skill.skill }}
+              {{ type.ProjectType }}
             </option>
           </select>
           <!-- 媒合期限 -->
@@ -170,11 +170,11 @@ export default {
               使用技術
             </option>
             <option
-              v-for="type in classData"
-              :key="type.Id"
-              :value="type.Id"
+              v-for="skill in skillsData"
+              :key="skill.Id"
+              :value="skill.Id"
             >
-              {{ type.ProjectType }}
+              {{ skill.skill }}
             </option>
           </select>
         </form>
@@ -295,10 +295,7 @@ export default {
                   :key="type.Id"
                   class="flex items-center"
                 >
-                  <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                    種類　
-                  </p>
-                  <p class="max-w-[80px] text-C_blue-500 dark:text-C_blue-200 truncate">
+                  <p class="max-w-[144px] font-medium text-C_blue-500 dark:text-C_blue-200 truncate">
                     {{ type.ProjectType }}
                   </p>
                 </div>
