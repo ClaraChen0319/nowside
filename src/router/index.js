@@ -1,10 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import Test from '../views/Test.vue'
 import Home from '../views/Home.vue'
 import Signup from '../views/Signup.vue'
-import Test from '../views/Test.vue'
 import Account from '../views/Account.vue'
-import AccountView from '../views/AccountView.vue'
 import AccountEdit from '../views/AccountEdit.vue'
+import AccountAdd from '../views/AccountAdd.vue'
+import AccountApply from '../views/AccountApply.vue'
+import AccountAttend from '../views/AccountAttend.vue'
+import AccountSave from '../views/AccountSave.vue'
+import AccountMessage from '../views/AccountMessage.vue'
 import Project from '../views/Project.vue'
 import ProjectView from '../views/ProjectView.vue'
 import ProjectMatch from '../views/ProjectMatch.vue'
@@ -34,14 +38,34 @@ const router = createRouter({
       component: Account
     },
     {
-      path: '/accountview',
-      name: 'accountview',
-      component: AccountView
-    },
-    {
       path: '/accountedit',
       name: 'accountedit',
       component: AccountEdit
+    },
+    {
+      path: '/accountadd',
+      name: 'accountadd',
+      component: AccountAdd
+    },
+    {
+      path: '/accountapply',
+      name: 'accountapply',
+      component: AccountApply
+    },
+    {
+      path: '/accountattend',
+      name: 'accountattend',
+      component: AccountAttend
+    },
+    {
+      path: '/accountsave',
+      name: 'accountsave',
+      component: AccountSave
+    },
+    {
+      path: '/accountmessage',
+      name: 'accountmessage',
+      component: AccountMessage
     },
     {
       path: '/project',
