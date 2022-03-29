@@ -1,8 +1,8 @@
 <script>
-import { S_getUserInfo, S_editUserInfo, S_editProfilePic } from '@/http/api';
+import { S_getUserInfo, } from '@/http/api';
 
 export default {
-  name: 'AccountEdit',
+  name: 'Create',
   components: {},
   data() {
     return {
@@ -24,22 +24,18 @@ export default {
         Skills: [], // 無資料的話為 null
         JobDescription: '',
       },
-      confirm: '',
     };
   },
   computed: {},
   methods: {
-    // 取得會員資料
-    getAccountParams() {
+    getAccountParams(){
       S_getUserInfo().then(res =>{
-        console.log('會員資料', res.data.userdata);
-        this.accountParams = res.data.userdata;
+        console.log(res.data);
       })
       .catch(error => {
         console.log(error);
       });
     },
-    // 編輯會員資料
     editAccountParams(){
       S_editUserInfo().then(res =>{
         console.log(res.data);
@@ -48,7 +44,6 @@ export default {
         console.log(error);
       });
     },
-    // 編輯會員資料 圖片上傳
     editAccountPic(){
       S_editProfilePic().then(res =>{
         console.log(res.data);

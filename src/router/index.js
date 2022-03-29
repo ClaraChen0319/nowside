@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Test from '../views/Test.vue'
 import Home from '../views/Home.vue'
+import Test from '../views/Test.vue'
 import Signup from '../views/Signup.vue'
 import Account from '../views/Account.vue'
 import AccountEdit from '../views/AccountEdit.vue'
@@ -12,75 +12,93 @@ import AccountMessage from '../views/AccountMessage.vue'
 import Project from '../views/Project.vue'
 import ProjectView from '../views/ProjectView.vue'
 import ProjectMatch from '../views/ProjectMatch.vue'
+import Create from '../views/Create.vue'
+import CreateEdit from '../views/CreateEdit.vue'
+import CreateSuccess from '../views/CreateSuccess.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home
     },
     {
       path: '/test',
-      name: 'test',
+      name: 'Test',
       component: Test
       // component: () => import('../views/TestView.vue')
     },
     {
       path: '/signup',
-      name: 'signup',
+      name: 'Signup',
       component: Signup
     },
     {
       path: '/account',
-      name: 'account',
+      name: 'Account',
       component: Account
     },
     {
       path: '/accountedit',
-      name: 'accountedit',
+      name: 'Accountedit',
       component: AccountEdit
     },
     {
       path: '/accountadd',
-      name: 'accountadd',
+      name: 'Accountadd',
       component: AccountAdd
     },
     {
       path: '/accountapply',
-      name: 'accountapply',
+      name: 'Accountapply',
       component: AccountApply
     },
     {
       path: '/accountattend',
-      name: 'accountattend',
+      name: 'Accountattend',
       component: AccountAttend
     },
     {
       path: '/accountsave',
-      name: 'accountsave',
+      name: 'Accountsave',
       component: AccountSave
     },
     {
       path: '/accountmessage',
-      name: 'accountmessage',
+      name: 'Accountmessage',
       component: AccountMessage
     },
     {
       path: '/project',
-      name: 'project',
+      name: 'Project',
       component: Project
     },
     {
       path: '/projectview',
-      name: 'projectview',
+      name: 'Projectview',
       component: ProjectView
     },
     {
       path: '/projectmatch',
-      name: 'projectmatch',
+      name: 'Projectmatch',
       component: ProjectMatch
+    },
+    {
+      path: '/create',
+      name: 'Create',
+      component: Create
+    },
+    {
+      path: '/createedit',
+      name: 'Createedit',
+      component: CreateEdit
+    },
+    {
+      path: '/createsuccess',
+      name: 'Createsuccess',
+      component: CreateSuccess
     },
   ]
 })
