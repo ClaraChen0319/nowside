@@ -21,26 +21,21 @@ export default {
         Company: '',
         Industry: '',
         Position: '',
-        Skills: [],
-        JobDescription: ''
+        Skills: [], // 無資料的話為 null
+        JobDescription: '',
       },
       confirm: '',
     };
   },
-  computed: {
-    imageUrl() {
-      let url = '';
-      url = `http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${this.accountParams.ProfilePicture}`;
-      return url;
-    },
-  },
+  computed: {},
   mounted() {
     this.getAccountParams();
   },
   methods: {
-    getAccountParams(){
+    // 取得會員資料
+    getAccountParams() {
       S_getUserInfo().then(res =>{
-        console.log(res.data.userdata);
+        console.log('會員資料', res.data.userdata);
         this.accountParams = res.data.userdata;
       })
       .catch(error => {
@@ -59,7 +54,7 @@ export default {
       <div class="flex flex-col items-center p-14 nowside-container-sm nowside-shadow">
         <div
           class="mb-8 w-[200px] h-[200px] rounded-full nowside-backgroundImage"
-          :style="{ 'background-image': `url(${imageUrl})` }"
+          :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${accountParams.ProfilePicture}')` }"
         ></div>
         <ul class="text-lg text-center text-C_blue-700 dark:text-C_blue-400">
           <li class="mb-6 font-medium">
@@ -321,7 +316,7 @@ export default {
               <div
                 v-for="skill in accountParams.Skills"
                 :key="skill.Id"
-                class="inline-block mr-4 bg-C_blue-200 rounded"
+                class="inline-block mr-2 mb-4 bg-C_blue-200 rounded"
               >
                 <span class="px-4">{{ skill.skill }}</span>
               </div>

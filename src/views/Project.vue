@@ -1,12 +1,92 @@
 <script>
+import { S_getAllProject, S_getAllProjectNoPage, S_getSkills, S_getProjectClass } from '@/http/api';
+import moment from 'moment';
+
 export default {
   name: 'Project',
   components: {},
   data() {
-    return {};
+    return {
+      skillsData: [
+        {
+          Id: 0,
+          skill: '',
+        },
+      ],
+      classData: [
+        {
+          Id: 0,
+          ProjectType: '',
+        },
+      ],
+      listParams: [
+        {
+          Id: 0,
+          ProjectName: '',
+          ProjectContext: '',
+          GroupPhoto: '',
+          InitDate: '',
+          GroupDeadline: '',
+          FinishedDeadline: '',
+          GroupNum: null,
+          PartnerSkills: [],
+          ProjectTypeId: [],
+          ProjectState: '',
+        },
+      ],
+    };
   },
   computed: {},
-  methods: {},
+  mounted() {
+    this.getSkillsParams();
+    this.getClassParams();
+    this.getListParams();
+  },
+  methods: {
+    // 取得技能列表
+    getSkillsParams() {
+      S_getSkills().then(res =>{
+        console.log('技能列表', res.data.Skilldata);
+        this.skillsData = res.data.Skilldata;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得專案類別列表
+    getClassParams() {
+      S_getProjectClass().then(res =>{
+        console.log('專案類別列表', res.data.Classdata);
+        this.classData = res.data.Classdata;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得所有專案列表（無分頁）
+    getListParams() {
+      S_getAllProjectNoPage().then(res =>{
+        console.log('所有專案列表（無分頁）', res.data.data);
+        this.listParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 收藏
+    addFavorite(id) {
+      console.log(id);
+    },
+    // 前往 ProjectView
+    goProjectView(id) {
+      console.log(id);
+    },
+    // 時間格式
+    timeFormat(date) {
+      const time = moment(date).format('YYYY.MM.DD');
+      return time;
+    },
+  },
 }
 </script>
 
@@ -31,10 +111,11 @@ export default {
         </label>
         <!-- 搜尋條件 select -->
         <form>
+          <!-- 專案類別 -->
           <select
-            id=""
+            id="skillsData"
             class="nowside-searchSelect"
-            name=""
+            name="skillsData"
           >
             <option
               disabled
@@ -42,7 +123,15 @@ export default {
             >
               專案類別
             </option>
+            <option
+              v-for="skill in skillsData"
+              :key="skill.Id"
+              :value="skill.Id"
+            >
+              {{ skill.skill }}
+            </option>
           </select>
+          <!-- 媒合期限 -->
           <select
             id=""
             class="nowside-searchSelect"
@@ -55,6 +144,7 @@ export default {
               媒合期限
             </option>
           </select>
+          <!-- 團隊人數 -->
           <select
             id=""
             class="nowside-searchSelect"
@@ -67,16 +157,24 @@ export default {
               團隊人數
             </option>
           </select>
+          <!-- 使用技術 -->
           <select
-            id=""
+            id="classData"
             class="nowside-searchSelect"
-            name=""
+            name="classData"
           >
             <option
               disabled
               selected
             >
               使用技術
+            </option>
+            <option
+              v-for="type in classData"
+              :key="type.Id"
+              :value="type.Id"
+            >
+              {{ type.ProjectType }}
             </option>
           </select>
         </form>
@@ -151,11 +249,15 @@ export default {
       </section>
       <!-- 專案列表 -->
       <section class="flex flex-col ml-6 nowside-container-md">
-        <div class="flex justify-between py-10 px-6 mb-10 nowside-shadow">
+        <div
+          v-for="project in listParams"
+          :key="project.Id"
+          class="flex justify-between py-10 px-6 mb-10 nowside-shadow"
+        >
           <!-- 【左】圖片 -->
           <div
             class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
-            style="background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1143&q=80')"
+            :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${project.GroupPhoto}')` }"
           >
           </div>
           <!-- 【中】內容 -->
@@ -163,15 +265,15 @@ export default {
             <ul class="text-C_blue-800">
               <li class="mb-4">
                 <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
-                  家務分配
+                  {{ project.ProjectName }}
                 </p>
               </li>
               <li class="mb-6">
                 <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
                   專案內容
-                </p>
-                <p class="overflow-y-hidden max-h-[160px] dark:text-C_blue-200">
-                  自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。
+                </p><br>
+                <p class="overflow-y-hidden h-[160px] dark:text-C_blue-200">
+                  {{ project.ProjectContext }}
                 </p>
               </li>
               <li>
@@ -179,7 +281,7 @@ export default {
                   媒合期限
                 </p>　
                 <p class="dark:text-C_blue-200">
-                  2022.01.02
+                  {{ timeFormat(project.GroupDeadline) }}
                 </p>
               </li>
             </ul>
@@ -187,19 +289,23 @@ export default {
           <!-- 【右】狀態 -->
           <div class="w-[256px]">
             <ul class="text-C_blue-800">
-              <li class="flex justify-between mb-4">
-                <div>
+              <li class="flex justify-between items-center mb-4">
+                <div
+                  v-for="type in project.ProjectTypeId"
+                  :key="type.Id"
+                  class="flex items-center"
+                >
                   <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                     種類　
                   </p>
-                  <p class="text-C_blue-500 dark:text-C_blue-200">
-                    SaaS
+                  <p class="max-w-[80px] text-C_blue-500 dark:text-C_blue-200 truncate">
+                    {{ type.ProjectType }}
                   </p>
                 </div>
                 <div class="flex items-center">
-                  <span class="mr-1 text-xl text-C_green-500 material-icons">adjust</span>
+                  <span class="mr-1 text-xl text-orange-500 material-icons">adjust</span>
                   <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
-                    進行中
+                    {{ project.ProjectState }}
                   </p>
                 </div>
               </li>
@@ -208,7 +314,7 @@ export default {
                   發起日
                 </p>
                 <p class="dark:text-C_blue-200">
-                  2022.01.01
+                  {{ timeFormat(project.InitDate) }}
                 </p>
               </li>
               <li class="mb-4">
@@ -216,227 +322,39 @@ export default {
                   結束日
                 </p>
                 <p class="dark:text-C_blue-200">
-                  2022.03.01
+                  {{ timeFormat(project.FinishedDeadline) }}
                 </p>
               </li>
               <li class="flex items-center mb-4">
                 <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
-                <span class="text-xl dark:text-C_blue-200">3</span>
+                <span class="text-xl dark:text-C_blue-200">{{ project.GroupNum }}</span>
               </li>
               <li class="mb-4">
-                <p class="flex overflow-y-hidden flex-wrap max-h-[68px]">
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Vue</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">C++</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">XD</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">C#</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                </p>
+                <div class="flex overflow-y-hidden flex-wrap max-h-[68px]">
+                  <div
+                    v-for="skill in project.PartnerSkills"
+                    :key="skill.Id"
+                    class="inline-block mr-2 mb-4 bg-C_blue-200 rounded"
+                  >
+                    <p class="px-4">
+                      {{ skill.skill }}
+                    </p>
+                  </div>
+                </div>
               </li>
               <li>
                 <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300">
+                  <button
+                    class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300"
+                    @click="addFavorite(project.Id)"
+                  >
                     <span class="mr-1 material-icons">favorite_border</span>
                     收藏
                   </button>
-                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-600 hover:bg-C_green-500 rounded">
-                    <span class="mr-1 material-icons">north_east</span>
-                    查看
-                  </button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex justify-between py-10 px-6 mb-10 nowside-shadow">
-          <!-- 【左】圖片 -->
-          <div
-            class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
-            style="background-image: url('https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"
-          >
-          </div>
-          <!-- 【中】內容 -->
-          <div class="mr-6 w-[482px]">
-            <ul class="text-C_blue-800">
-              <li class="mb-4">
-                <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
-                  家務分配
-                </p>
-              </li>
-              <li class="mb-6">
-                <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
-                  專案內容
-                </p>
-                <p class="overflow-y-hidden max-h-[160px] dark:text-C_blue-200">
-                  自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。
-                </p>
-              </li>
-              <li>
-                <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
-                  媒合期限
-                </p>　
-                <p class="dark:text-C_blue-200">
-                  2022.01.02
-                </p>
-              </li>
-            </ul>
-          </div>
-          <!-- 【右】狀態 -->
-          <div class="w-[256px]">
-            <ul class="text-C_blue-800">
-              <li class="flex justify-between mb-4">
-                <div>
-                  <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                    種類　
-                  </p>
-                  <p class="text-C_blue-500 dark:text-C_blue-200">
-                    SaaS
-                  </p>
-                </div>
-                <div class="flex items-center">
-                  <span class="mr-1 text-xl text-C_green-500 material-icons">adjust</span>
-                  <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
-                    進行中
-                  </p>
-                </div>
-              </li>
-              <li class="mb-4">
-                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                  發起日
-                </p>
-                <p class="dark:text-C_blue-200">
-                  2022.01.01
-                </p>
-              </li>
-              <li class="mb-4">
-                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                  結束日
-                </p>
-                <p class="dark:text-C_blue-200">
-                  2022.03.01
-                </p>
-              </li>
-              <li class="flex items-center mb-4">
-                <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
-                <span class="text-xl dark:text-C_blue-200">3</span>
-              </li>
-              <li class="mb-4">
-                <p class="flex overflow-y-hidden flex-wrap max-h-[68px]">
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Vue</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">C++</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">XD</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">C#</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                </p>
-              </li>
-              <li>
-                <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
-                    <span class="mr-1 material-icons">favorite_border</span>
-                    收藏
-                  </button>
-                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-600 hover:bg-C_green-500 rounded">
-                    <span class="mr-1 material-icons">north_east</span>
-                    查看
-                  </button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex justify-between py-10 px-6 mb-10 nowside-shadow">
-          <!-- 【左】圖片 -->
-          <div
-            class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
-            style="background-image: url('https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')"
-          >
-          </div>
-          <!-- 【中】內容 -->
-          <div class="mr-6 w-[482px]">
-            <ul class="text-C_blue-800">
-              <li class="mb-4">
-                <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
-                  家務分配
-                </p>
-              </li>
-              <li class="mb-6">
-                <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
-                  專案內容
-                </p>
-                <p class="overflow-y-hidden max-h-[160px] dark:text-C_blue-200">
-                  自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。
-                </p>
-              </li>
-              <li>
-                <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
-                  媒合期限
-                </p>　
-                <p class="dark:text-C_blue-200">
-                  2022.01.02
-                </p>
-              </li>
-            </ul>
-          </div>
-          <!-- 【右】狀態 -->
-          <div class="w-[256px]">
-            <ul class="text-C_blue-800">
-              <li class="flex justify-between mb-4">
-                <div>
-                  <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                    種類　
-                  </p>
-                  <p class="text-C_blue-500 dark:text-C_blue-200">
-                    SaaS
-                  </p>
-                </div>
-                <div class="flex items-center">
-                  <span class="mr-1 text-xl text-C_green-500 material-icons">adjust</span>
-                  <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
-                    進行中
-                  </p>
-                </div>
-              </li>
-              <li class="mb-4">
-                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                  發起日
-                </p>
-                <p class="dark:text-C_blue-200">
-                  2022.01.01
-                </p>
-              </li>
-              <li class="mb-4">
-                <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
-                  結束日
-                </p>
-                <p class="dark:text-C_blue-200">
-                  2022.03.01
-                </p>
-              </li>
-              <li class="flex items-center mb-4">
-                <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
-                <span class="text-xl dark:text-C_blue-200">3</span>
-              </li>
-              <li class="mb-4">
-                <p class="flex overflow-y-hidden flex-wrap max-h-[68px]">
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Vue</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">C++</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">XD</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">C#</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                  <span class="px-4 mr-2 mb-4 bg-C_blue-200 rounded-sm">Java</span>
-                </p>
-              </li>
-              <li>
-                <div class="flex justify-between w-full">
-                  <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
-                    <span class="mr-1 material-icons">favorite_border</span>
-                    收藏
-                  </button>
-                  <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-600 hover:bg-C_green-500 rounded">
+                  <button
+                    class="flex justify-center items-center py-2 px-6 text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded"
+                    @click="goProjectView(project.Id)"
+                  >
                     <span class="mr-1 material-icons">north_east</span>
                     查看
                   </button>

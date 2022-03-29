@@ -13,10 +13,12 @@ export default {
   },
   computed: {},
   methods: {
+    // 登入會員
     postLogin() {
       S_login(this.loginParams)
       .then(res =>{
-        console.log(res.data);
+        console.log('message：', res.data.message);
+        console.log('token：', res.data.token);
         // 使用 setItem 將 token 存入 localStorage
         localStorage.setItem('nowsideToken', res.data.token);
       })

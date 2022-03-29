@@ -1,23 +1,21 @@
 <script>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 import Login from '@/components/LoginModal.vue';
-import { S_uploadProfile, S_signup } from '@/http/api';
+import { S_uploadProfile, S_signup, S_checkUser } from '@/http/api';
 
 export default {
   name: 'Test',
   components: {
-    Header, Footer, Login,
+    Login,
   },
   data() {
     return {
       signupParams: {
-        account: "test@gmail.com",
-        password: "test",
-        nickName: "Crystal Kay",
-        gender: "女",
-        profilePicture: "~/Upload/ProfilePicture/unnamed(0).jpg",
-        contactTime: "09:00～12:00 PM",
+        account: '',
+        password: '',
+        nickName: '',
+        gender: '',
+        profilePicture: '',
+        contactTime: '',
       },
     };
   },
@@ -61,17 +59,20 @@ export default {
         console.log(error);
       });
     },
-
+    checkToken() {
+      S_checkUser().then(res =>{
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
   },
 }
 </script>
 
 <template>
-  <Header></Header>
-  <div
-    class="flex justify-center items-center w-full h-full"
-    style="background-image: linear-gradient(45deg, #DFF5F1 5% , #ffffff 40%, #A7CBEA 150%); background-attachment: fixed;"
-  >
+  <div class="flex justify-center">
     <Login class="mr-20"></Login>
     <form class="flex flex-col justify-center items-center space-x-6 h-screen">
       <label class="block mb-6">
@@ -85,11 +86,10 @@ export default {
       <button
         type="button"
         class="nowside-button-B"
-        @click="postSignup"
+        @click="checkToken"
       >
         註冊
       </button>
     </form>
   </div>
-  <Footer></Footer>
 </template>
