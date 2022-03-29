@@ -1,5 +1,5 @@
 <script>
-import { S_getAttendProject, S_getAttendProjectNoPage } from '@/http/api';
+import { S_getUserInfo, S_getAttendProject, S_getAttendProjectNoPage } from '@/http/api';
 import moment from 'moment';
 
 export default {
@@ -7,6 +7,24 @@ export default {
   components: {},
   data() {
     return {
+      accountParams: {
+        Account: '',
+        NickName: '',
+        Gender: '',
+        ProfilePicture: '',
+        Ig: '',
+        Fb: '',
+        ProfileWebsite: '',
+        ContactTime: '',
+        SelfIntroduction: '',
+        WorkState: '',
+        Language: '',
+        Company: '',
+        Industry: '',
+        Position: '',
+        Skills: [], // 無資料的話為 null
+        JobDescription: '',
+      },
       listParams: [
         {
           Id: 0,
@@ -26,9 +44,20 @@ export default {
   },
   computed: {},
   mounted() {
+    this.getAccountParams();
     this.getListParams();
   },
   methods: {
+    // 取得會員資料
+    getAccountParams() {
+      S_getUserInfo().then(res =>{
+        console.log('會員資料', res.data.userdata);
+        this.accountParams = res.data.userdata;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
     // 取得參與的專案資料
     getListParams() {
       S_getAttendProjectNoPage().then(res =>{
@@ -50,73 +79,66 @@ export default {
 
 <template>
   <article class="py-[180px] w-full h-full">
-    <div class="nowside-container-lg">
+    <div class="flex justify-end mb-12 nowside-container-lg">
       <!-- 專案狀態 select -->
-      <section class="mb-12">
-        <ul class="flex justify-end">
-          <li>
-            <button class="text-lg text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
-              最新
-            </button>
-          </li>
-          <li class="ml-10">
-            <button class="text-lg text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
-              熱門
-            </button>
-          </li>
-          <li class="ml-10">
-            <button class="text-lg text-C_blue-700 hover:text-C_blue-500 dark:text-C_blue-200 dark:hover:text-C_blue-300">
-              組團
-            </button>
-          </li>
-        </ul>
+      <section>
+        <select
+          id="status"
+          class="py-2 pr-6 pl-2 w-[140px] text-lg font-bold text-center text-white bg-C_blue-400 hover:bg-C_blue-300 rounded-full border-0 form-select"
+          name="status"
+        >
+          <option selected>
+            媒合中
+          </option>
+          <option>進行中</option>
+          <option>已完成</option>
+          <option>已關閉</option>
+          <option>已廢棄</option>
+        </select>
       </section>
     </div>
     <div class="flex justify-between nowside-container-lg">
       <!-- 【左】大頭貼 + 選單 -->
-      <section class="h-fit nowside-container-sm nowside-shadow">
-        <!-- 標題 -->
-        <div class="flex justify-center items-center py-4 w-full bg-C_blue-700 rounded-t-lg">
-          <span class="text-lg font-medium text-C_blue-100">收藏的專案</span>
-        </div>
-        <!-- 列表 -->
-        <div class="py-12 px-6 w-full bg-white dark:bg-C_black rounded-b-lg">
-          <ul class="w-[258px]">
-            <li class="flex items-center mb-8">
-              <div
-                class="w-[80px] h-[80px] rounded-full nowside-backgroundImage"
-                style="background-image: url('https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80')"
-              ></div>
-              <div>
-                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
-                  尋找貓
-                </p>
-              </div>
-            </li>
-            <li class="flex items-center mb-8">
-              <div
-                class="w-[80px] h-[80px] rounded-full nowside-backgroundImage"
-                style="background-image: url('https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"
-              ></div>
-              <div>
-                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
-                  天然 a 食譜
-                </p>
-              </div>
-            </li>
-            <li class="flex items-center">
-              <div
-                class="w-[80px] h-[80px] rounded-full nowside-backgroundImage"
-                style="background-image: url('https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')"
-              ></div>
-              <div>
-                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
-                  植萃分析
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <section class="flex flex-col items-center p-14 nowside-container-sm nowside-shadow">
+        <div
+          class="mb-8 w-[200px] h-[200px] rounded-full nowside-backgroundImage"
+          :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${accountParams.ProfilePicture}')` }"
+        ></div>
+        <ul class="text-lg text-center text-C_blue-700 dark:text-C_blue-400">
+          <li class="mb-6 font-medium">
+            {{ accountParams.NickName }}
+          </li>
+          <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
+            <button class="font-medium">
+              個人資料
+            </button>
+          </li>
+          <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
+            <button class="font-medium">
+              發起的專案
+            </button>
+          </li>
+          <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
+            <button class="font-medium">
+              申請的專案
+            </button>
+          </li>
+          <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
+            <button class="font-medium">
+              參與的專案
+            </button>
+          </li>
+          <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
+            <button class="font-medium">
+              收藏的專案
+            </button>
+          </li>
+          <li class=" hover:text-C_blue-400 dark:hover:text-C_blue-200">
+            <button class="font-medium">
+              通知
+            </button>
+          </li>
+        </ul>
       </section>
       <!-- 【右】專案列表 -->
       <section class="flex flex-col ml-6 nowside-container-md">

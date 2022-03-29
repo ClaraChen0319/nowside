@@ -24,7 +24,6 @@ export default {
         Skills: [], // 無資料的話為 null
         JobDescription: '',
       },
-      confirm: '',
     };
   },
   computed: {},
