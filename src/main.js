@@ -7,7 +7,7 @@ import 'moment'
 
 const app = createApp(App)
 
-// router（路由）是指根據不同的 url，展示不同的內容
+// router（路由）是指根據不同的 url，顯示不同的內容
 app.use(router)
 
 app.mount('#app')

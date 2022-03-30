@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'ProjectView',
+  name: 'ProjectMatch',
   components: {},
   data() {
     return {

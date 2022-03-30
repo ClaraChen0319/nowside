@@ -105,12 +105,12 @@ export default {
             >
               登入
             </button>
-            <RouterLink
+            <router-link
               class="mb-12 nowside-button-lightBlue-lg"
               to="/signup"
             >
               立即註冊
-            </RouterLink>
+            </router-link>
             <p class="flex justify-center text-xs text-C_blue-600">
               沒有信箱？立即註冊
             </p>

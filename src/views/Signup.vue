@@ -16,6 +16,11 @@ export default {
         contactTime: '09:00～12:00 PM',
       },
       confirm: '',
+      displayStep1: true,
+      displayStep2: false,
+      displayStep3: false,
+      displayStep4: false,
+      displayStep5: false,
     };
   },
   computed: {},
@@ -37,7 +42,10 @@ export default {
 
 <template>
   <!-- Step1 暱稱 -->
-  <article class="flex overflow-hidden relative flex-col justify-center min-h-screen">
+  <article
+    v-if="displayStep1 === true"
+    class="flex overflow-hidden relative flex-col justify-center min-h-screen"
+  >
     <div class="relative mx-auto min-w-[464px] nowside-shadow">
       <div class="mx-auto max-w-[384px]">
         <section class="my-8">
@@ -58,7 +66,7 @@ export default {
               <input
                 v-model="signupParams.nickName"
                 type="text"
-                class="w-4/5 text-3xl font-medium text-center dark:bg-C_black focus:border-0 focus:outline-none focus:ring-0"
+                class="w-4/5 text-3xl font-medium text-center dark:bg-C_black focus:outline-none focus:ring-0"
               ><span class="inline-block absolute right-4 bottom-2 ml-1 text-3xl text-C_green-500 rounded material-icons">edit</span>
             </div>
             <p class="text-lg text-center text-C_blue-500 dark:text-C_blue-200">
@@ -67,20 +75,21 @@ export default {
           </div>
           <!-- 按鈕 -->
           <div>
-            <RouterLink
+            <button
+              type="button"
               class="mb-12 nowside-button-darkBlue-lg"
-              to="/signup"
+              @click="displayStep1 = !displayStep1, displayStep2 = !displayStep2"
             >
               開始
-            </RouterLink>
+            </button>
             <p class="flex justify-center text-sm text-C_blue-600 dark:text-C_blue-200">
               已經有腦塞project的帳戶了嗎？
-              <RouterLink
+              <router-link
                 class="text-C_green-500"
                 to="/"
               >
                 立即登入
-              </RouterLink>
+              </router-link>
             </p>
           </div>
         </section>
@@ -88,7 +97,10 @@ export default {
     </div>
   </article>
   <!-- Step2 帳密 -->
-  <article class="flex overflow-hidden relative flex-col justify-center min-h-screen">
+  <article
+    v-if="displayStep2 === true"
+    class="flex overflow-hidden relative flex-col justify-center min-h-screen"
+  >
     <div class="relative mx-auto min-w-[464px] nowside-shadow">
       <div class="mx-auto max-w-[384px]">
         <section class="my-8">
@@ -153,6 +165,7 @@ export default {
             <button
               type="button"
               class="mb-12 nowside-button-darkBlue-lg"
+              @click="displayStep2 = !displayStep2, displayStep3 = !displayStep3"
             >
               下一步
             </button>
@@ -165,7 +178,10 @@ export default {
     </div>
   </article>
   <!-- Step3 性別 -->
-  <article class="flex overflow-hidden relative flex-col justify-center min-h-screen">
+  <article
+    v-if="displayStep3 === true"
+    class="flex overflow-hidden relative flex-col justify-center min-h-screen"
+  >
     <div class="relative mx-auto min-w-[464px] nowside-shadow">
       <div class="mx-auto max-w-[384px]">
         <section class="my-8">
@@ -225,6 +241,7 @@ export default {
             <button
               type="button"
               class="mb-12 nowside-button-darkBlue-lg"
+              @click="displayStep3 = !displayStep3, displayStep4 = !displayStep4"
             >
               下一步
             </button>
@@ -237,7 +254,10 @@ export default {
     </div>
   </article>
   <!-- Step4 圖片 -->
-  <article class="flex overflow-hidden relative flex-col justify-center min-h-screen">
+  <article
+    v-if="displayStep4 === true"
+    class="flex overflow-hidden relative flex-col justify-center min-h-screen"
+  >
     <div class="relative mx-auto min-w-[464px] nowside-shadow">
       <div class="mx-auto max-w-[384px]">
         <section class="my-8">
@@ -298,12 +318,13 @@ export default {
             >
               上傳
             </button>
-            <RouterLink
+            <router-link
               class="mb-12 nowside-button-lightBlue-lg"
               to="/signup"
+              @click="displayStep4 = !displayStep4, displayStep5 = !displayStep5"
             >
               下一步
-            </RouterLink>
+            </router-link>
             <p class="flex justify-center text-xs text-C_blue-600 dark:text-C_blue-200">
               完成後，進一步填寫個人資料設定
             </p>
@@ -313,7 +334,10 @@ export default {
     </div>
   </article>
   <!-- Step5 時間 -->
-  <article class="flex overflow-hidden relative flex-col justify-center min-h-screen">
+  <article
+    v-if="displayStep5 === true"
+    class="flex overflow-hidden relative flex-col justify-center min-h-screen"
+  >
     <div class="relative mx-auto min-w-[464px] nowside-shadow">
       <div class="mx-auto max-w-[384px]">
         <section class="my-8">
@@ -369,12 +393,12 @@ export default {
           </div>
           <!-- 按鈕 -->
           <div>
-            <button
-              type="button"
+            <router-link
               class="mb-12 nowside-button-darkBlue-lg"
+              to="/project"
             >
               完成
-            </button>
+            </router-link>
             <p class="flex justify-center text-xs text-C_blue-600 dark:text-C_blue-200">
               完成後，進一步填寫個人資料設定
             </p>

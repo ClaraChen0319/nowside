@@ -21,27 +21,38 @@ export default {
     class="flex fixed z-10 justify-center items-center w-screen h-[60px] text-lg text-C_blue-700 dark:text-white bg-white dark:bg-black shadow-md dark:shadow-gray-800"
   >
     <div class="mr-36 w-[196px]">
-      <img
-        src="@/assets/logo.png"
-        alt="logo"
-        class="mx-auto max-h-[36px] align-middle"
-      >
+      <router-link to="/">
+        <img
+          src="@/assets/logo.png"
+          alt="logo"
+          class="mx-auto max-h-[36px] align-middle"
+        >
+      </router-link>
     </div>
     <ul class="flex justify-between items-center w-[950px]">
       <li>
-        <button class="font-medium border-C_blue-300/0 border-b-4 hover:border-C_green-300/100 active:text-C_green-500">
+        <router-link
+          class="font-medium active:text-C_green-500 border-b-4 border-C_blue-300/0 hover:border-C_green-300/100"
+          to="/success"
+        >
           成功案例
-        </button>
+        </router-link>
       </li>
       <li>
-        <button class="font-medium border-C_blue-300/0 border-b-4 hover:border-C_green-300/100 active:text-C_green-500">
+        <router-link
+          class="font-medium active:text-C_green-500 border-b-4 border-C_blue-300/0 hover:border-C_green-300/100"
+          to="/project"
+        >
           瀏覽專案
-        </button>
+        </router-link>
       </li>
       <li>
-        <button class="font-medium border-C_blue-300/0 border-b-4 hover:border-C_green-300/100 active:text-C_green-500">
+        <router-link
+          class="font-medium active:text-C_green-500 border-b-4 border-C_blue-300/0 hover:border-C_green-300/100"
+          to="/create"
+        >
           發起專案
-        </button>
+        </router-link>
       </li>
       <li>
         <button @click="darkModeToggle">
@@ -53,14 +64,14 @@ export default {
         </button>
       </li>
       <li>
-        <button>
+        <router-link to="/accountmessage">
           <span class="text-2xl align-sub material-icons">notifications</span>
-        </button>
+        </router-link>
       </li>
       <li>
-        <button>
+        <router-link to="/account">
           <span class="text-2xl align-sub material-icons">account_circle</span>
-        </button>
+        </router-link>
       </li>
     </ul>
   </section>

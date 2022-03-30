@@ -1,20 +1,22 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Test from '../views/Test.vue'
 import Signup from '../views/Signup.vue'
 import Account from '../views/Account.vue'
-import AccountEdit from '../views/AccountEdit.vue'
-import AccountAdd from '../views/AccountAdd.vue'
-import AccountApply from '../views/AccountApply.vue'
-import AccountAttend from '../views/AccountAttend.vue'
-import AccountSave from '../views/AccountSave.vue'
-import AccountMessage from '../views/AccountMessage.vue'
 import Project from '../views/Project.vue'
-import ProjectView from '../views/ProjectView.vue'
-import ProjectMatch from '../views/ProjectMatch.vue'
 import Create from '../views/Create.vue'
-import CreateEdit from '../views/CreateEdit.vue'
-import CreateSuccess from '../views/CreateSuccess.vue'
+import Success from '../views/Success.vue'
+
+// <router-link> 跳轉路由的標籤
+// <router-view> 顯示「目前所在」路由對應的元件內容
+// 例：目前位於 /signup，<router-view> 則顯示對應的元件 Signup
+
+// component: ...
+// 同步載入
+// 在根目錄就先載入所需的元件
+
+// component: () => import('...')
+// 非同步載入
+// 只有在該路由下才會載入（import）對應的元件
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -27,8 +29,7 @@ const router = createRouter({
     {
       path: '/test',
       name: 'Test',
-      component: Test
-      // component: () => import('../views/TestView.vue')
+      component: () => import('../views/Test.vue')
     },
     {
       path: '/signup',
@@ -42,33 +43,33 @@ const router = createRouter({
     },
     {
       path: '/accountedit',
-      name: 'Accountedit',
-      component: AccountEdit
+      name: 'AccountEdit',
+      component: () => import('../views/AccountEdit.vue')
     },
     {
       path: '/accountadd',
-      name: 'Accountadd',
-      component: AccountAdd
+      name: 'AccountAdd',
+      component: () => import('../views/AccountAdd.vue')
     },
     {
       path: '/accountapply',
-      name: 'Accountapply',
-      component: AccountApply
+      name: 'AccountApply',
+      component: () => import('../views/AccountApply.vue')
     },
     {
       path: '/accountattend',
-      name: 'Accountattend',
-      component: AccountAttend
+      name: 'AccountAttend',
+      component: () => import('../views/AccountAttend.vue')
     },
     {
       path: '/accountsave',
-      name: 'Accountsave',
-      component: AccountSave
+      name: 'AccountSave',
+      component: () => import('../views/AccountSave.vue')
     },
     {
       path: '/accountmessage',
-      name: 'Accountmessage',
-      component: AccountMessage
+      name: 'AccountMessage',
+      component: () => import('../views/AccountMessage.vue')
     },
     {
       path: '/project',
@@ -77,13 +78,13 @@ const router = createRouter({
     },
     {
       path: '/projectview',
-      name: 'Projectview',
-      component: ProjectView
+      name: 'ProjectView',
+      component: () => import('../views/ProjectView.vue')
     },
     {
       path: '/projectmatch',
-      name: 'Projectmatch',
-      component: ProjectMatch
+      name: 'ProjectMatch',
+      component: () => import('../views/ProjectMatch.vue')
     },
     {
       path: '/create',
@@ -92,13 +93,18 @@ const router = createRouter({
     },
     {
       path: '/createedit',
-      name: 'Createedit',
-      component: CreateEdit
+      name: 'CreateEdit',
+      component: () => import('../views/CreateEdit.vue')
     },
     {
       path: '/createsuccess',
-      name: 'Createsuccess',
-      component: CreateSuccess
+      name: 'CreateSuccess',
+      component: () => import('../views/CreateSuccess.vue')
+    },
+    {
+      path: '/success',
+      name: 'Success',
+      component: Success
     },
   ]
 })

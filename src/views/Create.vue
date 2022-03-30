@@ -28,25 +28,11 @@ export default {
   },
   computed: {},
   methods: {
-    getAccountParams(){
+    // 取得會員資料
+    getAccountParams() {
       S_getUserInfo().then(res =>{
-        console.log(res.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    editAccountParams(){
-      S_editUserInfo().then(res =>{
-        console.log(res.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    editAccountPic(){
-      S_editProfilePic().then(res =>{
-        console.log(res.data);
+        console.log('會員資料', res.data.userdata);
+        this.accountParams = res.data.userdata;
       })
       .catch(error => {
         console.log(error);
