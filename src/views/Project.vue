@@ -28,7 +28,7 @@ export default {
           InitDate: '',
           GroupDeadline: '',
           FinishedDeadline: '',
-          GroupNum: null,
+          GroupNum: 0,
           PartnerSkills: [],
           ProjectTypeId: [],
           ProjectState: '',

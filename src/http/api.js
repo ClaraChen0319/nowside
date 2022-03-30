@@ -3,11 +3,11 @@ import axiosForm from './form.index'; // 載入 formdata 格式的配置請求
 
 // Common
 export const S_login = (params) => axiosInstance.post('/Login',params); // 登入會員
-export const S_checkUser = (params) => axiosInstance.post('/CheckUser',params); // 登入驗證
 export const S_signup = (params) => axiosInstance.post('/SignUp',params); // 註冊會員
 export const S_uploadProfile = (params) => axiosForm.post('/UploadProfile',params); // 註冊會員 圖片上傳
 export const S_getSkills = (params) => axiosForm.get('/GetSkills',params); // 取得技能列表
 export const S_getProjectClass = (params) => axiosForm.get('/GetProjectClass',params); // 取得專案類別列表
+// export const S_checkUser = (params) => axiosInstance.post('/CheckUser',params); // 登入驗證
 
 // User
 export const S_getUserInfo = (params) => axiosInstance.get('/GetUserInfo',params); // 取得會員資料
@@ -24,3 +24,6 @@ export const S_getAttendProjectNoPage = (params) => axiosInstance.get('/GetAtten
 // ViewProject
 export const S_getAllProject = (params) => axiosInstance.get('/GetAllProject',params); // 取得所有專案列表
 export const S_getAllProjectNoPage = (params) => axiosInstance.get('/GetAllProjectNoPage',params); // 取得所有專案列表（無分頁）
+
+// CreateProject
+export const S_addProject = (params) => axiosForm.post('/AddProject',params); // 新增專案資料

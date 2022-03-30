@@ -1,42 +1,49 @@
 <script>
-import { S_getUserInfo, } from '@/http/api';
+import { S_addProject, } from '@/http/api';
+import moment from 'moment';
 
 export default {
   name: 'Create',
   components: {},
   data() {
     return {
-      accountParams: {
-        Account: '',
-        NickName: '',
-        Gender: '',
-        ProfilePicture: '',
-        Ig: '',
-        Fb: '',
-        ProfileWebsite: '',
-        ContactTime: '',
-        SelfIntroduction: '',
-        WorkState: '',
-        Language: '',
-        Company: '',
-        Industry: '',
-        Position: '',
-        Skills: [], // 無資料的話為 null
-        JobDescription: '',
+      projectParams: {
+        // Id: 0, // 專案ID（不用顯示）
+        // ProjectName: '',
+        // ProjectContext: '',
+        GroupPhoto: '',
+        // InitDate: '', // 專案發起日（後端會賦值）
+        // GroupDeadline: '', // 參加截止日（後端會賦值）
+        // FinishedDeadline: '',
+        // GroupNum: 0,
+        // PartnerCondition: '',
+        PartnerSkills: [],
+        // ProjectTypeId: 0,
+        // ProjectState: '', // 專案狀態（不用顯示）
+        // MembersId: 0, // 發起人ID（不用顯示） 
       },
     };
   },
-  computed: {},
+  computed: {
+    // 參加截止日（當前時間 +7 天）
+    groupDeadline() {
+      return moment().add(7, 'days').format('YYYY.MM.DD');
+    },
+  },
   methods: {
     // 取得會員資料
-    getAccountParams() {
-      S_getUserInfo().then(res =>{
-        console.log('會員資料', res.data.userdata);
-        this.accountParams = res.data.userdata;
+    postProjectParams() {
+      S_addProject(this.projectParams).then(res =>{
+        console.log(res);
       })
       .catch(error => {
         console.log(error);
       });
+    },
+    // 時間格式
+    timeFormat(date) {
+      const time = moment(date).format('YYYY.MM.DD');
+      return time;
     },
   },
 }
@@ -44,328 +51,183 @@ export default {
 
 <template>
   <article class="py-[180px] w-full h-full">
-    <div class="py-14 px-10 nowside-container-lg nowside-shadow">
-      <!-- 大頭貼 + 個人資料 -->
-      <section class="flex justify-between items-center mb-[72px]">
-        <!-- 【左】大頭貼 + 按鈕 -->
-        <div class="relative h-[280px]">
+    <div class="py-24 px-14 mb-28 nowside-container-lg nowside-shadow">
+      <!-- 專案圖片 -->
+      <section class="flex flex-col justify-center items-center mb-24">
+        <div class="relative mb-20 h-[415px]">
           <div
-            class="w-[280px] h-[280px] rounded-full nowside-backgroundImage"
-            style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
+            class="w-[415px] h-[415px] rounded-full shadow-xl dark:shadow-gray-800 nowside-backgroundImage"
+            style="background-image: url('https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1157&q=80')"
           ></div>
           <button
-            class="flex absolute right-8 bottom-0 justify-center items-center w-[48px] h-[48px] bg-C_green-500 hover:bg-C_green-400 rounded-full border-4 border-white nowside-backgroundImage"
+            class="flex absolute right-16 bottom-0 justify-center items-center w-[48px] h-[48px] bg-C_green-500 hover:bg-C_green-400 rounded-full border-4 border-white nowside-backgroundImage"
           >
-            <span class="text-2xl text-white align-sub material-icons">
-              monochrome_photos
-            </span>
+            <span class="text-2xl text-white align-sub material-icons">monochrome_photos</span>
           </button>
         </div>
-        <!-- 【右】個人資料 -->
-        <div class="flex flex-col items-end min-w-[936px]">
-          <!-- 寬度撐滿 -->
-          <div class="mb-12 w-full text-xl font-medium text-C_blue-600 border-b-2 border-C_blue-400">
-            個人資料
-          </div>
-          <!-- 寬度靠右 -->
-          <div class="w-[896px]">
-            <form class="flex flex-nowrap justify-between mb-12 h-[40]">
-              <div class="flex justify-between items-center w-[648px]">
-                <label
-                  for="nickName"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >暱稱</label>
-                <input
-                  id="nickName"
-                  v-model="accountParams.nickName"
-                  name="nickName" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-              <div class="flex justify-between items-center w-[224px]">
-                <label
-                  for="gender"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >性別</label>
-                <input
-                  id="gender"
-                  v-model="accountParams.gender"
-                  name="gender" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
-                <label
-                  for="account"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >信箱</label>
-                <input
-                  id="account"
-                  v-model="accountParams.account"
-                  name="account" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
-                <label
-                  for="password"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >密碼</label>
-                <input
-                  id="password"
-                  v-model="accountParams.password"
-                  name="password" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
-                <label
-                  for="confirm"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >確認密碼</label>
-                <input
-                  id="confirm"
-                  v-model="confirm"
-                  name="confirm" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
-                <label
-                  for="fb"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >FB</label>
-                <input
-                  id="fb"
-                  v-model="accountParams.fb"
-                  name="fb" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
-                <label
-                  for="ig"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >IG</label>
-                <input
-                  id="ig"
-                  v-model="accountParams.ig"
-                  name="ig" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
-                <label
-                  for="profileWebsite"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >個人網站</label>
-                <input
-                  id="profileWebsite"
-                  v-model="accountParams.profileWebsite"
-                  name="profileWebsite" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-            <form>
-              <div class="flex justify-between items-center">
-                <label
-                  for="contactTime"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-                >聯絡時間</label>
-                <input
-                  id="contactTime"
-                  v-model="accountParams.contactTime"
-                  name="contactTime" 
-                  type="text"
-                  class="nowside-input"
-                >
-              </div>
-            </form>
-          </div>
-        </div>
+        <span class="text-3xl font-medium text-C_blue-700 dark:text-C_blue-400">家務分配</span><br>
       </section>
-      <!-- 專業背景 -->
-      <section class="flex flex-col items-end">
-        <!-- 寬度撐滿 -->
-        <div class="mb-12 w-full text-xl font-medium text-C_blue-600 border-b-2 border-C_blue-400">
-          專業背景
-        </div>
-        <!-- 寬度 1176px 靠右 -->
-        <div class="mb-14 w-[1176px]">
-          <form class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <div class="flex justify-between items-center w-[728px]">
-              <label
-                for="workState"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >目前狀態</label>
-              <input
-                id="workState"
-                v-model="accountParams.workState"
-                name="workState" 
-                type="text"
-                class="nowside-input"
-              >
-            </div>
-            <div class="flex justify-between items-center w-[424px]">
-              <label
-                for="language"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >語言</label>
-              <input
-                id="language"
-                v-model="accountParams.language"
-                name="language" 
-                type="text"
-                class="nowside-input"
-              >
-            </div>
-          </form>
-          <form class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <div class="flex justify-between items-center w-[728px]">
-              <label
-                for="company"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >公司</label>
-              <input
-                id="company"
-                v-model="accountParams.company"
-                name="company" 
-                type="text"
-                class="nowside-input"
-              >
-            </div>
-            <div class="flex justify-between items-center w-[424px]">
-              <label
-                for="industry"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >產業</label>
-              <input
-                id="industry"
-                v-model="accountParams.industry"
-                name="industry" 
-                type="text"
-                class="nowside-input"
-              >
-            </div>
-          </form>
-          <form class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <div class="flex justify-between items-center w-[728px]">
+      <!-- 專案詳細 -->
+      <section>
+        <ul>
+          <!-- 專案名稱 input + 專案種類 select -->
+          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
+            <form class="flex justify-between items-center w-[570px]">
               <label
                 for="position"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >工作內容</label>
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >專案名稱</label>
               <input
                 id="position"
-                v-model="accountParams.position"
+                v-model="projectParams.ProjectName"
                 name="position" 
                 type="text"
                 class="nowside-input"
               >
-            </div>
-            <div class="flex justify-between items-center w-[424px]">
+            </form>
+            <form class="flex justify-between items-center w-[570px]">
               <label
                 for="jobDescription"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >職務</label>
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >專案種類</label>
               <input
                 id="jobDescription"
-                v-model="accountParams.jobDescription"
+                v-model="projectParams.ProjectTypeId"
                 name="jobDescription" 
                 type="text"
                 class="nowside-input"
               >
-            </div>
-          </form>
-          <form class="mb-12">
-            <div class="flex justify-between items-center">
-              <label
-                for="profileWebsite"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >技能</label>
-              <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300">
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　Vue　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　C++　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　MySQL　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　Java　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　PHP　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
+            </form>
+          </li>
+          <!-- 專案內容 -->
+          <li class="flex justify-between items-center mb-12">
+            <label
+              for="selfIntroduction"
+              class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+            >專案內容</label>
+            <textarea
+              id="selfIntroduction"
+              v-model="projectParams.ProjectContext"
+              class="nowside-textarea"
+              name="selfIntroduction"
+              rows="5"
+              maxlength="1000"
+            ></textarea>
+          </li>
+          <!-- 夥伴條件 -->
+          <li class="flex justify-between items-center mb-12">
+            <label
+              for="selfIntroduction"
+              class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+            >夥伴條件</label>
+            <textarea
+              id="selfIntroduction"
+              v-model="projectParams.PartnerCondition"
+              class="nowside-textarea"
+              name="selfIntroduction"
+              rows="5"
+              maxlength="1000"
+            ></textarea>
+          </li>
+          <!-- 夥伴技能 -->
+          <li class="flex justify-between items-center mb-12">
+            <label
+              for="profileWebsite"
+              class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+            >夥伴技能</label>
+            <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300 dark:border-C_gray-900">
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
+                　Vue　
+                <span class="align-sub material-icons">
+                  close
+                </span>
+              </div>
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
+                　C++　
+                <span class="align-sub material-icons">
+                  close
+                </span>
+              </div>
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
+                　MySQL　
+                <span class="align-sub material-icons">
+                  close
+                </span>
+              </div>
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
+                　Java　
+                <span class="align-sub material-icons">
+                  close
+                </span>
+              </div>
+              <div class="inline-block mr-4 bg-C_blue-200 rounded">
+                　PHP　
+                <span class="align-sub material-icons">
+                  close
+                </span>
               </div>
             </div>
-          </form>
-          <form>
-            <div class="flex justify-between items-center">
+          </li>
+          <!-- 參加截止日 + 專案結束日 -->
+          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
+            <form class="flex justify-between items-center w-[570px]">
               <label
-                for="selfIntroduction"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >自我介紹</label>
-              <textarea
-                id="selfIntroduction"
-                v-model="accountParams.selfIntroduction"
-                class="nowside-textarea"
-                name="selfIntroduction"
-                rows="5"
-                maxlength="1000"
-              ></textarea>
-            </div>
-          </form>
-        </div>
-        <!-- 儲存取消按鈕 -->
-        <div class="flex justify-center w-full">
-          <button class="nowside-button-white-md">
-            取消
-          </button>
-          <button class="nowside-button-lightGreen-md">
-            <span class="align-sub material-icons">
-              bookmark_border
-            </span>
-            儲存
-          </button>
-        </div>
+                for="position"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >參加<br>截止日</label>
+              <input
+                id="position"
+                :value="groupDeadline"
+                name="position" 
+                type="text"
+                class="nowside-input"
+                disabled
+              >
+            </form>
+            <form class="flex justify-between items-center w-[570px]">
+              <label
+                for="jobDescription"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >專案<br>結束日</label>
+              <input
+                id="jobDescription"
+                v-model="projectParams.FinishedDeadline"
+                name="jobDescription" 
+                type="text"
+                class="nowside-input"
+              >
+            </form>
+          </li>
+          <!-- 團隊人數 -->
+          <li class="flex flex-nowrap justify-between h-[40px]">
+            <form class="flex justify-between items-center w-[570px]">
+              <label
+                for="position"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >團隊人數</label>
+              <input
+                id="position"
+                v-model="projectParams.GroupNum"
+                name="position" 
+                type="text"
+                class="nowside-input"
+              >
+            </form>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div>
+      <!-- 按鈕 -->
+      <section class="flex justify-center">
+        <button class="py-2 mr-6 w-[196px] text-lg font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400 shadow-lg">
+          <span class="align-sub material-icons">reply</span>
+          回上一步
+        </button>
+        <button class="py-2 w-[196px] text-lg font-bold text-white bg-C_green-500 hover:bg-C_green-400 rounded shadow-lg">
+          <span class="align-sub material-icons">ios_share</span>
+          發起專案
+        </button>
       </section>
     </div>
   </article>

@@ -87,12 +87,13 @@ export default {
             個人資料
           </div>
           <!-- 寬度靠右 -->
-          <div class="w-[896px]">
-            <form class="flex flex-nowrap justify-between mb-12 h-[40]">
-              <div class="flex justify-between items-center w-[648px]">
+          <ul class="w-[896px]">
+            <!-- 暱稱 + 性別 -->
+            <li class="flex flex-nowrap justify-between mb-12 h-[40]">
+              <form class="flex justify-between items-center w-[648px]">
                 <label
                   for="nickName"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >暱稱</label>
                 <input
                   id="nickName"
@@ -101,11 +102,11 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-              <div class="flex justify-between items-center w-[224px]">
+              </form>
+              <form class="flex justify-between items-center w-[224px]">
                 <label
                   for="gender"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >性別</label>
                 <input
                   id="gender"
@@ -114,13 +115,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- 信箱 -->
+            <li class="mb-12 h-[40]">
+              <form class="flex justify-between items-center">
                 <label
                   for="account"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >信箱</label>
                 <input
                   id="account"
@@ -129,13 +131,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- 密碼 -->
+            <li class="mb-12 h-[40]">
+              <form class="flex justify-between items-center">
                 <label
                   for="password"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >密碼</label>
                 <input
                   id="password"
@@ -144,13 +147,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- 確認密碼 -->
+            <li class="mb-12 h-[40]">
+              <form class="flex justify-between items-center">
                 <label
                   for="confirm"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >確認密碼</label>
                 <input
                   id="confirm"
@@ -159,13 +163,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- FB -->
+            <li class="mb-12 h-[40]">
+              <form class="flex justify-between items-center">
                 <label
                   for="fb"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >FB</label>
                 <input
                   id="fb"
@@ -174,13 +179,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- IG -->
+            <li class="mb-12 h-[40]">
+              <form class="flex justify-between items-center">
                 <label
                   for="ig"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >IG</label>
                 <input
                   id="ig"
@@ -189,13 +195,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form class="mb-12 h-[40]">
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- 個人網站 -->
+            <li class="mb-12 h-[40]">
+              <form class="flex justify-between items-center">
                 <label
                   for="profileWebsite"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >個人網站</label>
                 <input
                   id="profileWebsite"
@@ -204,13 +211,14 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-            <form>
-              <div class="flex justify-between items-center">
+              </form>
+            </li>
+            <!-- 聯絡時間 -->
+            <li>
+              <form class="flex justify-between items-center">
                 <label
                   for="contactTime"
-                  class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                  class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
                 >聯絡時間</label>
                 <input
                   id="contactTime"
@@ -219,9 +227,9 @@ export default {
                   type="text"
                   class="nowside-input"
                 >
-              </div>
-            </form>
-          </div>
+              </form>
+            </li>
+          </ul>
         </div>
       </section>
       <!-- 專業背景 -->
@@ -231,12 +239,13 @@ export default {
           專業背景
         </div>
         <!-- 寬度 1176px 靠右 -->
-        <div class="mb-14 w-[1176px]">
-          <form class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <div class="flex justify-between items-center w-[728px]">
+        <ul class="mb-14 w-[1176px]">
+          <!-- 目前狀態 + 語言 -->
+          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
+            <form class="flex justify-between items-center w-[728px]">
               <label
                 for="workState"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >目前狀態</label>
               <input
                 id="workState"
@@ -245,11 +254,11 @@ export default {
                 type="text"
                 class="nowside-input"
               >
-            </div>
-            <div class="flex justify-between items-center w-[424px]">
+            </form>
+            <form class="flex justify-between items-center w-[424px]">
               <label
                 for="language"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >語言</label>
               <input
                 id="language"
@@ -258,13 +267,14 @@ export default {
                 type="text"
                 class="nowside-input"
               >
-            </div>
-          </form>
-          <form class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <div class="flex justify-between items-center w-[728px]">
+            </form>
+          </li>
+          <!-- 公司 + 產業 -->
+          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
+            <form class="flex justify-between items-center w-[728px]">
               <label
                 for="company"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >公司</label>
               <input
                 id="company"
@@ -273,11 +283,11 @@ export default {
                 type="text"
                 class="nowside-input"
               >
-            </div>
-            <div class="flex justify-between items-center w-[424px]">
+            </form>
+            <form class="flex justify-between items-center w-[424px]">
               <label
                 for="industry"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >產業</label>
               <input
                 id="industry"
@@ -286,13 +296,14 @@ export default {
                 type="text"
                 class="nowside-input"
               >
-            </div>
-          </form>
-          <form class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <div class="flex justify-between items-center w-[728px]">
+            </form>
+          </li>
+          <!-- 工作內容 + 職務 -->
+          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
+            <form class="flex justify-between items-center w-[728px]">
               <label
                 for="position"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >工作內容</label>
               <input
                 id="position"
@@ -301,11 +312,11 @@ export default {
                 type="text"
                 class="nowside-input"
               >
-            </div>
-            <div class="flex justify-between items-center w-[424px]">
+            </form>
+            <form class="flex justify-between items-center w-[424px]">
               <label
                 for="jobDescription"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >職務</label>
               <input
                 id="jobDescription"
@@ -314,13 +325,14 @@ export default {
                 type="text"
                 class="nowside-input"
               >
-            </div>
-          </form>
-          <form class="mb-12">
-            <div class="flex justify-between items-center">
+            </form>
+          </li>
+          <!-- 技能 -->
+          <li class="mb-12">
+            <form class="flex justify-between items-center">
               <label
                 for="profileWebsite"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >技能</label>
               <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300">
                 <div class="inline-block mr-4 bg-C_blue-200 rounded">
@@ -354,13 +366,14 @@ export default {
                   </span>
                 </div>
               </div>
-            </div>
-          </form>
-          <form>
-            <div class="flex justify-between items-center">
+            </form>
+          </li>
+          <!-- 自我介紹 -->
+          <li>
+            <form class="flex justify-between items-center">
               <label
                 for="selfIntroduction"
-                class="mr-5 w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >自我介紹</label>
               <textarea
                 id="selfIntroduction"
@@ -370,9 +383,9 @@ export default {
                 rows="5"
                 maxlength="1000"
               ></textarea>
-            </div>
-          </form>
-        </div>
+            </form>
+          </li>
+        </ul>
         <!-- 儲存取消按鈕 -->
         <div class="flex justify-center w-full">
           <button class="nowside-button-white-md">

@@ -49,7 +49,7 @@
         @apply mr-2 checked:bg-C_green-500 checked:hover:bg-C_green-500 checked:focus:bg-C_green-500 rounded-[4px] border-C_gray-700 focus:ring-C_green-500 form-checkbox;
     }
     .nowside-textarea {
-        @apply p-2 w-full tracking-wide text-C_blue-600 dark:text-C_blue-200 bg-C_gray-100 dark:bg-[#333333] rounded border-2 border-C_gray-300 focus:border-C_green-500 focus:outline-none focus:ring-C_green-500 form-textarea;
+        @apply p-2 w-full tracking-wide text-C_blue-600 dark:text-C_blue-200 bg-C_gray-100 dark:bg-[#333333] rounded border-2 border-C_gray-300 dark:border-C_gray-900 focus:border-C_green-500 focus:outline-none focus:ring-C_green-500 form-textarea;
     }
     .nowside-peerInput {
         @apply p-3 pt-10 pb-6 w-full h-10 placeholder:text-transparent text-C_gray-700 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-700 dark:border-C_gray-900 focus:border-C_green-500 dark:focus:border-C_green-500 focus:outline-none;
