@@ -1,18 +1,73 @@
 <script>
+import { S_getProjectDetail, S_getProjectMessage, } from '@/http/api';
+import moment from 'moment';
+
 export default {
   name: 'ProjectView',
   components: {},
   data() {
     return {
-      projectDeatilParams: {},
-      messageParams: {
-        title: '我有問題想請問～～',
-        content: '確保組成成本需要辦公室，圖形他是打造醫藥都在看到主任附近，出生廣泛理想大幅多少在這個貼布永遠那些，網站已有浪費，儘量經理近年來總體時尚教育活動進去男子，會員必須不過通知一定我國專欄讀書學者這款讓我，另一不好大小調查，最為某些我家有點遠檢驗當你必須不禁任意有限公司將軍全部，定義她們意見交通小子有意大學床上桌面編號作用工業基金，父親一定要完了處於均為，出去點頭今後帳號文件交流招生，之前那裡位元把它本論壇規模這位財務大人設為，商標說出我家大會按鈕學習果然，名字金額，提供解壓密碼出台夢幻義務窗口版面，不行基礎上品種兩位它的傳來別的感情服飾她是郵箱研發，就是又有便宜冠軍對我文章網際快車消失房子進去，同志一座加工歐美大聲連續前往，互動認證排名經理之處商務擔心戀愛很多，決定有關部門，戰爭篇文章你們的擴大進一步參加幫助出售英語，好了化學資金，活力一定要他對套件，這麼各國寶寶到來顯然享受規範加強好友廣告您的連載一大，文學一遍主板您可以臉上沒人人物台鐵不錯前面，點此就要國外辛苦還沒有網遊大小暴力網頁課程，之家表示法律第一個你還戀愛，簡歷堅持追求一半感到一座原來由於好像寫作差距高中，小說下載地址，日報必要。',
+      id: 14,
+      detailParams: {
+        Id: 0,
+        // ProjectName: '',
+        // ProjectContext: '',
+        GroupPhoto: '',
+        // InitDate: '',
+        // GroupDeadline: '',
+        // FinishedDeadline: '',
+        // GroupNum: 0,
+        // PartnerCondition: '',
+        // PartnerSkills: [],
+        // ProjectTypeId: [],
+        // ProjectState: '',
+        // Organizer: [], // 發起人資訊
+        // Applicants: [], // 參與人資訊
       },
+      messageParams: [
+        {
+          ProjectsId: 0,
+          // ProfilePicture: '',
+          // NickName: '',
+          // MessageTitle: '',
+          // MessageContent: '',
+          // InitDate: '',
+        },
+      ],
     };
   },
   computed: {},
-  methods: {},
+  mounted() {
+    this.getDetailParams();
+    this.getMessageParams();
+  },
+  methods: {
+    // 取得專案詳細
+    getDetailParams() {
+      S_getProjectDetail(this.id).then(res =>{
+        console.log('專案詳細', res.data.userdata);
+        this.detailParams = res.data.userdata;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得專案留言
+    getMessageParams() {
+      S_getProjectMessage(this.id).then(res =>{
+        console.log('專案留言', res.data.data);
+        this.messageParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 時間格式
+    timeFormat(date) {
+      const time = moment(date).format('YYYY.MM.DD');
+      return time;
+    },
+  },
 }
 </script>
 
@@ -24,219 +79,182 @@ export default {
       <div class="flex flex-col justify-center items-center mb-14 w-full">
         <!-- 圖片 -->
         <div
-          class="mb-12 w-[304px] h-[304px] rounded-full shadow-xl nowside-backgroundImage"
-          style="background-image: url('https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1157&q=80')"
+          class="mb-12 w-[304px] h-[304px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900 shadow-xl nowside-backgroundImage"
+          :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${detailParams.GroupPhoto}')` }"
         ></div>
         <!-- 標題 -->
-        <span class="text-xl font-medium text-C_blue-700 dark:text-C_blue-300">家務分配</span>
+        <span class="text-xl font-medium text-C_blue-700 dark:text-C_blue-300">{{ detailParams.ProjectName }}</span>
         <!-- 狀態選單 -->
         <ul class="absolute top-20 right-12 w-[256px]">
+          <!-- 按鈕 -->
           <li class="mb-4">
             <div class="flex justify-between w-full">
-              <button class="flex justify-center items-center py-2 mr-6 w-[100px] text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400">
-                <span class="mr-1 material-icons">delete_forever</span>
-                刪除
+              <button
+                class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300"
+                @click="addFavorite(detailParams.Id)"
+              >
+                <span class="mr-1 material-icons">favorite_border</span>
+                ＸＸ
               </button>
-              <button class="flex justify-center items-center py-2 w-[100px] text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded">
-                <span class="mr-1 material-icons">restart_alt</span>
-                重啟
-              </button>
+              <router-link
+                class="flex justify-center items-center py-2 px-6 text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded"
+                :to="{ name: 'ProjectView', params: { projectId: detailParams.Id, }, hash: '#XXX' }"
+              >
+                <span class="mr-1 material-icons">north_east</span>
+                ＸＸ
+              </router-link>
             </div>
           </li>
-          <li class=" flex justify-between mb-4">
-            <div>
-              <span class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">種類</span>
-              <span class="text-C_blue-500 dark:text-C_blue-200">SaaS</span>
+          <!-- 種類 + 狀態 -->
+          <li class="flex justify-between items-center mb-4">
+            <div
+              v-for="type in detailParams.ProjectTypeId"
+              :key="type.Id"
+              class="flex items-center"
+            >
+              <p class="max-w-[144px] font-medium text-C_blue-500 dark:text-C_blue-200 truncate border-b-2 border-C_blue-300 dark:border-C_blue-200">
+                {{ type.ProjectType }}
+              </p>
             </div>
             <div class="flex items-center">
-              <span class="mr-1 text-xl text-C_red material-icons">adjust</span>
-              <span class="font-medium text-C_blue-700 dark:text-C_blue-200">已關閉</span>
+              <span class="mr-1 text-xl text-orange-500 material-icons">adjust</span>
+              <p class="font-medium text-C_blue-700 dark:text-C_blue-200">
+                {{ detailParams.ProjectState }}
+              </p>
             </div>
           </li>
+          <!-- 發起日 -->
           <li class="mb-4">
-            <span class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">發起日</span>
-            <span class="dark:text-C_blue-200">2022.01.01</span>
+            <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
+              發起日
+            </p>
+            <p class="dark:text-C_blue-200">
+              {{ timeFormat(detailParams.InitDate) }}
+            </p>
           </li>
+          <!-- 結束日 -->
           <li class="mb-4">
-            <span class="mr-4 font-medium text-C_blue-700 dark:text-C_blue-400">結束日</span>
-            <span class="dark:text-C_blue-200">2022.03.01</span>
+            <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
+              結束日
+            </p>
+            <p class="dark:text-C_blue-200">
+              {{ timeFormat(detailParams.FinishedDeadline) }}
+            </p>
           </li>
-          <li class="flex items-center">
-            <span class="mr-2 text-3xl text-C_blue-700 dark:text-C_blue-400 material-icons">account_circle</span>
-            <span class="text-xl dark:text-C_blue-200">3</span>
+          <!-- 團隊人數 -->
+          <li class="flex items-center mb-4">
+            <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
+            <span class="text-xl dark:text-C_blue-200">{{ detailParams.GroupNum }}</span>
           </li>
         </ul>
       </div>
       <!-- 內容區塊 -->
       <div>
         <ul class="text-C_blue-800">
+          <!-- 專案內容 -->
           <li class="mb-10">
-            <!-- 標題 -->
             <p class="inline-block mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               專案內容
             </p><br>
-            <!-- 內容 -->
             <p class="dark:text-C_blue-200">
-              自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。<br>
-              自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。<br>
-              自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。自動將家務分配給家庭成員，根據任務的大小平衡工作量，並管理為未完成的工作發送提醒。響應式設計，無需安裝。
+              {{ detailParams.ProjectContext }}
             </p>
           </li>
+          <!-- 夥伴條件 -->
           <li class="mb-10">
-            <!-- 標題 -->
             <p class="inline-block mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               夥伴條件
             </p><br>
-            <!-- 內容 -->
             <p class="dark:text-C_blue-200">
-              希望夥伴跟我依樣是夜貓子，在夜晚工作效率特別好，並且熟悉Notion作為專案管理工具。
+              {{ detailParams.PartnerCondition }}
             </p>
           </li>
+          <!-- 夥伴技能 -->
           <li class="mb-10">
-            <!-- 標題 -->
             <p class="inline-block mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               夥伴技能
             </p><br>
-            <!-- 標籤 -->
-            <div class="flex flex-wrap">
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Vue</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">C++</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">XD</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">C#</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Java</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">PHP</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">MySQL</span>
-              <span class="px-4 mr-2 mb-4 h-6 bg-C_blue-200 rounded-[4px]">Notion</span>
+            <div class="flex overflow-y-hidden flex-wrap max-h-[68px]">
+              <div
+                v-for="skill in detailParams.PartnerSkills"
+                :key="skill.Id"
+                class="inline-block mr-2 mb-4 bg-C_blue-200 rounded"
+              >
+                <p class="px-4">
+                  {{ skill.skill }}
+                </p>
+              </div>
             </div>
           </li>
+          <!-- 媒合期限 -->
           <li class="mb-10">
-            <!-- 標題 -->
             <p class="inline-block mr-8 mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               媒合期限
             </p>
-            <!-- 內容 -->
             <p class="dark:text-C_blue-200">
-              2022.01.02
+              {{ timeFormat(detailParams.GroupDeadline) }}
             </p>
           </li>
+          <!-- 分享 -->
           <li class="mb-10">
-            <!-- 標題 -->
             <p class="inline-block mr-8 mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               分享
             </p>
-            <!-- 按鈕 -->
             <div class="inline-block">
               <button class="nowside-button-blue-md">
                 複製連結
               </button>
             </div>
           </li>
+          <!-- 參加人員 -->
           <li>
-            <!-- 標題 -->
             <p class="inline-block mb-9 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               參加人員
             </p><br>
-            <!-- 列表 -->
             <ul class="flex flex-wrap items-center">
-              <li class="mr-6 mb-10 w-[196px]">
-                <div class="flex items-center">
-                  <div
-                    class="mr-6 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                    style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
-                  ></div>
-                  <div>
-                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
-                      Crystal Kay
-                    </p>
-                    <p class="text-C_blue-500 dark:text-C_blue-300">
-                      發起人
-                    </p>
-                  </div>
+              <!-- 發起人 -->
+              <li
+                v-for="member in detailParams.Organizer"
+                :key="member.NickName"
+                class="flex items-center mr-6 mb-10 w-[196px]"
+              >
+                <div
+                  class="mr-6 min-w-[72px] min-h-[72px] rounded-full nowside-backgroundImage"
+                  :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${member.ProfilePicture}')` }"
+                ></div>
+                <div class="flex flex-col max-w-[100px]">
+                  <p class="mb-1 text-C_blue-700 dark:text-C_blue-200 truncate">
+                    {{ member.NickName }}
+                  </p>
+                  <p class="text-C_blue-500 dark:text-C_blue-300">
+                    發起人
+                  </p>
                 </div>
               </li>
-              <li class="mr-6 mb-10 w-[196px]">
-                <div class="flex items-center">
-                  <div
-                    class="mr-6 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                    style="background-image: url('https://lh3.googleusercontent.com/F1v7ifmtVt3DBJA43ehLfcPW4P3YkMWBWW_Rqj_nmBmlsUtUZ5CkECVOoaLViu1ibZcrCOaen7bClqoS=w1920-h800-p-l90-rj')"
-                  ></div>
-                  <div>
-                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
-                      May J.
-                    </p>
-                    <p class="text-C_blue-500 dark:text-C_blue-300">
-                      組員
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="mr-6 mb-10 w-[196px]">
-                <div class="flex items-center">
-                  <div
-                    class="mr-6 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                    style="background-image: url('https://lh3.googleusercontent.com/FvstfbmQ69b2yTHap_Ez3rUfwq4MY3EM40VCjyKh0OhpcelZVzUYofLzJIUbsuxQtjJhmInYPKBY4g=w1920-h800-p-l90-rj')"
-                  ></div>
-                  <div>
-                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
-                      Daichi Miura
-                    </p>
-                    <p class="text-C_blue-500 dark:text-C_blue-300">
-                      組員
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="mr-6 mb-10 w-[196px]">
-                <div class="flex items-center">
-                  <div
-                    class="mr-6 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                    style="background-image: url('https://lh3.googleusercontent.com/k3R1thXUw5tEGHPHnsi66I-al08qAYuVT0ux_gFXeRSKcw9tRdGsjRKFgOqVIhMOFR3w9KIOD9e10MU=w1920-h800-p-l90-rj')"
-                  ></div>
-                  <div>
-                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
-                      Yuuri
-                    </p>
-                    <p class="text-C_blue-500 dark:text-C_blue-300">
-                      組員
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="mr-6 mb-10 w-[196px]">
-                <div class="flex items-center">
-                  <div
-                    class="mr-6 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                    style="background-image: url('https://lh3.googleusercontent.com/Mx-So4HrT7mwKRyn_JfzJQ6nWanKub_YqfN1-Xuhu1m2D5vtSTt0xPaRlAGb_7QUEWJirIs02afkVZU=w1920-h800-p-l90-rj')"
-                  ></div>
-                  <div>
-                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
-                      Hoshino Gen
-                    </p>
-                    <p class="text-C_blue-500 dark:text-C_blue-300">
-                      組員
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="mr-6 mb-10 w-[196px]">
-                <div class="flex items-center">
-                  <div
-                    class="mr-6 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                    style="background-image: url('https://lh3.googleusercontent.com/BY5XcaHlTixfqXcnH51Sy3AkMxDA5zhftTXPnST2OHOae3UoGkuNdEmAIabvt8Enl-z4sHlVXj_aZQ=w1920-h800-p-l90-rj')"
-                  ></div>
-                  <div>
-                    <p class="mb-1 w-[100px] text-C_blue-700 dark:text-C_blue-200 truncate">
-                      Nishino Kana
-                    </p>
-                    <p class="text-C_blue-500 dark:text-C_blue-300">
-                      組員
-                    </p>
-                  </div>
+              <!-- 申請人 -->
+              <li
+                v-for="member in detailParams.Applicants"
+                :key="member.NickName"
+                class="flex items-center mr-6 mb-10 w-[196px]"
+              >
+                <div
+                  class="mr-6 min-w-[72px] min-h-[72px] rounded-full nowside-backgroundImage"
+                  :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${member.ProfilePicture}')` }"
+                ></div>
+                <div class="flex flex-col max-w-[100px]">
+                  <p class="mb-1 text-C_blue-700 dark:text-C_blue-200 truncate">
+                    {{ member.NickName }}
+                  </p>
+                  <p class="text-C_blue-500 dark:text-C_blue-300">
+                    組員
+                  </p>
                 </div>
               </li>
             </ul>
+            <!-- 審核申請人按鈕 -->
             <button class="nowside-button-blue-md">
-              申請名單 1/15
+              審核組員
+              <!-- 組員人數 {{ `${detailParams.Applicants.length} / ${detailParams.GroupNum}` }} -->
             </button>
           </li>
         </ul>
@@ -252,74 +270,30 @@ export default {
         </p><br>
         <!-- 列表 -->
         <ul>
-          <li class="mb-16">
+          <li
+            v-for="message in messageParams"
+            :key="message.InitDate"
+            class="mb-16"
+          >
             <div class="flex">
               <div class="flex flex-col justify-start items-center">
                 <div
                   class="mx-6 mb-2 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                  style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
+                  :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${detailParams.ProfilePicture}')` }"
                 ></div>
                 <p class="text-sm text-C_blue-700 dark:text-C_blue-200">
-                  Crystal Kay
+                  {{ message.NickName }}
                 </p>
               </div>
               <div>
                 <p class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-300">
-                  我是PM
+                  {{ message.MessageTitle }}
                 </p><br>
                 <p class="mb-4 text-C_blue-700 dark:text-C_blue-200">
-                  我對你的專案超有興趣，+1 ！
+                  {{ message.MessageContent }}
                 </p><br>
                 <p class="mb-4 text-xs text-C_blue-700 dark:text-C_blue-200">
-                  2022.01.01
-                </p>
-              </div>
-            </div>
-          </li>
-          <li class="mb-16">
-            <div class="flex">
-              <div class="flex flex-col justify-start items-center">
-                <div
-                  class="mx-6 mb-2 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                  style="background-image: url('https://lh3.googleusercontent.com/k3R1thXUw5tEGHPHnsi66I-al08qAYuVT0ux_gFXeRSKcw9tRdGsjRKFgOqVIhMOFR3w9KIOD9e10MU=w1920-h800-p-l90-rj')"
-                ></div>
-                <p class="text-sm text-C_blue-700 dark:text-C_blue-200">
-                  Yuuri
-                </p>
-              </div>
-              <div>
-                <p class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-300">
-                  酷東西
-                </p><br>
-                <p class="mb-4 text-C_blue-700 dark:text-C_blue-200">
-                  不用為家事吵架，這酷東西我想要做～
-                </p><br>
-                <p class="mb-4 text-xs text-C_blue-700 dark:text-C_blue-200">
-                  2022.01.01
-                </p>
-              </div>
-            </div>
-          </li>
-          <li class="mb-16">
-            <div class="flex">
-              <div class="flex flex-col justify-start items-center">
-                <div
-                  class="mx-6 mb-2 w-[72px] h-[72px] rounded-full nowside-backgroundImage"
-                  style="background-image: url('https://lh3.googleusercontent.com/BY5XcaHlTixfqXcnH51Sy3AkMxDA5zhftTXPnST2OHOae3UoGkuNdEmAIabvt8Enl-z4sHlVXj_aZQ=w1920-h800-p-l90-rj')"
-                ></div>
-                <p class="text-sm text-C_blue-700 dark:text-C_blue-200">
-                  Nishino Kana
-                </p>
-              </div>
-              <div>
-                <p class="mb-4 text-lg font-medium text-C_blue-500 dark:text-C_blue-300">
-                  選我選我！
-                </p><br>
-                <p class="mb-4 text-C_blue-700 dark:text-C_blue-200">
-                  多麼漢化你們的接受，歐美過來轉變睡覺魔獸顯然可以只要神經病人屬性法國，也沒來自馬上外資自動措施，標誌無關床上諮詢畢業南方一副也要流行，良好我把打算你們的證件秘密對手特徵我真溫度，陽光民眾此外健康，既然註冊這樣挑戰，分鐘放下原本最好大眾協助這個問題天下一道位置，歐美做好關於開發商有關部門樹林精品碩士沒有拿出心裡面向，深入口氣的人前面節目過程花蓮共享聯想表情休閒出現在統計，而是點擊數故事背景無限優秀下午，能量添加時間發展高雄練習保障準備貿易，維修嘉義平均一路優勢性格垃圾也就是閲讀含有難以零售校長家園，廣大很難歌詞哥哥手機鈴聲認為一年對付婚姻，政府最快上有記者走了一套化工關心引用這次統計，美容兒子。
-                </p><br>
-                <p class="mb-4 text-xs text-C_blue-700 dark:text-C_blue-200">
-                  2022.01.01
+                  {{ timeFormat(message.InitDate) }}
                 </p>
               </div>
             </div>

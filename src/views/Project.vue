@@ -256,18 +256,20 @@ export default {
         >
           <!-- 【左】圖片 -->
           <div
-            class="mr-10 w-[132px] h-[132px] rounded-full nowside-backgroundImage"
+            class="mr-10 w-[132px] h-[132px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900 nowside-backgroundImage"
             :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${project.GroupPhoto}')` }"
           >
           </div>
           <!-- 【中】內容 -->
           <div class="mr-6 w-[482px]">
             <ul class="text-C_blue-800">
+              <!-- 專案名稱 -->
               <li class="mb-4">
                 <p class="text-xl font-medium text-C_blue-700 dark:text-C_blue-400">
                   {{ project.ProjectName }}
                 </p>
               </li>
+              <!-- 專案內容 -->
               <li class="mb-6">
                 <p class="mb-1 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
                   專案內容
@@ -276,6 +278,7 @@ export default {
                   {{ project.ProjectContext }}
                 </p>
               </li>
+              <!-- 媒合期限 -->
               <li>
                 <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
@@ -288,14 +291,15 @@ export default {
           </div>
           <!-- 【右】狀態 -->
           <div class="w-[256px]">
-            <ul class="text-C_blue-800">
+            <ul>
+              <!-- 種類 + 狀態 -->
               <li class="flex justify-between items-center mb-4">
                 <div
                   v-for="type in project.ProjectTypeId"
                   :key="type.Id"
                   class="flex items-center"
                 >
-                  <p class="max-w-[144px] font-medium text-C_blue-500 dark:text-C_blue-200 truncate">
+                  <p class="max-w-[144px] font-medium text-C_blue-500 dark:text-C_blue-200 truncate border-b-2 border-C_blue-300 dark:border-C_blue-200">
                     {{ type.ProjectType }}
                   </p>
                 </div>
@@ -306,6 +310,7 @@ export default {
                   </p>
                 </div>
               </li>
+              <!-- 發起日 -->
               <li class="mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
@@ -314,6 +319,7 @@ export default {
                   {{ timeFormat(project.InitDate) }}
                 </p>
               </li>
+              <!-- 結束日 -->
               <li class="mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
@@ -322,10 +328,12 @@ export default {
                   {{ timeFormat(project.FinishedDeadline) }}
                 </p>
               </li>
+              <!-- 團隊人數 -->
               <li class="flex items-center mb-4">
                 <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
                 <span class="text-xl dark:text-C_blue-200">{{ project.GroupNum }}</span>
               </li>
+              <!-- 夥伴技能 -->
               <li class="mb-4">
                 <div class="flex overflow-y-hidden flex-wrap max-h-[68px]">
                   <div
@@ -339,6 +347,7 @@ export default {
                   </div>
                 </div>
               </li>
+              <!-- 按鈕 -->
               <li>
                 <div class="flex justify-between w-full">
                   <button
@@ -348,13 +357,13 @@ export default {
                     <span class="mr-1 material-icons">favorite_border</span>
                     收藏
                   </button>
-                  <button
+                  <router-link
                     class="flex justify-center items-center py-2 px-6 text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded"
-                    @click="goProjectView(project.Id)"
+                    :to="{ name: 'ProjectView', params: { projectId: project.Id, } }"
                   >
                     <span class="mr-1 material-icons">north_east</span>
                     查看
-                  </button>
+                  </router-link>
                 </div>
               </li>
             </ul>
