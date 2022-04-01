@@ -5,9 +5,14 @@ import moment from 'moment';
 export default {
   name: 'ProjectView',
   components: {},
+  props: {
+    projectId: {
+      type: String,
+      default: '',
+    }
+  },
   data() {
     return {
-      id: 14,
       detailParams: {
         Id: 0,
         // ProjectName: '',
@@ -44,7 +49,7 @@ export default {
   methods: {
     // 取得專案詳細
     getDetailParams() {
-      S_getProjectDetail(this.id).then(res =>{
+      S_getProjectDetail(this.projectId).then(res =>{
         console.log('專案詳細', res.data.userdata);
         this.detailParams = res.data.userdata;
       })
@@ -54,7 +59,7 @@ export default {
     },
     // 取得專案留言
     getMessageParams() {
-      S_getProjectMessage(this.id).then(res =>{
+      S_getProjectMessage(this.projectId).then(res =>{
         console.log('專案留言', res.data.data);
         this.messageParams = res.data.data;
       })
@@ -253,8 +258,7 @@ export default {
             </ul>
             <!-- 審核申請人按鈕 -->
             <button class="nowside-button-blue-md">
-              審核組員
-              <!-- 組員人數 {{ `${detailParams.Applicants.length} / ${detailParams.GroupNum}` }} -->
+              審核組員 {{ `${detailParams.Applicants?.length} / ${detailParams.GroupNum}` }}
             </button>
           </li>
         </ul>

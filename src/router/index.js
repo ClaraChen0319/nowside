@@ -79,7 +79,7 @@ const router = createRouter({
     {
       path: '/projectview/:projectId',
       name: 'ProjectView',
-      props: (route) => ({ from: route.params.projectId }),
+      props: (route) => ({ projectId: route.params.projectId }),
       component: () => import('../views/ProjectView.vue')
     },
     {

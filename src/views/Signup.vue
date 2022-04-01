@@ -1,5 +1,5 @@
 <script>
-import { S_signup } from '@/http/api';
+import { S_uploadProfile, S_signup, } from '@/http/api';
 
 export default {
   name: 'Signup',
@@ -23,14 +23,48 @@ export default {
       displayStep5: false,
     };
   },
-  computed: {},
+  computed: {
+    // 大頭貼 預覽
+    profileImage() {
+      let style = 'str';
+      switch (this.profileStatus) {
+        // 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${signupParams.ProfilePicture}')`
+        case false:
+          style = `background-image: url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${signupParams.ProfilePicture}')`;
+          break
+        case true:
+          style = `background-image: url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${signupParams.ProfilePicture}')`;
+          break
+      };
+      return style;
+    },
+  },
   methods: {
-    postSignup() {
-      S_signup(this.signupParams)
-      .then(res =>{
+    // 註冊會員 圖片上傳
+    uploadImage(e) {
+      console.log(e.target.files[0]);
+      const formdata = new FormData;
+      formdata.append(e.target.files[0].name, e.target.files[0]);
+      
+      S_uploadProfile(formdata).then(res =>{
         console.log(res.data);
-        // 使用 setItem 將 token 存入 localStorage
-        localStorage.setItem('nowsideToken', res.data.token);
+        this.signupParams.ProfilePicture = res.data.data.ProfilePicture;
+        this.displayStep4 = !this.displayStep4;
+        this.displayStep5 = !this.displayStep5;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 註冊會員 預設圖片
+    defaultImage() {
+      this.displayStep4 = !this.displayStep4;
+      this.displayStep5 = !this.displayStep5;
+    },
+    // 註冊會員
+    postSignup() {
+      S_signup(this.signupParams).then(res =>{
+        console.log(res.data.message);
       })
       .catch(error => {
         console.log(error);
@@ -200,7 +234,7 @@ export default {
               <input
                 id="male"
                 v-model="signupParams.Gender"
-                value="male"
+                value="男"
                 name="gender"
                 class="nowside-genderRadio"
                 type="radio"
@@ -214,7 +248,7 @@ export default {
               <input
                 id="female"
                 v-model="signupParams.Gender"
-                value="female"
+                value="女"
                 name="gender"
                 class="nowside-genderRadio"
                 type="radio"
@@ -228,7 +262,7 @@ export default {
               <input
                 id="other" 
                 v-model="signupParams.Gender"
-                value="other"
+                value="其他"
                 name="gender"
                 class="nowside-genderRadio"
                 type="radio"
@@ -270,8 +304,8 @@ export default {
               <span class="text-3xl text-C_blue-700 material-icons">arrow_back_ios</span>
               <button
                 type="button"
-                class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
-                @click="signupParams.ProfilePicture = 'poopoo.png'"
+                class="overflow-hidden w-[96px] h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
+                @click="signupParams.ProfilePicture = 'default-06.png'"
               >
                 <img
                   src="@/assets/poopoo.png"
@@ -281,8 +315,8 @@ export default {
               </button>
               <button
                 type="button"
-                class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
-                @click="signupParams.ProfilePicture = 'zombie.png'"
+                class="overflow-hidden w-[96px] h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
+                @click="signupParams.ProfilePicture = 'default-07.png'"
               >
                 <img
                   src="@/assets/zombie.png"
@@ -292,8 +326,8 @@ export default {
               </button>
               <button
                 type="button"
-                class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
-                @click="signupParams.ProfilePicture = 'ghost.png'"
+                class="overflow-hidden w-[96px] h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
+                @click="signupParams.ProfilePicture = 'default-08.png'"
               >
                 <img
                   src="@/assets/ghost.png"
@@ -315,16 +349,25 @@ export default {
           </div>
           <!-- 按鈕 -->
           <div>
+            <form>
+              <input
+                ref="uploadImage"
+                type="file"
+                class="hidden"
+                @change="uploadImage"
+              >
+            </form>
             <button
               type="button"
               class="nowside-button-darkBlue-lg"
+              @click="$refs.uploadImage.click()"
             >
               上傳
             </button>
             <router-link
               class="mb-12 nowside-button-lightBlue-lg"
               to="/signup"
-              @click="displayStep4 = !displayStep4, displayStep5 = !displayStep5"
+              @click="defaultImage"
             >
               下一步
             </router-link>
@@ -346,18 +389,16 @@ export default {
         <section class="my-8">
           <!-- 大頭貼 -->
           <div class="flex justify-around items-center my-12 w-full">
-            <div class="flex overflow-hidden items-center max-w-[96px] max-h-[96px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900">
-              <img
-                src="@/assets/poopoo.png"
-                alt="poopoo"
-                class="align-middle"
-              >
-            </div>
+            <div
+              class="flex overflow-hidden items-center w-[96px] h-[96px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900 nowside-backgroundImage"
+              :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${signupParams.ProfilePicture}')` }"
+            ></div>
+            <!-- <img> -->
           </div>
           <!-- 內容 -->
           <div class="mb-12 text-center">
             <p class="text-3xl font-medium text-C_blue-700 dark:text-C_blue-400">
-              便便人，請提供您方便回復專案等相關問題的時段 :D
+              {{ signupParams.NickName }}，請提供您方便回復專案等相關問題的時段 :D
             </p>
           </div>
           <!-- 聯絡時間 input -->
@@ -399,6 +440,7 @@ export default {
             <router-link
               class="mb-12 nowside-button-darkBlue-lg"
               to="/project"
+              @click="postSignup"
             >
               完成
             </router-link>

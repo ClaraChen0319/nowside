@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     // 背景圖 切換
-    backgroundToggle() {
+    backgroundImage() {
       let style = 'str';
       switch (this.isDark) {
         case false:
@@ -41,7 +41,7 @@ export default {
   <article :class="isDark ? 'dark' : ''">
     <section
       class="w-full h-full"
-      :style="backgroundToggle"
+      :style="backgroundImage"
     >
       <Header @emit="darkModeToggle"></Header>
       <router-view></router-view>

@@ -1,6 +1,6 @@
 <script>
 import Login from '@/components/LoginModal.vue';
-import { S_uploadProfile, S_signup, S_checkUser } from '@/http/api';
+import { S_uploadProfile, S_signup, } from '@/http/api';
 
 export default {
   name: 'Test',
