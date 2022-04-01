@@ -9,7 +9,7 @@ export default {
     return {
       projectParams: {
         // Id: 0, // 專案ID（不用顯示）
-        // ProjectName: '',
+        ProjectName: '專案名稱',
         // ProjectContext: '',
         GroupPhoto: '',
         // InitDate: '', // 專案發起日（後端會賦值）
@@ -65,26 +65,22 @@ export default {
             <span class="text-2xl text-white align-sub material-icons">monochrome_photos</span>
           </button>
         </div>
-        <span class="text-3xl font-medium text-C_blue-700 dark:text-C_blue-400">家務分配</span><br>
+        <form class="flex items-center w-[415px]">
+          <input
+            id="ProjectName"
+            v-model="projectParams.ProjectName"
+            name="ProjectName"
+            type="text"
+            class="w-[383px] text-3xl font-medium text-center text-C_blue-400 dark:bg-C_black focus:outline-none focus:ring-0"
+          >
+          <span class="inline-block right-4 bottom-2 text-3xl text-C_green-500 rounded material-icons">edit</span>
+        </form>
       </section>
       <!-- 專案詳細 -->
       <section>
         <ul>
-          <!-- 專案名稱 input + 專案種類 select -->
+          <!-- 專案種類 select + 團隊人數 select -->
           <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <form class="flex justify-between items-center w-[570px]">
-              <label
-                for="position"
-                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >專案名稱</label>
-              <input
-                id="position"
-                v-model="projectParams.ProjectName"
-                name="position" 
-                type="text"
-                class="nowside-input"
-              >
-            </form>
             <form class="flex justify-between items-center w-[570px]">
               <label
                 for="jobDescription"
@@ -93,6 +89,49 @@ export default {
               <input
                 id="jobDescription"
                 v-model="projectParams.ProjectTypeId"
+                name="jobDescription" 
+                type="text"
+                class="nowside-input"
+              >
+            </form>
+            <form class="flex justify-between items-center w-[570px]">
+              <label
+                for="position"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >團隊人數</label>
+              <input
+                id="position"
+                v-model="projectParams.GroupNum"
+                name="position"
+                type="text"
+                class="nowside-input"
+              >
+            </form>
+          </li>
+          <!-- 參加截止日 + 專案結束日 -->
+          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
+            <form class="flex justify-between items-center w-[570px]">
+              <label
+                for="position"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >參加<br>截止日</label>
+              <input
+                id="position"
+                :value="groupDeadline"
+                name="position" 
+                type="text"
+                class="nowside-input"
+                disabled
+              >
+            </form>
+            <form class="flex justify-between items-center w-[570px]">
+              <label
+                for="jobDescription"
+                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
+              >專案<br>結束日</label>
+              <input
+                id="jobDescription"
+                v-model="projectParams.FinishedDeadline"
                 name="jobDescription" 
                 type="text"
                 class="nowside-input"
@@ -167,52 +206,6 @@ export default {
                 </span>
               </div>
             </div>
-          </li>
-          <!-- 參加截止日 + 專案結束日 -->
-          <li class="flex flex-nowrap justify-between mb-12 h-[40px]">
-            <form class="flex justify-between items-center w-[570px]">
-              <label
-                for="position"
-                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >參加<br>截止日</label>
-              <input
-                id="position"
-                :value="groupDeadline"
-                name="position" 
-                type="text"
-                class="nowside-input"
-                disabled
-              >
-            </form>
-            <form class="flex justify-between items-center w-[570px]">
-              <label
-                for="jobDescription"
-                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >專案<br>結束日</label>
-              <input
-                id="jobDescription"
-                v-model="projectParams.FinishedDeadline"
-                name="jobDescription" 
-                type="text"
-                class="nowside-input"
-              >
-            </form>
-          </li>
-          <!-- 團隊人數 -->
-          <li class="flex flex-nowrap justify-between h-[40px]">
-            <form class="flex justify-between items-center w-[570px]">
-              <label
-                for="position"
-                class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
-              >團隊人數</label>
-              <input
-                id="position"
-                v-model="projectParams.GroupNum"
-                name="position" 
-                type="text"
-                class="nowside-input"
-              >
-            </form>
           </li>
         </ul>
       </section>

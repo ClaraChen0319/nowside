@@ -8,12 +8,12 @@ export default {
     return {
       isDark: false,
       signupParams: {
-        account: '',
-        password: '',
-        nickName: 'Mr. / Miss Sider',
-        gender: '',
-        profilePicture: '',
-        contactTime: '09:00～12:00 PM',
+        Account: '',
+        Password: '',
+        NickName: 'Mr. / Miss Sider',
+        Gender: '',
+        ProfilePicture: '',
+        ContactTime: '09:00～12:00 PM',
       },
       confirm: '',
       displayStep1: true,
@@ -62,13 +62,16 @@ export default {
             <p class="mb-8 text-3xl font-medium">
               歡迎進入腦塞 project世界
             </p>
-            <div class="flex relative justify-center items-center mb-8">
+            <form class="flex relative justify-center items-center mb-8">
               <input
-                v-model="signupParams.nickName"
+                id="NickName"
+                v-model="signupParams.NickName"
+                name="NickName"
                 type="text"
                 class="w-4/5 text-3xl font-medium text-center dark:bg-C_black focus:outline-none focus:ring-0"
-              ><span class="inline-block absolute right-4 bottom-2 ml-1 text-3xl text-C_green-500 rounded material-icons">edit</span>
-            </div>
+              >
+              <span class="inline-block absolute right-4 bottom-2 ml-1 text-3xl text-C_green-500 rounded material-icons">edit</span>
+            </form>
             <p class="text-lg text-center text-C_blue-500 dark:text-C_blue-200">
               以下所填寫的資訊將有助於<br>幫助我們推薦適合你的專案項目
             </p>
@@ -116,7 +119,7 @@ export default {
               <div class="relative mb-8">
                 <input
                   id="account"
-                  v-model="signupParams.account"
+                  v-model="signupParams.Account"
                   name="account" 
                   type="text"
                   class="peer nowside-peerInput"
@@ -125,13 +128,13 @@ export default {
                 <label
                   for="account"
                   class="nowside-peerLabel"
-                  :class="[ signupParams.account ? 'nowside-peerFilled' : '' ]"
+                  :class="[ signupParams.Account ? 'nowside-peerFilled' : '' ]"
                 >信箱</label>
               </div>
               <div class="relative mb-8">
                 <input
                   id="password"
-                  v-model="signupParams.password"
+                  v-model="signupParams.Password"
                   type="password"
                   name="password"     
                   class="peer nowside-peerInput"
@@ -140,7 +143,7 @@ export default {
                 <label
                   for="password"
                   class="nowside-peerLabel"
-                  :class="[ signupParams.password ? 'nowside-peerFilled' : '' ]"
+                  :class="[ signupParams.Password ? 'nowside-peerFilled' : '' ]"
                 >密碼</label>
               </div>
               <div class="relative">
@@ -196,7 +199,7 @@ export default {
             <form class="mb-8">
               <input
                 id="male"
-                v-model="signupParams.gender"
+                v-model="signupParams.Gender"
                 value="male"
                 name="gender"
                 class="nowside-genderRadio"
@@ -210,7 +213,7 @@ export default {
             <form class="mb-8">
               <input
                 id="female"
-                v-model="signupParams.gender"
+                v-model="signupParams.Gender"
                 value="female"
                 name="gender"
                 class="nowside-genderRadio"
@@ -224,7 +227,7 @@ export default {
             <form>
               <input
                 id="other" 
-                v-model="signupParams.gender"
+                v-model="signupParams.Gender"
                 value="other"
                 name="gender"
                 class="nowside-genderRadio"
@@ -268,7 +271,7 @@ export default {
               <button
                 type="button"
                 class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
-                @click="signupParams.profilePicture = 'poopoo.png'"
+                @click="signupParams.ProfilePicture = 'poopoo.png'"
               >
                 <img
                   src="@/assets/poopoo.png"
@@ -279,7 +282,7 @@ export default {
               <button
                 type="button"
                 class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
-                @click="signupParams.profilePicture = 'zombie.png'"
+                @click="signupParams.ProfilePicture = 'zombie.png'"
               >
                 <img
                   src="@/assets/zombie.png"
@@ -290,7 +293,7 @@ export default {
               <button
                 type="button"
                 class="overflow-hidden max-w-[96px] max-h-[96px] rounded-full border-2 hover:border-4 dark:hover:border-4 border-C_gray-300 hover:border-C_green-500 dark:border-C_gray-900 dark:hover:border-C_green-500"
-                @click="signupParams.profilePicture = 'ghost.png'"
+                @click="signupParams.ProfilePicture = 'ghost.png'"
               >
                 <img
                   src="@/assets/ghost.png"
@@ -361,7 +364,7 @@ export default {
           <div class="mb-14">
             <select
               id="contactTime"
-              v-model="signupParams.contactTime"
+              v-model="signupParams.ContactTime"
               name="contactTime"
               class="py-4 pl-6 w-full text-lg font-bold text-C_blue-700 dark:text-C_blue-200 indent-20 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-700 focus:border-C_green-500 dark:border-C_gray-900 focus:outline-none active:outline-none focus:ring-C_green-500 form-select"
             >
