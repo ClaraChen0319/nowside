@@ -390,7 +390,7 @@ export default {
           <!-- 大頭貼 -->
           <div class="flex justify-around items-center my-12 w-full">
             <div
-              class="flex overflow-hidden items-center w-[96px] h-[96px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900 nowside-backgroundImage"
+              class="flex overflow-hidden items-center w-[160px] h-[160px] rounded-full border-2 border-C_gray-300 dark:border-C_gray-900 nowside-backgroundImage"
               :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${signupParams.ProfilePicture}')` }"
             ></div>
             <!-- <img> -->
