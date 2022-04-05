@@ -46,7 +46,7 @@ export default {
     // 取得技能列表
     getSkillsParams() {
       S_getSkills().then(res =>{
-        console.log('技能列表', res.data.Skilldata);
+        console.log('取得技能列表', res.data.Skilldata);
         this.skillsData = res.data.Skilldata;
       })
       .catch(error => {
@@ -56,7 +56,7 @@ export default {
     // 取得專案類別列表
     getClassParams() {
       S_getProjectClass().then(res =>{
-        console.log('專案類別列表', res.data.Classdata);
+        console.log('取得專案類別列表', res.data.Classdata);
         this.classData = res.data.Classdata;
       })
       .catch(error => {
@@ -66,7 +66,7 @@ export default {
     // 取得所有專案列表（無分頁）
     getListParams() {
       S_getAllProjectNoPage().then(res =>{
-        console.log('所有專案列表（無分頁）', res.data.data);
+        console.log('取得所有專案列表（無分頁）', res.data.data);
         this.listParams = res.data.data;
       })
       .catch(error => {

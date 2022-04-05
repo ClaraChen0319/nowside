@@ -36,7 +36,7 @@ export default {
     // 取得會員資料
     getAccountParams() {
       S_getUserInfo().then(res =>{
-        console.log('會員資料', res.data.userdata);
+        console.log('取得會員資料', res.data.userdata);
         this.accountParams = res.data.userdata;
       })
       .catch(error => {
@@ -50,7 +50,7 @@ export default {
       formdata.append(e.target.files[0].name, e.target.files[0]);
       
       S_uploadProfile(formdata).then(res =>{
-        console.log(res.data);
+        console.log('編輯會員資料 圖片上傳', res.data);
         this.accountParams.ProfilePicture = res.data.data.ProfilePicture;
       })
       .catch(error => {
@@ -60,7 +60,7 @@ export default {
     // 編輯會員資料
     editAccountParams(){
       S_editUserInfo(this.accountParams).then(res =>{
-        console.log(res.data);
+        console.log('編輯會員資料', res.data);
       })
       .catch(error => {
         console.log(error);

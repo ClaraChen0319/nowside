@@ -22,7 +22,8 @@ export const S_getAttendProjectNoPage = (params) => axiosInstance.get('/GetAtten
 export const S_getSaveProject = (params) => axiosInstance.get('/GetSaveProject',params); // 取得收藏的專案資料
 
 // CreateProject
-export const S_addProject = (params) => axiosForm.post('/AddProject',params); // 新增專案資料
+export const S_addProject = (params) => axiosInstance.post('/AddProject',params); // 新增專案資料
+export const S_uploadGroupPic = (params) => axiosForm.post('/UploadGroupPic',params); // 新增專案資料 圖片上傳
 
 // ViewProject
 export const S_getAllProject = (params) => axiosInstance.get('/GetAllProject',params); // 取得所有專案列表
