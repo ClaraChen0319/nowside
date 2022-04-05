@@ -26,10 +26,10 @@ export default {
         GroupPhoto: '',
         InitDate: '', // 專案發起日（後端賦值）
         GroupDeadline: '', // 參加截止日（後端賦值）
-        FinishedDeadline: null,
+        FinishedDeadline: '2022-04-05T05:08:40.999Z',
         GroupNum: 0,
         PartnerCondition: '',
-        PartnerSkills: ['',],
+        PartnerSkills: [0,], // 一定要有值（數字陣列）
         ProjectTypeId: 0,
         ProjectState: '', // 專案狀態（不用顯示）
         MembersId: 0, // 發起人ID（不用顯示） 
@@ -42,9 +42,9 @@ export default {
       return moment().add(7, 'days').format('YYYY.MM.DD');
     },
     // Date Time（後端要求格式）
-    finishedDeadline() {
-      return moment().format(this.projectParams.FinishedDeadline);
-    },
+    // finishedDeadline() {
+    //   return moment().format(this.projectParams.FinishedDeadline);
+    // },
   },
   mounted() {
     this.getSkillsParams();
@@ -247,7 +247,7 @@ export default {
                 v-model="projectParams.FinishedDeadline"
                 name="finishedDeadline"
                 type="date" 
-                class="nowside-input"
+                class="nowside-input form-input"
               >
             </form>
           </li>
@@ -303,13 +303,14 @@ export default {
           <span class="mr-1 material-icons">reply</span>
           取消
         </router-link>
-        <button
+        <router-link
           class="flex justify-center items-center py-2 w-[196px] text-lg font-bold text-white bg-C_green-500 hover:bg-C_green-400 rounded shadow-lg"
+          to="/project"
           @click="postProjectParams"
         >
           <span class="mr-1 material-icons">ios_share</span>
           發起專案
-        </button>
+        </router-link>
       </section>
     </div>
   </article>
