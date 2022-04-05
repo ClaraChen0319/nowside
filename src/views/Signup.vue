@@ -308,8 +308,8 @@ export default {
                 @click="signupParams.ProfilePicture = 'default-06.png'"
               >
                 <img
-                  src="@/assets/poopoo.png"
-                  alt="poopoo"
+                  src="../assets/default-06.png"
+                  alt="default-06"
                   class="align-middle"
                 >
               </button>
@@ -319,8 +319,8 @@ export default {
                 @click="signupParams.ProfilePicture = 'default-07.png'"
               >
                 <img
-                  src="@/assets/zombie.png"
-                  alt="zombie"
+                  src="../assets/default-07.png"
+                  alt="default-07"
                   class="align-middle"
                 >
               </button>
@@ -330,8 +330,8 @@ export default {
                 @click="signupParams.ProfilePicture = 'default-08.png'"
               >
                 <img
-                  src="@/assets/ghost.png"
-                  alt="ghost"
+                  src="../assets/default-08.png"
+                  alt="default-08"
                   class="align-middle"
                 >
               </button>

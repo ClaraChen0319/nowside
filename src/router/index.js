@@ -19,6 +19,8 @@ import Success from '../views/Success.vue'
 // 非同步載入
 // 只有在該路由下才會載入（import）對應的元件
 
+// :to="{ name: 'ProjectView', params: { projectId: project.Id, }, hash: '#XXX' }"
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [

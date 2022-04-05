@@ -7,22 +7,22 @@ export default {
   data() {
     return {
       accountParams: {
-        Account: '',
+        ProfilePicture: '',
         NickName: '',
         Gender: '',
-        ProfilePicture: '',
-        Ig: '',
+        Account: '',
         Fb: '',
+        Ig: '',
         ProfileWebsite: '',
         ContactTime: '',
-        SelfIntroduction: '',
         WorkState: '',
         Language: '',
         Company: '',
         Industry: '',
         Position: '',
-        Skills: [], // 無資料的話為 null
         JobDescription: '',
+        Skills: [], // 無資料的話為 null
+        SelfIntroduction: '',
       },
     };
   },
@@ -368,17 +368,15 @@ export default {
           </form>
         </li>
       </ul>
-      <!-- 儲存取消按鈕 -->
+      <!-- 編輯按鈕 -->
       <div class="flex justify-center w-full">
-        <button class="nowside-button-white-md">
-          取消
-        </button>
-        <button class="nowside-button-lightGreen-md">
-          <span class="align-sub material-icons">
-            edit
-          </span>
+        <router-link
+          class="flex justify-center items-center nowside-button-lightGreen-md"
+          to="/accountedit"
+        >
+          <span class="mr-1 material-icons">edit</span>
           編輯
-        </button>
+        </router-link>
       </div>
     </section>
   </article>

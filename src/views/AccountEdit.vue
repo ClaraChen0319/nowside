@@ -1,5 +1,5 @@
 <script>
-import { S_getUserInfo, S_editUserInfo, S_editProfilePic } from '@/http/api';
+import { S_getUserInfo, S_editUserInfo, S_uploadProfile } from '@/http/api';
 
 export default {
   name: 'AccountEdit',
@@ -7,27 +7,31 @@ export default {
   data() {
     return {
       accountParams: {
-        Account: '',
+        ProfilePicture: '',
         NickName: '',
         Gender: '',
-        ProfilePicture: '',
-        Ig: '',
+        Account: '',
         Fb: '',
+        Ig: '',
         ProfileWebsite: '',
         ContactTime: '',
-        SelfIntroduction: '',
         WorkState: '',
         Language: '',
         Company: '',
         Industry: '',
         Position: '',
-        Skills: [], // 無資料的話為 null
         JobDescription: '',
+        Skills: [], // 無資料的話為 null
+        SelfIntroduction: '',
       },
+      password: '',
       confirm: '',
     };
   },
   computed: {},
+  mounted() {
+    this.getAccountParams();
+  },
   methods: {
     // 取得會員資料
     getAccountParams() {
@@ -39,18 +43,23 @@ export default {
         console.log(error);
       });
     },
-    // 編輯會員資料
-    editAccountParams(){
-      S_editUserInfo().then(res =>{
+    // 編輯會員資料 圖片上傳
+    uploadImage(e) {
+      console.log(e.target.files[0]);
+      const formdata = new FormData;
+      formdata.append(e.target.files[0].name, e.target.files[0]);
+      
+      S_uploadProfile(formdata).then(res =>{
         console.log(res.data);
+        this.accountParams.ProfilePicture = res.data.data.ProfilePicture;
       })
       .catch(error => {
         console.log(error);
       });
     },
-    // 編輯會員資料 圖片上傳
-    editAccountPic(){
-      S_editProfilePic().then(res =>{
+    // 編輯會員資料
+    editAccountParams(){
+      S_editUserInfo(this.accountParams).then(res =>{
         console.log(res.data);
       })
       .catch(error => {
@@ -70,10 +79,20 @@ export default {
         <div class="relative h-[280px]">
           <div
             class="w-[280px] h-[280px] rounded-full nowside-backgroundImage"
-            style="background-image: url('https://lh3.googleusercontent.com/bbR_o6X9VgjiJKsRcu-ESXwz5M9do7eFs4CSUvgPCpmxe7pm8d6jw4s5XLcDBIFfhTbRo-qKMljPJ6Y=w1920-h800-p-l90-rj')"
+            :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${accountParams.ProfilePicture}')` }"
           ></div>
+          <form>
+            <input
+              ref="uploadImage"
+              type="file"
+              class="hidden"
+              @change="uploadImage"
+            >
+          </form>
           <button
+            type="button"
             class="flex absolute right-8 bottom-0 justify-center items-center w-[48px] h-[48px] bg-C_green-500 hover:bg-C_green-400 rounded-full border-4 border-white nowside-backgroundImage"
+            @click="$refs.uploadImage.click()"
           >
             <span class="text-2xl text-white align-sub material-icons">
               monochrome_photos
@@ -97,7 +116,7 @@ export default {
                 >暱稱</label>
                 <input
                   id="nickName"
-                  v-model="accountParams.nickName"
+                  v-model="accountParams.NickName"
                   name="nickName" 
                   type="text"
                   class="nowside-input"
@@ -110,10 +129,11 @@ export default {
                 >性別</label>
                 <input
                   id="gender"
-                  v-model="accountParams.gender"
+                  v-model="accountParams.Gender"
                   name="gender" 
                   type="text"
-                  class="nowside-input"
+                  class="cursor-not-allowed nowside-input"
+                  disabled
                 >
               </form>
             </li>
@@ -126,7 +146,7 @@ export default {
                 >信箱</label>
                 <input
                   id="account"
-                  v-model="accountParams.account"
+                  v-model="accountParams.Account"
                   name="account" 
                   type="text"
                   class="nowside-input"
@@ -142,9 +162,9 @@ export default {
                 >密碼</label>
                 <input
                   id="password"
-                  v-model="accountParams.password"
+                  v-model="password"
                   name="password" 
-                  type="text"
+                  type="password"
                   class="nowside-input"
                 >
               </form>
@@ -160,7 +180,7 @@ export default {
                   id="confirm"
                   v-model="confirm"
                   name="confirm" 
-                  type="text"
+                  type="password"
                   class="nowside-input"
                 >
               </form>
@@ -174,7 +194,7 @@ export default {
                 >FB</label>
                 <input
                   id="fb"
-                  v-model="accountParams.fb"
+                  v-model="accountParams.Fb"
                   name="fb" 
                   type="text"
                   class="nowside-input"
@@ -190,7 +210,7 @@ export default {
                 >IG</label>
                 <input
                   id="ig"
-                  v-model="accountParams.ig"
+                  v-model="accountParams.Ig"
                   name="ig" 
                   type="text"
                   class="nowside-input"
@@ -206,7 +226,7 @@ export default {
                 >個人網站</label>
                 <input
                   id="profileWebsite"
-                  v-model="accountParams.profileWebsite"
+                  v-model="accountParams.ProfileWebsite"
                   name="profileWebsite" 
                   type="text"
                   class="nowside-input"
@@ -222,7 +242,7 @@ export default {
                 >聯絡時間</label>
                 <input
                   id="contactTime"
-                  v-model="accountParams.contactTime"
+                  v-model="accountParams.ContactTime"
                   name="contactTime" 
                   type="text"
                   class="nowside-input"
@@ -249,7 +269,7 @@ export default {
               >目前狀態</label>
               <input
                 id="workState"
-                v-model="accountParams.workState"
+                v-model="accountParams.WorkState"
                 name="workState" 
                 type="text"
                 class="nowside-input"
@@ -262,7 +282,7 @@ export default {
               >語言</label>
               <input
                 id="language"
-                v-model="accountParams.language"
+                v-model="accountParams.Language"
                 name="language" 
                 type="text"
                 class="nowside-input"
@@ -278,7 +298,7 @@ export default {
               >公司</label>
               <input
                 id="company"
-                v-model="accountParams.company"
+                v-model="accountParams.Company"
                 name="company" 
                 type="text"
                 class="nowside-input"
@@ -291,7 +311,7 @@ export default {
               >產業</label>
               <input
                 id="industry"
-                v-model="accountParams.industry"
+                v-model="accountParams.Industry"
                 name="industry" 
                 type="text"
                 class="nowside-input"
@@ -307,7 +327,7 @@ export default {
               >工作內容</label>
               <input
                 id="position"
-                v-model="accountParams.position"
+                v-model="accountParams.Position"
                 name="position" 
                 type="text"
                 class="nowside-input"
@@ -320,7 +340,7 @@ export default {
               >職務</label>
               <input
                 id="jobDescription"
-                v-model="accountParams.jobDescription"
+                v-model="accountParams.JobDescription"
                 name="jobDescription" 
                 type="text"
                 class="nowside-input"
@@ -334,36 +354,13 @@ export default {
                 for="profileWebsite"
                 class="mr-5 min-w-[96px] text-lg font-medium text-C_blue-500 dark:text-C_blue-400"
               >技能</label>
-              <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300">
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　Vue　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　C++　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　MySQL　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　Java　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
-                </div>
-                <div class="inline-block mr-4 bg-C_blue-200 rounded">
-                  　PHP　
-                  <span class="align-sub material-icons">
-                    close
-                  </span>
+              <div class="p-2 w-full h-[140px] text-lg text-C_blue-600 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300 dark:border-C_gray-900">
+                <div
+                  v-for="skill in accountParams.Skills"
+                  :key="skill.Id"
+                  class="inline-block mr-2 mb-4 bg-C_blue-200 rounded"
+                >
+                  <span class="px-4">{{ skill.skill }}</span>
                 </div>
               </div>
             </form>
@@ -377,7 +374,7 @@ export default {
               >自我介紹</label>
               <textarea
                 id="selfIntroduction"
-                v-model="accountParams.selfIntroduction"
+                v-model="accountParams.SelfIntroduction"
                 class="nowside-textarea"
                 name="selfIntroduction"
                 rows="5"
@@ -388,13 +385,17 @@ export default {
         </ul>
         <!-- 儲存取消按鈕 -->
         <div class="flex justify-center w-full">
-          <button class="nowside-button-white-md">
+          <router-link
+            class="flex justify-center items-center nowside-button-white-md"
+            to="/account"
+          >
             取消
-          </button>
-          <button class="nowside-button-lightGreen-md">
-            <span class="align-sub material-icons">
-              bookmark_border
-            </span>
+          </router-link>
+          <button
+            class="flex justify-center items-center nowside-button-lightGreen-md"
+            @click="editAccountParams"
+          >
+            <span class="mr-1 material-icons">bookmark_border</span>
             儲存
           </button>
         </div>
