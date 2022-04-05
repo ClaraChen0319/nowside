@@ -77,10 +77,6 @@ export default {
     addFavorite(id) {
       console.log(id);
     },
-    // 前往 ProjectView
-    goProjectView(id) {
-      console.log(id);
-    },
     // 時間格式
     timeFormat(date) {
       const time = moment(date).format('YYYY.MM.DD');

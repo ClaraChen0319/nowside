@@ -113,6 +113,12 @@ const router = createRouter({
       name: 'Success',
       component: Success
     },
+    {
+      path: '/successview',
+      name: 'SuccessView',
+      props: (route) => ({ successId: route.params.successId }),
+      component: () => import('../views/SuccessView.vue')
+    },
   ]
 })
 

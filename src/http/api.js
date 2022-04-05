@@ -21,11 +21,16 @@ export const S_getAttendProject = (params) => axiosInstance.get('/GetAttendProje
 export const S_getAttendProjectNoPage = (params) => axiosInstance.get('/GetAttendProjectNoPage',params); // 取得參與的專案資料（無分頁）
 // export const S_getSaveProject = (params) => axiosInstance.get('/GetSaveProject',params); // 取得收藏的專案資料
 
+// CreateProject
+export const S_addProject = (params) => axiosForm.post('/AddProject',params); // 新增專案資料
+
 // ViewProject
 export const S_getAllProject = (params) => axiosInstance.get('/GetAllProject',params); // 取得所有專案列表
 export const S_getAllProjectNoPage = (params) => axiosInstance.get('/GetAllProjectNoPage',params); // 取得所有專案列表（無分頁）
 export const S_getProjectDetail = (params) => axiosInstance.get(`/GetProjectDetail?Id=${params}`); // 取得專案詳細內容
 export const S_getProjectMessage = (params) => axiosInstance.get(`/GetProjectMessage?projectId=${params}`); // 取得專案留言內容
 
-// CreateProject
-export const S_addProject = (params) => axiosForm.post('/AddProject',params); // 新增專案資料
+// SuccessProject
+export const S_getSuccessProject = (params) => axiosInstance.get('/GetSuccessProject',params); // 取得已完成專案列表
+export const S_getSuccess = (params) => axiosInstance.get('/GetSuccess',params); // 取得已完成專案列表（無分頁）
+export const S_getSuccessProjectDetail = (params) => axiosInstance.get(`/GetSuccessProjectDetail?projectId=${params}`); // 取得已完成專案詳細內容
