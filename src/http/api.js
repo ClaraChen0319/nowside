@@ -25,6 +25,14 @@ export const S_getSaveProject = (params) => axiosInstance.get('/GetSaveProject',
 export const S_addProject = (params) => axiosInstance.post('/AddProject',params); // 新增專案資料
 export const S_uploadGroupPic = (params) => axiosForm.post('/UploadGroupPic',params); // 新增專案資料 圖片上傳
 
+// Match
+export const S_getApplicant = (params) => axiosInstance.get(`/GetApplicant?id=${params}`); // 取得申請人列表
+export const S_getApplicantInfo = (paramsA, paramsB) => axiosInstance.get(`/GetApplicantInfo?memberId=${paramsB}&projectId=${paramsA}`); // 取得申請人資料
+export const S_passApplicant = (paramsA, paramsB) => axiosInstance.post(`/PassApplicant?memberId=${paramsB}&projectId=${paramsA}`); // 通過申請人
+export const S_rejectApplicant = (paramsA, paramsB) => axiosInstance.post(`/RejectApplicant?memberId=${paramsB}&projectId=${paramsA}`); // 不通過申請人
+export const S_attendProject = (params) => axiosInstance.post(`/AttendProject?Id=${params}`); // 參與專案
+
+
 // ViewProject
 export const S_getAllProject = (params) => axiosInstance.get('/GetAllProject',params); // 取得所有專案列表
 export const S_getAllProjectNoPage = (params) => axiosInstance.get('/GetAllProjectNoPage',params); // 取得所有專案列表（無分頁）

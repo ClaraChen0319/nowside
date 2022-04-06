@@ -121,7 +121,7 @@ export default {
       <ul class="flex justify-between w-[1296px]">
         <!-- Sharon -->
         <li class="flex relative flex-col justify-between items-center w-[364px] h-[515px]">
-          <h3 class="flex justify-center items-center py-1 px-3 font-chillax text-lg font-medium text-C_blue-500 dark:text-C_blue-200 rounded-full border-[3px] border-[#FFFF9C]">
+          <h3 class="flex justify-center items-center py-1 px-3 font-chillax text-lg font-medium text-C_blue-500 dark:text-C_blue-200 rounded-full border-[3px] border-[#FFF495]">
             <span class="mr-2 text-lg material-icons">mail_outline</span>
             sharonwang.ichun@gmail.com
           </h3>
@@ -139,7 +139,7 @@ export default {
                   <p>傳說對決送頭達人</p>
                 </div>
               </div>
-              <div class="absolute top-8 left-9 w-[364px] h-[436px] bg-[#FFFF9C]"></div>
+              <div class="absolute top-8 left-9 w-[364px] h-[436px] bg-[#FFF495]"></div>
             </div>
           </section>
         </li>
@@ -205,7 +205,7 @@ export default {
         </p>
       </div>
       <!-- 特色 -->
-      <ul>
+      <ul class="mb-40">
         <!-- 具私密性 -->
         <li class="flex justify-center mb-6">
           <img
