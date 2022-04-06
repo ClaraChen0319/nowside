@@ -1,11 +1,7 @@
 <script>
-// import LoginModal from '@/components/LoginModal.vue';
-
 export default {
   name: 'Home',
-  components: {
-  //   LoginModal,
-  },
+  components: {},
   data() {
     return {};
   },
@@ -42,13 +38,34 @@ export default {
         </div>
       </div>
       <!-- 右半圖片 + input -->
-      <div class="z-10 w-[960px]">
+      <div class="relative w-[960px]">
         <img
-          class="mt-16"
+          class="w-[612px]"
           src="../assets/banner-03.svg"
           alt="banner-03"
         >
+        <img
+          class="absolute right-0 bottom-0"
+          src="../assets/banner-04.svg"
+          alt="banner-04"
+        >
+        <form class=" relative ml-8 w-[636px] h-[62px] rounded-lg shadow-xl dark:shadow-none">
+          <input
+            id="signup"
+            name="signup" 
+            type="text"
+            class="pl-8 w-full h-full text-lg font-medium text-C_gray-700 bg-C_blue-100 dark:bg-[#333333] rounded-lg focus:outline-none ring-1 focus:ring-0 dark:ring-0 ring-C_gray-300"
+            placeholder="請輸入暱稱"
+          >
+          <button
+            for="signup"
+            class="flex absolute top-0 right-0 justify-center items-center w-[192px] h-[62px] text-lg font-medium text-white bg-C_green-500 hover:bg-C_green-400 dark:bg-C_green-600 dark:hover:bg-C_green-500 rounded-lg"
+          >
+            立即註冊
+          </button>
+        </form>
       </div>
+      <!-- 裝飾元素 -->
     </section>
     <!-- step -->
     <section class="flex flex-col items-center py-20 mx-auto bg-white dark:bg-C_black">
@@ -134,9 +151,15 @@ export default {
                   alt=""
                 >
                 <div class="overlay">
-                  <h3>選擇障礙</h3>
-                  <p>空瑜小萌新</p>
-                  <p>傳說對決送頭達人</p>
+                  <h3 class="text-lg">
+                    選擇障礙
+                  </h3>
+                  <a class="text-lg">
+                    空瑜小萌新
+                  </a>
+                  <p class="text-lg">
+                    傳說對決送頭達人
+                  </p>
                 </div>
               </div>
               <div class="absolute top-8 left-9 w-[364px] h-[436px] bg-[#FFF495]"></div>
@@ -158,9 +181,15 @@ export default {
                   alt=""
                 >
                 <div class="overlay">
-                  <h3>養老作息</h3>
-                  <p>無情挖坑</p>
-                  <p>愛鳥人士養成中</p>
+                  <h3 class="text-lg">
+                    養老作息
+                  </h3>
+                  <a class="text-lg">
+                    無情挖坑
+                  </a>
+                  <p class="text-lg">
+                    愛鳥人士養成中
+                  </p>
                 </div>
               </div>
               <div class="absolute top-8 left-9 w-[364px] h-[436px] bg-[#FFBA7B]"></div>
@@ -182,9 +211,15 @@ export default {
                   alt=""
                 >
                 <div class="overlay">
-                  <h3>咖啡成癮</h3>
-                  <p>吃貨一名</p>
-                  <p>Figma 愛好者</p>
+                  <h3 class="text-lg">
+                    咖啡成癮
+                  </h3>
+                  <a class="text-lg">
+                    吃貨一名
+                  </a>
+                  <p class="text-lg">
+                    Figma 愛好者
+                  </p>
                 </div>
               </div>
               <div class="absolute top-8 left-9 w-[364px] h-[436px] bg-[#FF7B7B]"></div>
@@ -260,3 +295,96 @@ export default {
     </section>
   </article>
 </template>
+
+<style>
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 40%;
+  left: 10%;
+  top: 30%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h3 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+.hovereffect a {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h3 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+</style>

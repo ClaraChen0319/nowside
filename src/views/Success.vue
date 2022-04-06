@@ -1,5 +1,5 @@
 <script>
-import { S_getSuccessProject, S_getSuccess, S_getSkills, S_getProjectClass } from '@/http/api';
+import { S_getSkills, S_getProjectClass, S_getSuccessProject, S_getSuccessProjectNoPage, } from '@/http/api';
 import moment from 'moment';
 
 export default {
@@ -65,7 +65,7 @@ export default {
     },
     // 取得已完成專案列表（無分頁）
     getListParams() {
-      S_getSuccess().then(res =>{
+      S_getSuccessProjectNoPage().then(res =>{
         console.log('已完成專案列表（無分頁）', res.data.data);
         this.listParams = res.data.data;
       })
@@ -344,9 +344,8 @@ export default {
                   </button>
                   <router-link
                     class="flex justify-center items-center py-2 px-6 text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded"
-                    to="/successview"
+                    :to="{ name: 'SuccessView', params: { successId: project.Id, } }"
                   >
-                    <!-- :to="{ name: 'SuccessView', params: { successId: project.Id, } }"" -->
                     <span class="mr-1 material-icons">north_east</span>
                     查看
                   </router-link>

@@ -1,5 +1,5 @@
 <script>
-import { S_getAllProject, S_getAllProjectNoPage, S_getSkills, S_getProjectClass } from '@/http/api';
+import { S_getSkills, S_getProjectClass, S_getAllProject, S_getAllProjectNoPage, } from '@/http/api';
 import moment from 'moment';
 
 export default {

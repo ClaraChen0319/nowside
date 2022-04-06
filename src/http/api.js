@@ -41,5 +41,5 @@ export const S_getProjectMessage = (params) => axiosInstance.get(`/GetProjectMes
 
 // SuccessProject
 export const S_getSuccessProject = (params) => axiosInstance.get('/GetSuccessProject',params); // 取得已完成專案列表
-export const S_getSuccess = (params) => axiosInstance.get('/GetSuccess',params); // 取得已完成專案列表（無分頁）
+export const S_getSuccessProjectNoPage = (params) => axiosInstance.get('/GetSuccessProjectNoPage',params); // 取得已完成專案列表（無分頁）
 export const S_getSuccessProjectDetail = (params) => axiosInstance.get(`/GetSuccessProjectDetail?projectId=${params}`); // 取得已完成專案詳細內容

@@ -13,7 +13,6 @@ export default {
   },
   data() {
     return {
-      Id: 11,
       detailParams: {
         Id: 0,
         ProjectName: '',
@@ -40,8 +39,7 @@ export default {
   methods: {
     // 取得專案詳細
     getDetailParams() {
-      // S_getSuccessProjectDetail(this.successId).then(res =>{
-      S_getSuccessProjectDetail(this.Id).then(res =>{
+      S_getSuccessProjectDetail(this.successId).then(res =>{
         console.log('專案詳細', res.data.userdata);
         this.detailParams = res.data.userdata;
       })
