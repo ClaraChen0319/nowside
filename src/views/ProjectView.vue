@@ -99,14 +99,14 @@ export default {
                 @click="addFavorite(detailParams.Id)"
               >
                 <span class="mr-1 material-icons">favorite_border</span>
-                ＸＸ
+                收藏
               </button>
               <router-link
                 class="flex justify-center items-center py-2 px-6 text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded"
-                :to="{ name: 'ProjectView', params: { projectId: detailParams.Id, }, hash: '#XXX' }"
+                :to="{ name: 'ProjectView', params: { projectId: detailParams.Id, }, }"
               >
                 <span class="mr-1 material-icons">north_east</span>
-                ＸＸ
+                編輯
               </router-link>
             </div>
           </li>
@@ -256,10 +256,21 @@ export default {
                 </div>
               </li>
             </ul>
-            <!-- 審核申請人按鈕 -->
-            <button class="nowside-button-blue-md">
-              審核組員 {{ `${detailParams.Applicants?.length} / ${detailParams.GroupNum}` }}
-            </button>
+            <!-- 審核申請人 + 參與專案 -->
+            <div class="flex">
+              <router-link
+                class="mr-6 nowside-button-blue-md"
+                :to="{ name: 'ProjectMatch', params: { projectId: projectId, } }"
+              >
+                審核組員 {{ `${detailParams.Applicants?.length} / ${detailParams.GroupNum}` }}
+              </router-link>
+              <router-link
+                class="nowside-button-blue-md"
+                :to="{ name: 'ProjectApply', params: { projectId: projectId, } }"
+              >
+                參與專案
+              </router-link>
+            </div>
           </li>
         </ul>
       </div>

@@ -3,8 +3,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import Account from '../views/Account.vue'
-import Project from '../views/Project.vue'
 import Create from '../views/Create.vue'
+import Project from '../views/Project.vue'
 import Success from '../views/Success.vue'
 
 // <router-link> 跳轉路由的標籤
@@ -80,22 +80,6 @@ const router = createRouter({
       component: () => import('../views/AccountMessage.vue')
     },
     {
-      path: '/project',
-      name: 'Project',
-      component: Project
-    },
-    {
-      path: '/projectview/:projectId',
-      name: 'ProjectView',
-      props: (route) => ({ projectId: route.params.projectId }),
-      component: () => import('../views/ProjectView.vue')
-    },
-    {
-      path: '/projectmatch',
-      name: 'ProjectMatch',
-      component: () => import('../views/ProjectMatch.vue')
-    },
-    {
       path: '/create',
       name: 'Create',
       component: Create
@@ -109,6 +93,29 @@ const router = createRouter({
       path: '/createsuccess',
       name: 'CreateSuccess',
       component: () => import('../views/CreateSuccess.vue')
+    },
+    {
+      path: '/project',
+      name: 'Project',
+      component: Project
+    },
+    {
+      path: '/projectview/:projectId',
+      name: 'ProjectView',
+      props: (route) => ({ projectId: route.params.projectId }),
+      component: () => import('../views/ProjectView.vue')
+    },
+    {
+      path: '/projectmatch/:projectId',
+      name: 'ProjectMatch',
+      props: (route) => ({ projectId: route.params.projectId }),
+      component: () => import('../views/ProjectMatch.vue')
+    },
+    {
+      path: '/projectapply/:projectId',
+      name: 'ProjectApply',
+      props: (route) => ({ projectId: route.params.projectId }),
+      component: () => import('../views/ProjectApply.vue')
     },
     {
       path: '/success',

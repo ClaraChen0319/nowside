@@ -23,9 +23,9 @@ export default {
     <div class="mr-36 w-[196px]">
       <router-link to="/">
         <img
-          src="@/assets/logo.png"
-          alt="logo"
-          class="mx-auto max-h-[36px] align-middle"
+          src="../assets/logo-header.svg"
+          alt="logo-header"
+          class="mx-auto align-middle"
         >
       </router-link>
     </div>
