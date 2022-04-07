@@ -1,5 +1,11 @@
 <script>
-import { S_getSuccessProjectDetail, } from '@/http/api';
+import {
+  S_presentFavoriteProject,
+  S_checkUser,
+  S_getSuccessProjectDetail,
+  S_addFavoriteProject,
+  S_cancelFavoriteProject,
+} from '@/http/api';
 import moment from 'moment';
 
 export default {
@@ -13,6 +19,8 @@ export default {
   },
   data() {
     return {
+      favoriteActive: false,
+      organizerActive: false,
       detailParams: {
         Id: 0,
         ProjectName: '',
@@ -34,9 +42,39 @@ export default {
   },
   computed: {},
   mounted() {
+    this.onLogin();
     this.getDetailParams();
   },
   methods: {
+    // 判斷有無登入（token）
+    onLogin() {
+      const token = localStorage.getItem('nowsideToken');
+      if (token) {
+        this.onFavorite();
+        this.onOrganizer();
+      };
+      return;
+    },
+    // 顯示是否收藏該專案
+    onFavorite() {
+      S_presentFavoriteProject(this.projectId).then(res =>{
+        console.log('是否收藏專案', res.data);
+        if (res.data === true) this.favoriteActive = true;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 驗證是否為發起人
+    onOrganizer() {
+      S_checkUser(this.projectId).then(res =>{
+        console.log('是否為發起人', res.data);
+        if (res.data === true) this.organizerActive = true;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
     // 取得專案詳細
     getDetailParams() {
       S_getSuccessProjectDetail(this.successId).then(res =>{
@@ -46,6 +84,36 @@ export default {
       .catch(error => {
         console.log(error);
       });
+    },
+    // 收藏專案
+    addFavorite(id) {
+      const token = localStorage.getItem('nowsideToken');
+      if (token) {
+        S_addFavoriteProject(id).then(res =>{
+          console.log('收藏專案', res.data);
+          this.getSaveListParams();
+          this.getListParams();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      };
+      return;
+    },
+    // 取消收藏專案
+    cancelFavorite(id) {
+      const token = localStorage.getItem('nowsideToken');
+      if (token) {
+        S_cancelFavoriteProject(id).then(res =>{
+          console.log('取消收藏專案', res.data);
+          this.getSaveListParams();
+          this.getListParams();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      };
+      return;
     },
     // 時間格式
     timeFormat(date) {
@@ -83,10 +151,19 @@ export default {
           <li class="mb-4">
             <div class="flex justify-between w-full">
               <button
-                class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300"
+                v-if="favoriteActive === false"
+                class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-400 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300" 
                 @click="addFavorite(detailParams.Id)"
               >
                 <span class="mr-1 material-icons">favorite_border</span>
+                收藏
+              </button>
+              <button
+                v-if="favoriteActive === true"
+                class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300" 
+                @click="cancelFavorite(detailParams.Id)"
+              >
+                <span class="mr-1 material-icons">favorite</span>
                 收藏
               </button>
               <router-link

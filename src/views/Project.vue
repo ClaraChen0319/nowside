@@ -1,5 +1,16 @@
 <script>
-import { S_getSkills, S_getProjectClass, S_getAllProject, S_getAllProjectNoPage, } from '@/http/api';
+import {
+  S_getSaveProject,
+  S_getSaveProjectNoPage,
+  S_getAllProject,
+  S_getAllProjectNoPage,
+  S_getAllProjectGuest,
+  S_getAllProjectGuestNoPage,
+  S_getSkills,
+  S_getProjectClass,
+  S_addFavoriteProject,
+  S_cancelFavoriteProject,
+} from '@/http/api';
 import moment from 'moment';
 
 export default {
@@ -7,18 +18,7 @@ export default {
   components: {},
   data() {
     return {
-      skillsData: [
-        {
-          Id: 0,
-          skill: '',
-        },
-      ],
-      classData: [
-        {
-          Id: 0,
-          ProjectType: '',
-        },
-      ],
+      favoriteActive: false,
       listParams: [
         {
           Id: 0,
@@ -34,15 +34,84 @@ export default {
           ProjectState: '',
         },
       ],
+      favoriteListParams: [
+        {
+          Id: 0,
+          ProjectName: '',
+          ProjectContext: '',
+          GroupPhoto: '',
+          InitDate: '',
+          GroupDeadline: '',
+          FinishedDeadline: '',
+          GroupNum: 0,
+          PartnerSkills: [],
+          ProjectTypeId: [],
+          ProjectState: '',
+        },
+      ],
+      skillsData: [
+        {
+          Id: 0,
+          skill: '',
+        },
+      ],
+      classData: [
+        {
+          Id: 0,
+          ProjectType: '',
+        },
+      ],
     };
   },
   computed: {},
   mounted() {
+    this.onLogin();
     this.getSkillsParams();
     this.getClassParams();
-    this.getListParams();
   },
   methods: {
+    // 判斷有無登入（token）
+    onLogin() {
+      const token = localStorage.getItem('nowsideToken');
+      if (token) {
+        this.favoriteActive = true;
+        this.getSaveListParams();
+        this.getListParams();
+      } else {
+        this.getGuestListParams();
+      };
+      return;
+    },
+    // 取得收藏的專案資料
+    getSaveListParams() {
+      S_getSaveProjectNoPage().then(res =>{
+        console.log('收藏的專案資料', res.data.data);
+        this.favoriteListParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得所有專案列表
+    getListParams() {
+      S_getAllProjectNoPage().then(res =>{
+        console.log('取得所有專案列表', res.data.data);
+        this.listParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得所有專案列表【無登入】
+    getGuestListParams() {
+      S_getAllProjectGuestNoPage().then(res =>{
+        console.log('取得所有專案列表', res.data.data);
+        this.listParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
     // 取得技能列表
     getSkillsParams() {
       S_getSkills().then(res =>{
@@ -63,19 +132,35 @@ export default {
         console.log(error);
       });
     },
-    // 取得所有專案列表（無分頁）
-    getListParams() {
-      S_getAllProjectNoPage().then(res =>{
-        console.log('取得所有專案列表（無分頁）', res.data.data);
-        this.listParams = res.data.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    },
-    // 收藏
+    // 收藏專案
     addFavorite(id) {
-      console.log(id);
+      const token = localStorage.getItem('nowsideToken');
+      if (token) {
+        S_addFavoriteProject(id).then(res =>{
+          console.log('收藏專案', res.data);
+          this.getSaveListParams();
+          this.getListParams();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      };
+      return;
+    },
+    // 取消收藏專案
+    cancelFavorite(id) {
+      const token = localStorage.getItem('nowsideToken');
+      if (token) {
+        S_cancelFavoriteProject(id).then(res =>{
+          console.log('取消收藏專案', res.data);
+          this.getSaveListParams();
+          this.getListParams();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      };
+      return;
     },
     // 時間格式
     timeFormat(date) {
@@ -207,36 +292,18 @@ export default {
         <!-- 列表 -->
         <div class="py-12 px-6 w-full bg-white dark:bg-C_black rounded-b-lg">
           <ul class="w-[258px]">
-            <li class="flex items-center mb-8">
+            <li
+              v-for="project in favoriteListParams"
+              :key="project.Id"
+              class="flex items-center mb-8"
+            >
               <div
                 class="w-[80px] h-[80px] rounded-full nowside-backgroundImage"
-                style="background-image: url('https://images.unsplash.com/photo-1492370284958-c20b15c692d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80')"
+                :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${project.GroupPhoto}')` }"
               ></div>
               <div>
                 <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
-                  尋找貓
-                </p>
-              </div>
-            </li>
-            <li class="flex items-center mb-8">
-              <div
-                class="w-[80px] h-[80px] rounded-full nowside-backgroundImage"
-                style="background-image: url('https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"
-              ></div>
-              <div>
-                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
-                  天然 a 食譜
-                </p>
-              </div>
-            </li>
-            <li class="flex items-center">
-              <div
-                class="w-[80px] h-[80px] rounded-full nowside-backgroundImage"
-                style="background-image: url('https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')"
-              ></div>
-              <div>
-                <p class="ml-6 font-medium text-C_blue-500 dark:text-C_blue-200">
-                  植萃分析
+                  {{ project.ProjectName }}
                 </p>
               </div>
             </li>
@@ -347,10 +414,19 @@ export default {
               <li>
                 <div class="flex justify-between w-full">
                   <button
-                    class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300"
+                    v-if="project.CollectOrNot === false"
+                    class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-400 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300" 
                     @click="addFavorite(project.Id)"
                   >
                     <span class="mr-1 material-icons">favorite_border</span>
+                    收藏
+                  </button>
+                  <button
+                    v-if="project.CollectOrNot === true"
+                    class="flex justify-center items-center py-2 px-6 text-md font-medium text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_gray-300" 
+                    @click="cancelFavorite(project.Id)"
+                  >
+                    <span class="mr-1 material-icons">favorite</span>
                     收藏
                   </button>
                   <router-link
