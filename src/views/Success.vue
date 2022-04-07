@@ -264,7 +264,7 @@ export default {
                 </p>
               </li>
               <!-- 媒合期限 -->
-              <li>
+              <li class="flex">
                 <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
                 </p>　
@@ -296,7 +296,7 @@ export default {
                 </div>
               </li>
               <!-- 發起日 -->
-              <li class="mb-4">
+              <li class="flex mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
                 </p>
@@ -305,7 +305,7 @@ export default {
                 </p>
               </li>
               <!-- 結束日 -->
-              <li class="mb-4">
+              <li class="flex mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
                 </p>

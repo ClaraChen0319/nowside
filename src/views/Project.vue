@@ -275,7 +275,7 @@ export default {
                 </p>
               </li>
               <!-- 媒合期限 -->
-              <li>
+              <li class="flex">
                 <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
                 </p>　
@@ -307,7 +307,7 @@ export default {
                 </div>
               </li>
               <!-- 發起日 -->
-              <li class="mb-4">
+              <li class="flex mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
                 </p>
@@ -316,7 +316,7 @@ export default {
                 </p>
               </li>
               <!-- 結束日 -->
-              <li class="mb-4">
+              <li class="flex mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
                 </p>
@@ -331,7 +331,7 @@ export default {
               </li>
               <!-- 夥伴技能 -->
               <li class="mb-4">
-                <div class="flex overflow-y-hidden flex-wrap max-h-[68px]">
+                <div class="inline-block overflow-y-hidden h-[80px]">
                   <div
                     v-for="skill in project.PartnerSkills"
                     :key="skill.Id"

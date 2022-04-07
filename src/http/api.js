@@ -20,6 +20,7 @@ export const S_getApplyProjectNoPage = (params) => axiosInstance.get('/GetApplyP
 export const S_getAttendProject = (params) => axiosInstance.get('/GetAttendProject',params); // 取得參與的專案資料
 export const S_getAttendProjectNoPage = (params) => axiosInstance.get('/GetAttendProjectNoPage',params); // 取得參與的專案資料（無分頁）
 export const S_getSaveProject = (params) => axiosInstance.get('/GetSaveProject',params); // 取得收藏的專案資料
+export const S_getSaveProjectNoPage = (params) => axiosInstance.get('/GetSaveProjectNoPage',params); // 取得收藏的專案資料
 
 // CreateProject
 export const S_addProject = (params) => axiosInstance.post('/AddProject',params); // 新增專案資料

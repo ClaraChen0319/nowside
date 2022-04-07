@@ -481,7 +481,7 @@ export default {
                       <form>
                         <textarea
                           id="selfIntroduction"
-                          v-model="applicant.SelfIntroduction[0]"
+                          v-model="applicant.SelfIntroduction"
                           class="nowside-textarea"
                           name="selfIntroduction"
                           rows="5"

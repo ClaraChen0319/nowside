@@ -48,7 +48,7 @@ export default {
 <template>
   <article class="py-[180px] w-full h-full">
     <!-- 大頭貼 + 個人資料 -->
-    <section class="flex justify-between mb-[72px] nowside-container-lg">
+    <section class="flex justify-between mb-[72px] h-fit nowside-container-lg">
       <!-- 【左】大頭貼 + 選單 -->
       <div class="flex flex-col items-center p-14 nowside-container-sm nowside-shadow">
         <!-- 大頭貼 -->
@@ -64,33 +64,48 @@ export default {
           </li>
           <!-- 個人資料 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              to="/account"
+            >
               個人資料
-            </button>
+            </router-link>
           </li>
           <!-- 發起的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              :to="{ name: 'AccountProject', params: { projectType: 'add', } }"
+            >
               發起的專案
-            </button>
+            </router-link>
           </li>
           <!-- 申請的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              :to="{ name: 'AccountProject', params: { projectType: 'apply', } }"
+            >
               申請的專案
-            </button>
+            </router-link>
           </li>
           <!-- 參與的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              :to="{ name: 'AccountProject', params: { projectType: 'attend', } }"
+            >
               參與的專案
-            </button>
+            </router-link>
           </li>
           <!-- 收藏的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              :to="{ name: 'AccountProject', params: { projectType: 'save', } }"
+            >
               收藏的專案
-            </button>
+            </router-link>
           </li>
           <!-- 通知 -->
           <li class=" hover:text-C_blue-400 dark:hover:text-C_blue-200">

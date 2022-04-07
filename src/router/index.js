@@ -30,11 +30,6 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/test',
-      name: 'Test',
-      component: () => import('../views/Test.vue')
-    },
-    {
       path: '/login',
       name: 'Login',
       component: Login
@@ -55,24 +50,10 @@ const router = createRouter({
       component: () => import('../views/AccountEdit.vue')
     },
     {
-      path: '/accountadd',
-      name: 'AccountAdd',
-      component: () => import('../views/AccountAdd.vue')
-    },
-    {
-      path: '/accountapply',
-      name: 'AccountApply',
-      component: () => import('../views/AccountApply.vue')
-    },
-    {
-      path: '/accountattend',
-      name: 'AccountAttend',
-      component: () => import('../views/AccountAttend.vue')
-    },
-    {
-      path: '/accountsave',
-      name: 'AccountSave',
-      component: () => import('../views/AccountSave.vue')
+      path: '/accountproject',
+      name: 'AccountProject',
+      props: (route) => ({ projectType: route.params.projectType }),
+      component: () => import('../views/AccountProject.vue')
     },
     {
       path: '/accountmessage',

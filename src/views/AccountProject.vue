@@ -1,10 +1,26 @@
 <script>
-import { S_getUserInfo, S_getAddProject, S_getAddProjectNoPage } from '@/http/api';
+import {
+  S_getUserInfo,
+  S_getAddProject,
+  S_getAddProjectNoPage,
+  S_getApplyProject,
+  S_getApplyProjectNoPage,
+  S_getAttendProject,
+  S_getAttendProjectNoPage,
+  S_getSaveProject,
+  S_getSaveProjectNoPage,
+} from '@/http/api';
 import moment from 'moment';
 
 export default {
-  name: 'AccountAdd',
+  name: 'AccountProject',
   components: {},
+  props: {
+    projectType: {
+      type: String,
+      default: '',
+    }
+  },
   data() {
     return {
       accountParams: {
@@ -38,6 +54,7 @@ export default {
           PartnerSkills: [],
           ProjectTypeId: [],
           ProjectState: '', // 專案狀態
+          ApplicantState: '', // 申請人的專案狀態
         },
       ],
     };
@@ -45,7 +62,20 @@ export default {
   computed: {},
   mounted() {
     this.getAccountParams();
-    this.getListParams();
+    switch (this.projectType) {
+      case 'add':
+        this.getAddListParams();
+        break
+      case 'apply':
+        this.getApplyListParams();
+        break
+      case 'attend':
+        this.getAttendListParams();
+        break
+      case 'save':
+        this.getSaveListParams();
+        break
+    };
   },
   methods: {
     // 取得會員資料
@@ -59,9 +89,39 @@ export default {
       });
     },
     // 取得發起的專案資料
-    getListParams() {
+    getAddListParams() {
       S_getAddProjectNoPage().then(res =>{
         console.log('發起的專案資料', res.data.data);
+        this.listParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得申請的專案資料
+    getApplyListParams() {
+      S_getApplyProjectNoPage().then(res =>{
+        console.log('申請的專案資料', res.data.data);
+        this.listParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得參與的專案資料
+    getAttendListParams() {
+      S_getAttendProjectNoPage().then(res =>{
+        console.log('參與的專案資料', res.data.data);
+        this.listParams = res.data.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
+    // 取得收藏的專案資料
+    getSaveListParams() {
+      S_getSaveProjectNoPage().then(res =>{
+        console.log('收藏的專案資料', res.data.data);
         this.listParams = res.data.data;
       })
       .catch(error => {
@@ -79,64 +139,73 @@ export default {
 
 <template>
   <article class="py-[180px] w-full h-full">
-    <div class="flex justify-end mb-12 nowside-container-lg">
-      <!-- 專案狀態 select -->
-      <section>
-        <select
-          id="status"
-          class="py-2 pr-6 pl-2 w-[140px] text-lg font-bold text-center text-white bg-C_blue-400 hover:bg-C_blue-300 rounded-full border-0 form-select"
-          name="status"
-        >
-          <option selected>
-            媒合中
-          </option>
-          <option>進行中</option>
-          <option>已完成</option>
-          <option>已關閉</option>
-          <option>已廢棄</option>
-        </select>
-      </section>
-    </div>
     <div class="flex justify-between nowside-container-lg">
       <!-- 【左】大頭貼 + 選單 -->
-      <section class="flex flex-col items-center p-14 nowside-container-sm nowside-shadow">
+      <section class="flex flex-col items-center p-14 h-fit nowside-container-sm nowside-shadow">
+        <!-- 大頭貼 -->
         <div
           class="mb-8 w-[200px] h-[200px] rounded-full nowside-backgroundImage"
           :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/ProfilePicture/${accountParams.ProfilePicture}')` }"
         ></div>
+        <!-- 選單 -->
         <ul class="text-lg text-center text-C_blue-700 dark:text-C_blue-400">
+          <!-- 暱稱 -->
           <li class="mb-6 font-medium">
             {{ accountParams.NickName }}
           </li>
+          <!-- 個人資料 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              to="/account"
+            >
               個人資料
-            </button>
+            </router-link>
           </li>
+          <!-- 發起的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <button
+              class="font-medium"
+              @click="getAddListParams"
+            >
               發起的專案
             </button>
           </li>
+          <!-- 申請的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <button
+              class="font-medium"
+              @click="getApplyListParams"
+            >
               申請的專案
             </button>
           </li>
+          <!-- 參與的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <button
+              class="font-medium"
+              @click="getAttendListParams"
+            >
               參與的專案
             </button>
           </li>
+          <!-- 收藏的專案 -->
           <li class="mb-6 hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <button
+              class="font-medium"
+              @click="getSaveListParams"
+            >
               收藏的專案
             </button>
           </li>
+          <!-- 通知 -->
           <li class=" hover:text-C_blue-400 dark:hover:text-C_blue-200">
-            <button class="font-medium">
+            <router-link
+              class="font-medium"
+              to="/accountmessage"
+            >
               通知
-            </button>
+            </router-link>
           </li>
         </ul>
       </section>
@@ -169,7 +238,7 @@ export default {
                   {{ project.ProjectContext }}
                 </p>
               </li>
-              <li>
+              <li class="flex">
                 <p class="font-medium text-C_blue-700 dark:text-C_blue-400">
                   媒合期限
                 </p>　
@@ -182,6 +251,7 @@ export default {
           <!-- 【右】狀態 -->
           <div class="w-[256px]">
             <ul class="text-C_blue-800">
+              <!-- 種類 + 狀態 -->
               <li class="flex justify-between items-center mb-4">
                 <div
                   v-for="type in project.ProjectTypeId"
@@ -199,7 +269,8 @@ export default {
                   </p>
                 </div>
               </li>
-              <li class="mb-4">
+              <!-- 發起日 -->
+              <li class="flex mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   發起日
                 </p>
@@ -207,7 +278,8 @@ export default {
                   {{ timeFormat(project.InitDate) }}
                 </p>
               </li>
-              <li class="mb-4">
+              <!-- 結束日 -->
+              <li class="flex mb-4">
                 <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
                   結束日
                 </p>
@@ -215,12 +287,14 @@ export default {
                   {{ timeFormat(project.FinishedDeadline) }}
                 </p>
               </li>
+              <!-- 團隊人數 -->
               <li class="flex items-center mb-4">
                 <span class="mr-2 text-3xl text-C_blue-400 material-icons">account_circle</span>
                 <span class="text-xl dark:text-C_blue-200">{{ project.GroupNum }}</span>
               </li>
+              <!-- 夥伴技能 -->
               <li class="mb-4">
-                <div class="flex overflow-y-hidden flex-wrap max-h-[68px]">
+                <div class="inline-block overflow-y-hidden h-[80px]">
                   <div
                     v-for="skill in project.PartnerSkills"
                     :key="skill.Id"
@@ -232,6 +306,7 @@ export default {
                   </div>
                 </div>
               </li>
+              <!-- 按鈕 -->
               <li>
                 <div class="flex justify-between w-full">
                   <button

@@ -129,7 +129,7 @@ export default {
             </div>
           </li>
           <!-- 發起日 -->
-          <li class="mb-4">
+          <li class="flex mb-4">
             <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
               發起日
             </p>
@@ -138,7 +138,7 @@ export default {
             </p>
           </li>
           <!-- 結束日 -->
-          <li class="mb-4">
+          <li class="flex mb-4">
             <p class="mr-2 font-medium text-C_blue-700 dark:text-C_blue-400">
               結束日
             </p>
@@ -192,8 +192,8 @@ export default {
             </div>
           </li>
           <!-- 媒合期限 -->
-          <li class="mb-10">
-            <p class="inline-block mr-8 mb-4 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
+          <li class="flex items-center mb-10">
+            <p class="inline-block mr-8 text-lg font-medium text-C_blue-700 dark:text-C_blue-400">
               媒合期限
             </p>
             <p class="dark:text-C_blue-200">
