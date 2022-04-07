@@ -74,7 +74,6 @@ export default {
     onLogin() {
       const token = localStorage.getItem('nowsideToken');
       if (token) {
-        this.favoriteActive = true;
         this.getSaveListParams();
         this.getListParams();
       } else {
@@ -86,6 +85,7 @@ export default {
     getSaveListParams() {
       S_getSaveProjectNoPage().then(res =>{
         console.log('收藏的專案資料', res.data.data);
+        this.favoriteActive = true;
         this.favoriteListParams = res.data.data;
       })
       .catch(error => {
