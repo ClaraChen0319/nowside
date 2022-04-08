@@ -27,87 +27,87 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
     },
     {
       path: '/signup',
       name: 'Signup',
-      component: Signup
+      component: Signup,
     },
     {
       path: '/account',
       name: 'Account',
-      component: Account
+      component: Account,
     },
     {
       path: '/accountedit',
       name: 'AccountEdit',
-      component: () => import('../views/AccountEdit.vue')
+      component: () => import('../views/AccountEdit.vue'),
     },
     {
       path: '/accountproject',
       name: 'AccountProject',
       props: (route) => ({ projectType: route.params.projectType }),
-      component: () => import('../views/AccountProject.vue')
+      component: () => import('../views/AccountProject.vue'),
     },
     {
       path: '/accountmessage',
       name: 'AccountMessage',
-      component: () => import('../views/AccountMessage.vue')
+      component: () => import('../views/AccountMessage.vue'),
     },
     {
       path: '/create',
       name: 'Create',
-      component: Create
-    },
-    {
-      path: '/createedit',
-      name: 'CreateEdit',
-      component: () => import('../views/CreateEdit.vue')
+      component: Create,
     },
     {
       path: '/createsuccess',
       name: 'CreateSuccess',
-      component: () => import('../views/CreateSuccess.vue')
+      component: () => import('../views/CreateSuccess.vue'),
     },
     {
       path: '/project',
       name: 'Project',
-      component: Project
+      component: Project,
     },
     {
       path: '/projectview/:projectId',
       name: 'ProjectView',
       props: (route) => ({ projectId: route.params.projectId }),
-      component: () => import('../views/ProjectView.vue')
+      component: () => import('../views/ProjectView.vue'),
+    },
+    {
+      path: '/projectedit',
+      name: 'ProjectEdit',
+      component: () => import('../views/ProjectEdit.vue'),
     },
     {
       path: '/projectmatch/:projectId',
       name: 'ProjectMatch',
       props: (route) => ({ projectId: route.params.projectId }),
-      component: () => import('../views/ProjectMatch.vue')
+      component: () => import('../views/ProjectMatch.vue'),
     },
     {
       path: '/projectapply/:projectId',
       name: 'ProjectApply',
       props: (route) => ({ projectId: route.params.projectId }),
-      component: () => import('../views/ProjectApply.vue')
+      component: () => import('../views/ProjectApply.vue'),
     },
     {
       path: '/success',
       name: 'Success',
-      component: Success
+      component: Success,
     },
     {
       path: '/successview/:successId',
       name: 'SuccessView',
       props: (route) => ({ successId: route.params.successId }),
-      component: () => import('../views/SuccessView.vue')
+      component: () => import('../views/SuccessView.vue'),
     },
   ]
 })
