@@ -27,6 +27,7 @@ export const S_getSaveProjectNoPage = (params) => axiosInstance.get('/GetSavePro
 // CreateProject
 export const S_addProject = (params) => axiosInstance.post('/AddProject',params); // 新增專案資料
 export const S_uploadGroupPic = (params) => axiosForm.post('/UploadGroupPic',params); // 新增專案資料 圖片上傳
+export const S_editProject = (paramsA, paramsB) => axiosInstance.put(`/EditProject?Id=${paramsA}`, paramsB); // 編輯專案詳細內容
 
 // Match
 export const S_getApplicant = (params) => axiosInstance.get(`/GetApplicant?id=${params}`); // 取得申請人列表

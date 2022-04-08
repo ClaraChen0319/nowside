@@ -82,8 +82,9 @@ const router = createRouter({
       component: () => import('../views/ProjectView.vue'),
     },
     {
-      path: '/projectedit',
+      path: '/projectedit/:projectId',
       name: 'ProjectEdit',
+      props: (route) => ({ projectId: route.params.projectId }),
       component: () => import('../views/ProjectEdit.vue'),
     },
     {

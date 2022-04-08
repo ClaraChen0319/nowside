@@ -1,10 +1,16 @@
 <script>
-import { S_getSkills, S_getProjectClass, S_addProject, S_uploadGroupPic, } from '@/http/api';
+import { S_getSkills, S_getProjectClass, S_getProjectDetail, S_editProject, S_uploadGroupPic, } from '@/http/api';
 import moment from 'moment';
 
 export default {
   name: 'ProjectEdit',
   components: {},
+  props: {
+    projectId: {
+      type: String,
+      default: '',
+    }
+  },
   data() {
     return {
       skillsData: [
@@ -19,20 +25,19 @@ export default {
           ProjectType: '',
         },
       ],
-      projectParams: {
-        Id: 0, // 專案ID（不用顯示）
-        ProjectName: '專案名稱',
+      detailParams: {
+        Id: 0,
+        ProjectName: '',
         ProjectContext: '',
         GroupPhoto: '',
-        InitDate: '', // 專案發起日（後端賦值）
-        GroupDeadline: '', // 參加截止日（後端賦值）
+        InitDate: '',
+        GroupDeadline: '',
         FinishedDeadline: '',
         GroupNum: 0,
         PartnerCondition: '',
-        PartnerSkills: [0,], // 一定要有值（數字陣列）
-        ProjectTypeId: 0,
-        ProjectState: '', // 專案狀態（不用顯示）
-        MembersId: 0, // 發起人ID（不用顯示） 
+        PartnerSkills: [1,],
+        ProjectTypeId: [{}],
+        ProjectState: '',
       },
     };
   },
@@ -46,16 +51,17 @@ export default {
       set(newVal) {
         const formatDateResult = new Date(newVal).toISOString();
         console.log('set', formatDateResult);
-        this.projectParams.FinishedDeadline = formatDateResult;
+        this.detailParams.FinishedDeadline = formatDateResult;
       },
       get() {
-        return this.projectParams.FinishedDeadline;
+        return this.detailParams.FinishedDeadline;
       },
     },
   },
   mounted() {
     this.getSkillsParams();
     this.getClassParams();
+    this.getDetailParams();
   },
   methods: {
     // 取得技能列表
@@ -78,6 +84,28 @@ export default {
         console.log(error);
       });
     },
+    // 取得專案詳細
+    getDetailParams() {
+      S_getProjectDetail(this.projectId).then(res =>{
+        console.log('專案詳細', res.data.userdata);
+        // this.detailParams = res.data.userdata;
+        const obj = {
+          GroupPhoto: res.data.userdata.GroupPhoto,
+          ProjectName: res.data.userdata.ProjectName,
+          ProjectTypeId: res.data.userdata.ProjectTypeId[0].Id,
+          GroupNum: res.data.userdata.GroupNum,
+          GroupDeadline: res.data.userdata.GroupDeadline,
+          FinishedDeadline: res.data.userdata.FinishedDeadline,
+          ProjectContext: res.data.userdata.ProjectContext,
+          PartnerCondition: res.data.userdata.PartnerCondition,
+          PartnerSkills: [res.data.userdata.PartnerSkills[0].Id],
+        };
+        this.detailParams = obj;        
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    },
     // 新增專案資料 圖片上傳
     uploadImage(e) {
       console.log(e.target.files[0]);
@@ -86,16 +114,16 @@ export default {
       
       S_uploadGroupPic(formdata).then(res =>{
         console.log('新增專案資料 圖片上傳', res.data);
-        this.projectParams.GroupPhoto = res.data.data.ProfilePicture;
+        this.detailParams.GroupPhoto = res.data.data.ProfilePicture;
       })
       .catch(error => {
         console.log(error);
       });
     },
-    // 新增專案資料
-    postProjectParams() {
-      S_addProject(this.projectParams).then(res =>{
-        console.log('新增專案資料', res);
+    // 編輯專案詳細內容
+    putProjectParams() {
+      S_editProject(this.projectId, this.detailParams).then(res =>{
+        console.log('編輯專案詳細內容', res.data);
       })
       .catch(error => {
         console.log(error);
@@ -105,6 +133,13 @@ export default {
     timeFormat(date) {
       const time = moment(date).format('YYYY.MM.DD');
       return time;
+    },
+    // 專題種類 selected
+    optionSelected(type) {
+      console.log(type.Id);
+      console.log(this.detailParams.ProjectTypeId[0]);
+      console.log((type.Id === this.detailParams.ProjectTypeId[0]?.Id) ? true : false);
+      return (type.Id === this.detailParams.ProjectTypeId[0]?.Id) ? true : false;
     },
   },
 }
@@ -118,7 +153,7 @@ export default {
         <div class="relative mb-20 h-[415px]">
           <div
             class="w-[415px] h-[415px] rounded-full shadow-xl dark:shadow-gray-800 nowside-backgroundImage"
-            :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${projectParams.GroupPhoto}')` }"
+            :style="{ 'background-image': `url('http://sideprojectnow.rocket-coding.com/Upload/GroupPicture/${detailParams.GroupPhoto}')` }"
           ></div>
           <form>
             <input
@@ -139,7 +174,7 @@ export default {
         <form class="flex items-center w-[415px]">
           <input
             id="projectName"
-            v-model="projectParams.ProjectName"
+            v-model="detailParams.ProjectName"
             name="projectName"
             type="text"
             class="w-[383px] text-3xl font-medium text-center text-C_blue-400 dark:bg-C_black focus:outline-none focus:ring-0"
@@ -159,7 +194,7 @@ export default {
               >專案種類</label>
               <select
                 id="projectTypeId"
-                v-model="projectParams.ProjectTypeId"
+                v-model="detailParams.ProjectTypeId"
                 name="projectTypeId"
                 class="w-full tracking-wide text-C_blue-600 dark:text-C_blue-200 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300 focus:border-C_green-500 dark:border-C_gray-900 focus:ring-C_green-500 form-input"
               >
@@ -167,6 +202,7 @@ export default {
                   v-for="type in classData"
                   :key="type.Id"
                   :value="type.Id"
+                  :selected="(type.Id === detailParams.ProjectTypeId) ?true :false"
                 >
                   {{ type.ProjectType }}
                 </option>
@@ -179,7 +215,7 @@ export default {
               >團隊人數</label>
               <select
                 id="projectTypeId"
-                v-model="projectParams.GroupNum"
+                v-model="detailParams.GroupNum"
                 name="projectTypeId"
                 class="w-full tracking-wide text-C_blue-600 dark:text-C_blue-200 bg-C_gray-100 dark:bg-[#333333] rounded border border-C_gray-300 focus:border-C_green-500 dark:border-C_gray-900 focus:ring-C_green-500 form-input"
               >
@@ -266,7 +302,7 @@ export default {
             >專案內容</label>
             <textarea
               id="projectContext"
-              v-model="projectParams.ProjectContext"
+              v-model="detailParams.ProjectContext"
               class="nowside-textarea"
               name="projectContext"
               rows="5"
@@ -281,7 +317,7 @@ export default {
             >夥伴條件</label>
             <textarea
               id="PartnerCondition"
-              v-model="projectParams.PartnerCondition"
+              v-model="detailParams.PartnerCondition"
               class="nowside-textarea"
               name="PartnerCondition"
               rows="5"
@@ -305,18 +341,18 @@ export default {
       <section class="flex justify-center">
         <router-link
           class="flex justify-center items-center py-2 mr-6 w-[196px] text-lg font-bold text-C_blue-700 bg-white hover:bg-C_gray-100 rounded border-2 border-C_blue-400 shadow-lg"
-          to="/"
+          :to="{ name: 'ProjectView', params: { projectId: projectId, }, }"
         >
           <span class="mr-1 material-icons">reply</span>
           取消
         </router-link>
         <router-link
           class="flex justify-center items-center py-2 w-[196px] text-lg font-bold text-white bg-C_green-500 hover:bg-C_green-400 rounded shadow-lg"
-          to="/project"
-          @click="postProjectParams"
+          :to="{ name: 'ProjectView', params: { projectId: projectId, }, }"
+          @click="putProjectParams"
         >
           <span class="mr-1 material-icons">ios_share</span>
-          發起專案
+          儲存
         </router-link>
       </section>
     </div>

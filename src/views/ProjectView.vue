@@ -181,7 +181,7 @@ export default {
               </button>
               <router-link
                 class="flex justify-center items-center py-2 px-6 text-md font-medium text-white bg-C_green-500 hover:bg-C_green-400 rounded"
-                :to="{ name: 'ProjectView', params: { projectId: detailParams.Id, }, }"
+                :to="{ name: 'ProjectEdit', params: { projectId: detailParams.Id, }, }"
               >
                 <span class="mr-1 material-icons">north_east</span>
                 編輯

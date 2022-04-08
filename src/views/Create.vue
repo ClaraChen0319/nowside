@@ -20,19 +20,19 @@ export default {
         },
       ],
       projectParams: {
-        Id: 0, // 專案ID（不用顯示）
+        Id: 0,
         ProjectName: '專案名稱',
         ProjectContext: '',
         GroupPhoto: '',
-        InitDate: '', // 專案發起日（後端賦值）
-        GroupDeadline: '', // 參加截止日（後端賦值）
+        InitDate: '',
+        GroupDeadline: '',
         FinishedDeadline: '',
         GroupNum: 0,
         PartnerCondition: '',
-        PartnerSkills: [0,], // 一定要有值（數字陣列）
+        PartnerSkills: [1], // 一定要有值（數字陣列）
         ProjectTypeId: 0,
-        ProjectState: '', // 專案狀態（不用顯示）
-        MembersId: 0, // 發起人ID（不用顯示） 
+        ProjectState: '',
+        MembersId: 0,
       },
     };
   },
