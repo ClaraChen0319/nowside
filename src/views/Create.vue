@@ -26,7 +26,7 @@ export default {
         GroupPhoto: '',
         InitDate: '', // 專案發起日（後端賦值）
         GroupDeadline: '', // 參加截止日（後端賦值）
-        FinishedDeadline: '2022-04-05T05:08:40.999Z',
+        FinishedDeadline: '',
         GroupNum: 0,
         PartnerCondition: '',
         PartnerSkills: [0,], // 一定要有值（數字陣列）
@@ -41,10 +41,17 @@ export default {
     groupDeadline() {
       return moment().add(7, 'days').format('YYYY.MM.DD');
     },
-    // Date Time（後端要求格式）
-    // finishedDeadline() {
-    //   return moment().format(this.projectParams.FinishedDeadline);
-    // },
+    // 專案結束日 ISO 時間格式
+    finishedDeadline: {
+      set(newVal) {
+        const formatDateResult = new Date(newVal).toISOString();
+        console.log('set', formatDateResult);
+        this.projectParams.FinishedDeadline = formatDateResult;
+      },
+      get() {
+        return this.projectParams.FinishedDeadline;
+      },
+    },
   },
   mounted() {
     this.getSkillsParams();
@@ -54,7 +61,7 @@ export default {
     // 取得技能列表
     getSkillsParams() {
       S_getSkills().then(res =>{
-        console.log('取得技能列表', res.data.Skilldata);
+        console.log('技能列表', res.data.Skilldata);
         this.skillsData = res.data.Skilldata;
       })
       .catch(error => {
@@ -64,7 +71,7 @@ export default {
     // 取得專案類別列表
     getClassParams() {
       S_getProjectClass().then(res =>{
-        console.log('取得專案類別列表', res.data.Classdata);
+        console.log('專案類別列表', res.data.Classdata);
         this.classData = res.data.Classdata;
       })
       .catch(error => {
@@ -244,7 +251,7 @@ export default {
               >專案<br>結束日</label>
               <input
                 id="finishedDeadline"
-                v-model="projectParams.FinishedDeadline"
+                v-model="finishedDeadline"
                 name="finishedDeadline"
                 type="date" 
                 class="nowside-input form-input"

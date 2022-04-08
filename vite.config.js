@@ -11,5 +11,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  // GitHub Repository 命名設定
   base: process.env.NODE_ENV === 'production' ? '/nowside/' : './'
 })
